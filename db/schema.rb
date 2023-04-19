@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_19_180141) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_183909) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,10 +20,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_19_180141) do
     t.string "style"
     t.float "abv"
     t.integer "ibu"
-    t.text "description"
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "likes", force: :cascade do |t|
