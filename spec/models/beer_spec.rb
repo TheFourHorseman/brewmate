@@ -32,4 +32,11 @@ RSpec.describe Beer, type: :model do
         brewery_name: "Hoppy Hour", style: "blonde", abv: 5, ibu: 2)
         expect(beer.errors[:image]).to_not be_empty
     end
+    it"beer name must be unique within brewery" do
+      beer= user.beers.create(
+        brewery_name: "Hoppy Hour", style: "blonde", abv: 5, ibu: 2)
+        beer2= user.beers.create(
+          brewery_name: "Hoppy Hour", style: "blonde", abv: 5, ibu: 2)
+        expect(beer2.errors[:beer_name]).to_not be_empty
+    end
 end
