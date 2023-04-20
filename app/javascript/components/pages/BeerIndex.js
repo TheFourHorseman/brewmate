@@ -24,7 +24,11 @@ const BeerIndex = ({ beers }) => {
                 className="index-card"
               >
                 <CardBody>
-                  <img alt="Sample" src={beer.image} className="index-image" />
+                  <img
+                    alt={`A picture of ${beer.beer_name}`}
+                    src={beer.image}
+                    className="index-image"
+                  />
                   <CardTitle tag="h5">{beer.beer_name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted" tag="h6">
                     {beer.brewery_name}
