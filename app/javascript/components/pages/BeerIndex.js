@@ -23,8 +23,8 @@ const BeerIndex = ({ beers }) => {
                 key={index}
                 className="index-card"
               >
-                <img alt="Sample" src="https://picsum.photos/300/200" />
                 <CardBody>
+                  <img alt="Sample" src={beer.image} className="index-image" />
                   <CardTitle tag="h5">{beer.beer_name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted" tag="h6">
                     {beer.brewery_name}

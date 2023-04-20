@@ -76,5 +76,13 @@ h1,h2,h3 {
 }
 
 .index-card{
-    margin: 35px 35px 35px 35px
+    max-height: 580px;
+    margin: 35px 35px 35px 35px;
+    text-align: center;
+    background-color: #F36527;
+}
+.index-image{
+    max-width: 100%;
+    height:300px;
+    object-fit: scale-down;
 }
