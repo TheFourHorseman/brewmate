@@ -9,11 +9,13 @@ import BeerNew from "./pages/BeerNew";
 import BeerSuggestions from "./pages/BeerSuggestions";
 import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
+import Header from "./components/Header"
 
 const App = (props) => {
   return (
     <>
       <BrowserRouter>
+      <Header {...props}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/beerindex" element={<BeerIndex />} />
