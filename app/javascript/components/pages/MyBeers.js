@@ -11,13 +11,13 @@ import {
 
 const MyBeers = ({ beers, current_user }) => {
   const userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
+  console.log(userBeers)
   return (
     <>
-      {console.log(current_user)}
       <div className="index-content">
         <h2>Your Uploaded Brews</h2>
         <div className="index-cards">
-          {userBeers?.filter((beer, index) => {
+          {userBeers?.map((beer, index) => {
             return (
               <Card
                 style={{
@@ -39,7 +39,7 @@ const MyBeers = ({ beers, current_user }) => {
                   <CardText>{beer.beer_style}</CardText>
                 </CardBody>
                 <ButtonGroup>
-                  <Button>Show More</Button>
+                  <Button className="">Show More</Button>
                   <Button>Edit</Button>
                   <Button color="danger">Delete</Button>
                 </ButtonGroup>

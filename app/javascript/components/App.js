@@ -39,7 +39,7 @@ const App = (props) => {
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
             path="/mybeers"
-            element={<MyBeers {...props} beers={beers} />}
+            element={<MyBeers current_user={props.current_user} beers={beers} />}
           />
         </Routes>
       </BrowserRouter>

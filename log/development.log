@@ -4282,3 +4282,808 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 7407)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-20 14:15:29 -0700
+Started GET "/" for 127.0.0.1 at 2023-04-20 14:15:29 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 17.4ms | Allocations: 1421)
+  Rendered home/index.html.erb within layouts/application (Duration: 18.6ms | Allocations: 1937)
+Started GET "/" for 127.0.0.1 at 2023-04-20 14:15:45 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 492)
+[Webpacker] Compiling...
+[Webpacker] Compiling...
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+yarn run v1.22.19
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+warning package.json: No license field
+warning package.json: No license field
+error Command "webpack" not found.
+
+[Webpacker] Compilation failed:
+yarn run v1.22.19
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+warning package.json: No license field
+warning package.json: No license field
+error Command "webpack" not found.
+
+[Webpacker] Compilation failed:
+yarn run v1.22.19
+info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+
+
+warning package.json: No license field
+warning package.json: No license field
+error Command "webpack" not found.
+
+  Rendered layout layouts/application.html.erb (Duration: 31609.1ms | Allocations: 332572)
+  Rendered layout layouts/application.html.erb (Duration: 47994.1ms | Allocations: 372836)
+  Rendered layout layouts/application.html.erb (Duration: 47995.6ms | Allocations: 373398)
+Completed 500 Internal Server Error in 31627ms (ActiveRecord: 0.0ms | Allocations: 334250)
+
+
+Completed 500 Internal Server Error in 48084ms (ActiveRecord: 0.0ms | Allocations: 378883)
+
+
+Completed 500 Internal Server Error in 48081ms (ActiveRecord: 0.0ms | Allocations: 378495)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/learnacademy/Desktop/brewmate/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_pack_tag 'application', "data-turbolinks-track": 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/learnacademy/Desktop/brewmate/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_pack_tag 'application', "data-turbolinks-track": 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+  
+ActionView::Template::Error (Webpacker can't find application.js in /Users/learnacademy/Desktop/brewmate/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_pack_tag 'application', "data-turbolinks-track": 'reload' %>
+    11:   </head>
+    12: 
+    13:   <body>
+  
+app/views/layouts/application.html.erb:10
+
+NameError: constant WebConsole::SourceLocation not defined
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:51:in `block in guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `each'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `find'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:30:in `first'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:48:in `initialize'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `new'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `from'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:30:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `catch'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:40:in `call_app'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/request_id.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/method_override.rb:24:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/runtime.rb:22:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/static.rb:23:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/sendfile.rb:110:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/webpacker-5.4.4/lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-proxy-0.7.6/lib/rack/proxy.rb:87:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/engine.rb:530:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/configuration.rb:252:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:77:in `block in handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:76:in `handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/server.rb:443:in `process_client'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+
+NameError: constant WebConsole::SourceLocation not defined
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:51:in `block in guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `each'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `find'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:30:in `first'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:48:in `initialize'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `new'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `from'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:30:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `catch'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:40:in `call_app'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/request_id.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/method_override.rb:24:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/runtime.rb:22:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/static.rb:23:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/sendfile.rb:110:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/webpacker-5.4.4/lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-proxy-0.7.6/lib/rack/proxy.rb:87:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/engine.rb:530:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/configuration.rb:252:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:77:in `block in handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:76:in `handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/server.rb:443:in `process_client'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2023-04-20 14:19:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1196)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e67469268c6011f63962
+Version: webpack 4.46.0
+Time: 35620ms
+Built at: 04/20/2023 2:19:42 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-3357f5a7a4692ed4c93e.js  3.61 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-3357f5a7a4692ed4c93e.js.map  3.74 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-763796b48e2793ff8727.js  3.61 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-763796b48e2793ff8727.js.map  3.74 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-3357f5a7a4692ed4c93e.js js/application-3357f5a7a4692ed4c93e.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-763796b48e2793ff8727.js js/server_rendering-763796b48e2793ff8727.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.06 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 610 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 40613.6ms | Allocations: 40497)
+Completed 200 OK in 40642ms (Views: 40623.2ms | ActiveRecord: 0.0ms | Allocations: 43765)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:19:44 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (6.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 332ms (Views: 158.5ms | ActiveRecord: 68.3ms | Allocations: 11327)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 14:19:50 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 551)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 7262)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 0.0ms | Allocations: 7578)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:19:51 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 1.1ms | Allocations: 2526)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:19:51 -0700
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:19:51 -0700
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:19:51 -0700
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:19:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:19:52 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+
+NameError: constant WebConsole::SourceLocation not defined
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:51:in `block in guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `each'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `find'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `guess_the_first_application_binding'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:30:in `first'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:48:in `initialize'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `new'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `from'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:30:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `catch'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:40:in `call_app'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/request_id.rb:26:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/method_override.rb:24:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/runtime.rb:22:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/static.rb:23:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/sendfile.rb:110:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/webpacker-5.4.4/lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/rack-proxy-0.7.6/lib/rack/proxy.rb:87:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/engine.rb:530:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/configuration.rb:252:in `call'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:77:in `block in handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:76:in `handle_request'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/server.rb:443:in `process_client'
+	from /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-04-20 14:19:53 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 6.9ms | Allocations: 711)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 165.5ms | Allocations: 7445)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 219.2ms | Allocations: 14261)
+Completed 200 OK in 293ms (Views: 229.8ms | ActiveRecord: 8.8ms | Allocations: 20465)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:19:55 -0700
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:19:55 -0700
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:19:55 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:19:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:19:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beers" for ::1 at 2023-04-20 14:19:59 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (10.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 55ms (Views: 38.1ms | ActiveRecord: 10.4ms | Allocations: 2518)
+
+
+Started GET "/" for ::1 at 2023-04-20 14:25:24 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 575)
+[Webpacker] Compiling...
+Started GET "/users/sign_in" for ::1 at 2023-04-20 14:25:33 -0700
+[Webpacker] Compilation failed:
+Hash: 775bf3cc4e19b2943c93
+Version: webpack 4.46.0
+Time: 27572ms
+Built at: 04/20/2023 2:26:06 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-c5afae812217f1dca22b.js  3.62 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-c5afae812217f1dca22b.js.map  3.74 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-9c3fc32fbec8cc09d646.js  3.62 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-9c3fc32fbec8cc09d646.js.map  3.74 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-c5afae812217f1dca22b.js js/application-c5afae812217f1dca22b.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-9c3fc32fbec8cc09d646.js js/server_rendering-9c3fc32fbec8cc09d646.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.06 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 610 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 39603.4ms | Allocations: 9568)
+Completed 200 OK in 39627ms (Views: 39614.0ms | ActiveRecord: 0.0ms | Allocations: 10147)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 156)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 29.2ms | Allocations: 1355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 124.0ms | Allocations: 8171)
+Completed 200 OK in 250ms (Views: 131.7ms | ActiveRecord: 49.8ms | Allocations: 11675)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 14:26:40 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 1333ms (ActiveRecord: 26.9ms | Allocations: 6545)
+
+
+Started GET "/" for ::1 at 2023-04-20 14:26:41 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 36.5ms | Allocations: 1440)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 100.0ms | Allocations: 8308)
+Completed 200 OK in 114ms (Views: 103.5ms | ActiveRecord: 1.1ms | Allocations: 8883)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:26:42 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 129ms (Views: 42.3ms | ActiveRecord: 69.0ms | Allocations: 6956)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 14:26:48 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 99.0ms | Allocations: 1355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 291.6ms | Allocations: 8151)
+Completed 200 OK in 297ms (Views: 292.5ms | ActiveRecord: 0.8ms | Allocations: 8464)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:26:49 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (4.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 58ms (Views: 48.8ms | ActiveRecord: 4.4ms | Allocations: 2517)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:26:49 -0700
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:26:49 -0700
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:26:50 -0700
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:26:50 -0700
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:26:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+Started GET "/" for ::1 at 2023-04-20 14:26:52 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 27.7ms | Allocations: 1376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.7ms | Allocations: 8169)
+Completed 200 OK in 107ms (Views: 99.3ms | ActiveRecord: 1.3ms | Allocations: 8483)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:26:52 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 77ms (Views: 54.5ms | ActiveRecord: 1.6ms | Allocations: 2515)
+
+
+Started GET "/mybeers" for ::1 at 2023-04-20 14:27:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 26.3ms | Allocations: 1338)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 109.0ms | Allocations: 8048)
+Completed 200 OK in 118ms (Views: 109.8ms | ActiveRecord: 1.2ms | Allocations: 8360)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:27:02 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (2.1ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 54ms (Views: 45.0ms | ActiveRecord: 2.1ms | Allocations: 2516)
+
+
+Started GET "/mybeers" for ::1 at 2023-04-20 14:41:19 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 446.1ms | Allocations: 6447)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6dacf6c8266343109a21
+Version: webpack 4.46.0
+Time: 35863ms
+Built at: 04/20/2023 2:42:14 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-4b6187a965352fc78be7.js  3.62 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-4b6187a965352fc78be7.js.map  3.74 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-5a0d9683736b39067eaa.js  3.62 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-5a0d9683736b39067eaa.js.map  3.74 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-4b6187a965352fc78be7.js js/application-4b6187a965352fc78be7.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-5a0d9683736b39067eaa.js js/server_rendering-5a0d9683736b39067eaa.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.06 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 610 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 54217.8ms | Allocations: 14544)
+Completed 200 OK in 54238ms (Views: 54224.5ms | ActiveRecord: 284.8ms | Allocations: 15120)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:42:17 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (62.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 306ms (Views: 169.2ms | ActiveRecord: 62.8ms | Allocations: 6062)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:42:18 -0700
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:42:18 -0700
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:42:19 -0700
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:42:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:42:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/mybeers" for ::1 at 2023-04-20 14:48:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 177.6ms | Allocations: 4244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32545.6ms | Allocations: 43990)
+Completed 200 OK in 32552ms (Views: 32547.7ms | ActiveRecord: 102.8ms | Allocations: 44303)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:49:28 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (2.5ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 68ms (Views: 38.3ms | ActiveRecord: 2.5ms | Allocations: 2592)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:49:28 -0700
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:49:28 -0700
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:49:28 -0700
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:49:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:49:29 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/" for ::1 at 2023-04-20 14:49:42 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 17.5ms | Allocations: 1345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 110.4ms | Allocations: 8122)
+Completed 200 OK in 118ms (Views: 110.1ms | ActiveRecord: 2.3ms | Allocations: 8435)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:49:44 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 1.4ms | Allocations: 2516)
+
+
+Started GET "/mybeers" for ::1 at 2023-04-20 14:52:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 120.9ms | Allocations: 3991)
+[Webpacker] Compiling...
+Started GET "/mybeers" for ::1 at 2023-04-20 14:53:08 -0700
+[Webpacker] Compilation failed:
+Hash: 5721cb6020c2c94c1b89
+Version: webpack 4.46.0
+Time: 18855ms
+Built at: 04/20/2023 2:53:08 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-44495bd17762fe4ea530.js  3.62 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-44495bd17762fe4ea530.js.map  3.74 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-529c54173ce1075a20d5.js  3.62 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-529c54173ce1075a20d5.js.map  3.74 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-44495bd17762fe4ea530.js js/application-44495bd17762fe4ea530.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-529c54173ce1075a20d5.js js/server_rendering-529c54173ce1075a20d5.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.06 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 610 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 26903.6ms | Allocations: 12869)
+Completed 200 OK in 26913ms (Views: 26813.4ms | ActiveRecord: 94.2ms | Allocations: 13447)
+
+
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (24.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 74.9ms | Allocations: 3852)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 166.0ms | Allocations: 10718)
+Completed 200 OK in 174ms (Views: 132.1ms | ActiveRecord: 38.1ms | Allocations: 11296)
+
+
+Started GET "/beers" for ::1 at 2023-04-20 14:53:11 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (4.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 355ms (Views: 141.4ms | ActiveRecord: 144.3ms | Allocations: 6359)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for ::1 at 2023-04-20 14:53:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/hoplanta.png" for ::1 at 2023-04-20 14:53:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+Started GET "/thai_wheat.png" for ::1 at 2023-04-20 14:53:13 -0700
+Started GET "/calicreamsicle.png" for ::1 at 2023-04-20 14:53:13 -0700
+Started GET "/calipeaches.png" for ::1 at 2023-04-20 14:53:13 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
