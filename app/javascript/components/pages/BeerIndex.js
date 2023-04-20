@@ -35,7 +35,7 @@ const BeerIndex = ({ beers }) => {
                   </CardSubtitle>
                   <CardText>{beer.beer_style}</CardText>
                 </CardBody>
-                <Button>Show More</Button>
+                <Button href={`/beershow/${beer.id}`}>Show More</Button>
               </Card>
             );
           })}

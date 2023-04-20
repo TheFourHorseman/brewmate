@@ -57,7 +57,7 @@ h1,h2,h3 {
 }
 
 .btn.btn-secondary{
-    margin: 20px;
+    margin: 10px;
 }
 
 .logo{
@@ -86,3 +86,26 @@ h1,h2,h3 {
     height:300px;
     object-fit: scale-down;
 }
+
+.show-cards{
+    max-height: 580px;
+    margin: 35px 35px 35px 35px;
+    text-align: center;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+.show-card{
+    max-height: 580px;
+    margin: 35px 35px 35px 35px;
+    text-align: center;
+    background-color: #F36527;
+}
+.go-back{
+    text-align: center;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
+
+

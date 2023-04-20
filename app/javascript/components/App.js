@@ -32,7 +32,7 @@ const App = (props) => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
-          <Route path="/beershow" element={<BeerShow />} />
+          <Route path="/beershow/:id" element={<BeerShow  props = {props} beers={beers}/>} />
           <Route path="/beeredit" element={<BeerEdit />} />
           <Route path="/beernew" element={<BeerNew />} />
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
