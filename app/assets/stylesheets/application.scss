@@ -10,6 +10,7 @@ section {
 h1,h2,h3 {
     color: var(--text-color);
     align-items: center;
+    text-align: center;
 }
 
 :root {
@@ -64,10 +65,16 @@ h1,h2,h3 {
 }
 
 .index-content{
+    background-color: #FFFFFF;
+
+}
+
+.index-cards{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
 }
 
 .index-card{
-    margin: 10px 10px 75px 50px
+    margin: 35px 35px 35px 35px
 }
