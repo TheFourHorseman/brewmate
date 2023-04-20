@@ -9,7 +9,7 @@ import BeerNew from "./pages/BeerNew";
 import BeerSuggestions from "./pages/BeerSuggestions";
 import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
-import Header from "./components/Header"
+import Header from "./components/Header";
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
@@ -28,7 +28,7 @@ const App = (props) => {
   return (
     <>
       <BrowserRouter>
-      <Header {...props}/>
+        <Header {...props} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
@@ -37,7 +37,10 @@ const App = (props) => {
           <Route path="/beernew" element={<BeerNew />} />
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
-          <Route path="/mybeers" element={<MyBeers />} />
+          <Route
+            path="/mybeers"
+            element={<MyBeers current_user={props.current_user} beers={beers} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
