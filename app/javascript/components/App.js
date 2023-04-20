@@ -37,7 +37,7 @@ const App = (props) => {
           <Route path="/beernew" element={<BeerNew />} />
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
-          <Route path="/mybeers" element={<MyBeers />} />
+          <Route path="/mybeers" element={<MyBeers {...props}/>} />
         </Routes>
       </BrowserRouter>
     </>
