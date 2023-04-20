@@ -882,3 +882,1648 @@ Migrating to RemovingDescriptionColumn (20230419183909)
   [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mBeer Load (11.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:00:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 4 pending migrations:
+
+20230419175010_create_beers.rb
+20230419175902_create_likes.rb
+20230419180141_add_user_id_to_beer.rb
+20230419183909_removing_description_column.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBeers (20230419175010)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "beers" ("id" bigserial primary key, "beer_name" character varying, "brewery_name" character varying, "style" character varying, "abv" float, "ibu" integer, "description" text, "image" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230419175010"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLikes (20230419175902)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "likes" ("id" bigserial primary key, "user_id" integer, "beer_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230419175902"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserIdToBeer (20230419180141)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "beers" ADD "user_id" integer[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230419180141"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemovingDescriptionColumn (20230419183909)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "beers" DROP COLUMN "description"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230419183909"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:00:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1017)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 72717b9d68947691e66c
+Version: webpack 4.46.0
+Time: 752ms
+Built at: 04/19/2023 3:00:28 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-a6c1375202048d7973f8.js  2.06 MiB       application  [emitted] [immutable]  application
+     js/application-a6c1375202048d7973f8.js.map  2.28 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-e6cc791aad44263a8ee4.js  2.06 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-e6cc791aad44263a8ee4.js.map  2.28 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-a6c1375202048d7973f8.js js/application-a6c1375202048d7973f8.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-e6cc791aad44263a8ee4.js js/server_rendering-e6cc791aad44263a8ee4.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 46 hidden modules
+
+ERROR in ./app/javascript/components/pages/Home.test.js
+Module not found: Error: Can't resolve '@testing-library/react' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components/pages'
+ @ ./app/javascript/components/pages/Home.test.js 3:0-56 8:4-10 23:4-10 24:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 4414.5ms | Allocations: 94710)
+Completed 200 OK in 4417ms (Views: 4415.3ms | ActiveRecord: 0.0ms | Allocations: 96891)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:20:56 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 516)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 4d07b96664dc89267139
+Version: webpack 4.46.0
+Time: 2430ms
+Built at: 04/19/2023 3:21:00 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-088954d4c0cf6b17523c.js  2.71 MiB       application  [emitted] [immutable]  application
+     js/application-088954d4c0cf6b17523c.js.map  2.89 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-8412f22dd7aff720633e.js  2.71 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-8412f22dd7aff720633e.js.map  2.89 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-088954d4c0cf6b17523c.js js/application-088954d4c0cf6b17523c.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-8412f22dd7aff720633e.js js/server_rendering-8412f22dd7aff720633e.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 407 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3599.7ms | Allocations: 8227)
+Completed 200 OK in 3602ms (Views: 3600.4ms | Allocations: 8800)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:22:16 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 540)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 56e28e2236e84c7d94da
+Version: webpack 4.46.0
+Time: 3238ms
+Built at: 04/19/2023 3:22:20 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-74ff75edbf053fc85c43.js  3.58 MiB       application  [emitted] [immutable]  application
+     js/application-74ff75edbf053fc85c43.js.map  3.72 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-7908365a00318272a70e.js  3.58 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-7908365a00318272a70e.js.map  3.72 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-74ff75edbf053fc85c43.js js/application-74ff75edbf053fc85c43.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-7908365a00318272a70e.js js/server_rendering-7908365a00318272a70e.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 602 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 4300.2ms | Allocations: 8265)
+Completed 200 OK in 4302ms (Views: 4300.8ms | Allocations: 8838)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:25:03 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Desktop/brewmate/public/packs
+[Webpacker] warning package.json: No license field
+
+[Webpacker] Hash: 172ff292139f1ad83ff9
+Version: webpack 4.46.0
+Time: 1864ms
+Built at: 04/19/2023 3:25:06 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-4f6cba2abb6c5b048a9c.js  3.58 MiB       application  [emitted] [immutable]  application
+     js/application-4f6cba2abb6c5b048a9c.js.map  3.72 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-f6c886d76e43ad9c079f.js  3.58 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-f6c886d76e43ad9c079f.js.map  3.72 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-4f6cba2abb6c5b048a9c.js js/application-4f6cba2abb6c5b048a9c.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-f6c886d76e43ad9c079f.js js/server_rendering-f6c886d76e43ad9c079f.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 601 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 3022.5ms | Allocations: 8219)
+Completed 200 OK in 3025ms (Views: 3023.4ms | Allocations: 8791)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:29:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 507)
+[Webpacker] Compiling...
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:29:05 -0700
+[Webpacker] Compiled all packs in /Users/learnacademy/Desktop/brewmate/public/packs
+[Webpacker] warning package.json: No license field
+
+[Webpacker] Hash: 7dd492e005c1d69b5d94
+Version: webpack 4.46.0
+Time: 1284ms
+Built at: 04/19/2023 3:29:06 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-561e4307916e5c9a643a.js   2.7 MiB       application  [emitted] [immutable]  application
+     js/application-561e4307916e5c9a643a.js.map  2.89 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-8c8b50cbeebb0bdbe626.js   2.7 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-8c8b50cbeebb0bdbe626.js.map  2.89 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-561e4307916e5c9a643a.js js/application-561e4307916e5c9a643a.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-8c8b50cbeebb0bdbe626.js js/server_rendering-8c8b50cbeebb0bdbe626.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 406 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2250.9ms | Allocations: 9156)
+Completed 200 OK in 2252ms (Views: 2251.5ms | Allocations: 9730)
+
+
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 7183)
+Completed 200 OK in 6ms (Views: 5.7ms | Allocations: 7755)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:29:18 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/learnacademy/Desktop/brewmate/public/packs
+[Webpacker] warning package.json: No license field
+
+[Webpacker] Hash: 414a0725bdf5cf867f64
+Version: webpack 4.46.0
+Time: 1222ms
+Built at: 04/19/2023 3:29:21 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-55c71463fd16db14c640.js   2.7 MiB       application  [emitted] [immutable]  application
+     js/application-55c71463fd16db14c640.js.map  2.89 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-7a9d4795da9cc4d364ef.js   2.7 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-7a9d4795da9cc4d364ef.js.map  2.89 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-55c71463fd16db14c640.js js/application-55c71463fd16db14c640.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-7a9d4795da9cc4d364ef.js js/server_rendering-7a9d4795da9cc4d364ef.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 406 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2229.7ms | Allocations: 8319)
+Completed 200 OK in 2231ms (Views: 2230.3ms | Allocations: 8892)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:29:46 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 462)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7135)
+Completed 200 OK in 16ms (Views: 14.7ms | Allocations: 7444)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:30:52 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 7041)
+Completed 200 OK in 35ms (Views: 33.4ms | Allocations: 7350)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:30:54 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 7052)
+Completed 200 OK in 15ms (Views: 13.8ms | Allocations: 7362)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:30:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 7074)
+Completed 200 OK in 15ms (Views: 14.2ms | Allocations: 7383)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:30:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 7044)
+Completed 200 OK in 16ms (Views: 14.5ms | Allocations: 7353)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:31:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 123.8ms | Allocations: 53383)
+Completed 200 OK in 132ms (Views: 126.8ms | ActiveRecord: 0.0ms | Allocations: 56647)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:32:26 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 512)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e73aec53bb69931683f8
+Version: webpack 4.46.0
+Time: 986ms
+Built at: 04/19/2023 3:32:28 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-0b4c601d9818d81640ec.js  2.06 MiB       application  [emitted] [immutable]  application
+     js/application-0b4c601d9818d81640ec.js.map  2.28 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-b4bd7f8ef5008bc1ad66.js  2.06 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-b4bd7f8ef5008bc1ad66.js.map  2.28 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-0b4c601d9818d81640ec.js js/application-0b4c601d9818d81640ec.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b4bd7f8ef5008bc1ad66.js js/server_rendering-b4bd7f8ef5008bc1ad66.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 47 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2168.7ms | Allocations: 8242)
+Completed 200 OK in 2172ms (Views: 2170.0ms | ActiveRecord: 0.0ms | Allocations: 8818)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:33:43 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 519)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: cf6631c3f64c82209e0c
+Version: webpack 4.46.0
+Time: 1351ms
+Built at: 04/19/2023 3:33:46 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-0798db363721dcba4832.js  2.93 MiB       application  [emitted] [immutable]  application
+     js/application-0798db363721dcba4832.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-eae76a2ab8fd6ddff8d7.js  2.93 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-eae76a2ab8fd6ddff8d7.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-0798db363721dcba4832.js js/application-0798db363721dcba4832.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-eae76a2ab8fd6ddff8d7.js js/server_rendering-eae76a2ab8fd6ddff8d7.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2523.4ms | Allocations: 8148)
+Completed 200 OK in 2525ms (Views: 2524.0ms | ActiveRecord: 0.0ms | Allocations: 8725)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:36:59 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 495)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 91717c0a01d4ffdd3b9f
+Version: webpack 4.46.0
+Time: 1339ms
+Built at: 04/19/2023 3:37:01 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-df7e3592800b292cb5d9.js  2.93 MiB       application  [emitted] [immutable]  application
+     js/application-df7e3592800b292cb5d9.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-f0f999c3581565593346.js  2.93 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-f0f999c3581565593346.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-df7e3592800b292cb5d9.js js/application-df7e3592800b292cb5d9.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-f0f999c3581565593346.js js/server_rendering-f0f999c3581565593346.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2561.6ms | Allocations: 8120)
+Completed 200 OK in 2563ms (Views: 2562.6ms | ActiveRecord: 0.0ms | Allocations: 8696)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:37:44 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 510)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 561d206b8aabd9a3b4d5
+Version: webpack 4.46.0
+Time: 1271ms
+Built at: 04/19/2023 3:37:47 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-6a8786b18f2eb22cb9ca.js  2.93 MiB       application  [emitted] [immutable]  application
+     js/application-6a8786b18f2eb22cb9ca.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-588c0b39a5bc04c7adbc.js  2.93 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-588c0b39a5bc04c7adbc.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-6a8786b18f2eb22cb9ca.js js/application-6a8786b18f2eb22cb9ca.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-588c0b39a5bc04c7adbc.js js/server_rendering-588c0b39a5bc04c7adbc.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2382.3ms | Allocations: 8135)
+Completed 200 OK in 2384ms (Views: 2383.2ms | ActiveRecord: 0.0ms | Allocations: 8710)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:39:31 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: d3b7f6c8229250b50974
+Version: webpack 4.46.0
+Time: 1250ms
+Built at: 04/19/2023 3:39:34 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-eac17b358affb327cbd2.js  2.93 MiB       application  [emitted] [immutable]  application
+     js/application-eac17b358affb327cbd2.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-0f64feac6e607986eb94.js  2.93 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-0f64feac6e607986eb94.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-eac17b358affb327cbd2.js js/application-eac17b358affb327cbd2.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-0f64feac6e607986eb94.js js/server_rendering-0f64feac6e607986eb94.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2409.3ms | Allocations: 8132)
+Completed 200 OK in 2411ms (Views: 2410.0ms | ActiveRecord: 0.0ms | Allocations: 8708)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:41:24 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 501)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b238ba8dde86bda441ba
+Version: webpack 4.46.0
+Time: 1698ms
+Built at: 04/19/2023 3:41:27 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-8385c118575e943c1846.js  2.93 MiB       application  [emitted] [immutable]  application
+     js/application-8385c118575e943c1846.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-2b8be29b5d744937882b.js  2.93 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-2b8be29b5d744937882b.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-8385c118575e943c1846.js js/application-8385c118575e943c1846.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-2b8be29b5d744937882b.js js/server_rendering-2b8be29b5d744937882b.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2811.8ms | Allocations: 8131)
+Completed 200 OK in 2814ms (Views: 2812.9ms | ActiveRecord: 0.0ms | Allocations: 8708)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:42:54 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6f4ceb086239db313d24
+Version: webpack 4.46.0
+Time: 1387ms
+Built at: 04/19/2023 3:42:57 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-27bc3791c50e935ee989.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-27bc3791c50e935ee989.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-4c48b0e55401d5b1f864.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-4c48b0e55401d5b1f864.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-27bc3791c50e935ee989.js js/application-27bc3791c50e935ee989.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-4c48b0e55401d5b1f864.js js/server_rendering-4c48b0e55401d5b1f864.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2483.4ms | Allocations: 8225)
+Completed 200 OK in 2485ms (Views: 2484.1ms | ActiveRecord: 0.0ms | Allocations: 8801)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:45:05 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 510)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: f6dd6b1d66820bedcb00
+Version: webpack 4.46.0
+Time: 1383ms
+Built at: 04/19/2023 3:45:08 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-c6cf725c16b54dc05af2.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-c6cf725c16b54dc05af2.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-27a9bb938759a7325530.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-27a9bb938759a7325530.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-c6cf725c16b54dc05af2.js js/application-c6cf725c16b54dc05af2.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-27a9bb938759a7325530.js js/server_rendering-27a9bb938759a7325530.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2567.5ms | Allocations: 8134)
+Completed 200 OK in 2569ms (Views: 2568.3ms | ActiveRecord: 0.0ms | Allocations: 8709)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:45:31 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 513)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 822f6e4d1e78169fd9d0
+Version: webpack 4.46.0
+Time: 1292ms
+Built at: 04/19/2023 3:45:34 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-dc83badaf7840d9336cb.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-dc83badaf7840d9336cb.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-649e6b65662689a1bdc6.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-649e6b65662689a1bdc6.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-dc83badaf7840d9336cb.js js/application-dc83badaf7840d9336cb.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-649e6b65662689a1bdc6.js js/server_rendering-649e6b65662689a1bdc6.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2324.2ms | Allocations: 8271)
+Completed 200 OK in 2326ms (Views: 2325.0ms | ActiveRecord: 0.0ms | Allocations: 8848)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:45:56 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 58abe54cdeb40518c713
+Version: webpack 4.46.0
+Time: 1380ms
+Built at: 04/19/2023 3:45:59 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-c6aa824b0a0ba7ee776b.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-c6aa824b0a0ba7ee776b.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-b8b4ca101315d58db6a9.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-b8b4ca101315d58db6a9.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-c6aa824b0a0ba7ee776b.js js/application-c6aa824b0a0ba7ee776b.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b8b4ca101315d58db6a9.js js/server_rendering-b8b4ca101315d58db6a9.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2668.9ms | Allocations: 8125)
+Completed 200 OK in 2670ms (Views: 2669.4ms | ActiveRecord: 0.0ms | Allocations: 8700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:49:15 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 501)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6546724b7abfa2b409c8
+Version: webpack 4.46.0
+Time: 1192ms
+Built at: 04/19/2023 3:49:17 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-9feac8420020d3cc34fc.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-9feac8420020d3cc34fc.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-d80f5c07c55487647cdd.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-d80f5c07c55487647cdd.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-9feac8420020d3cc34fc.js js/application-9feac8420020d3cc34fc.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-d80f5c07c55487647cdd.js js/server_rendering-d80f5c07c55487647cdd.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2272.0ms | Allocations: 8222)
+Completed 200 OK in 2273ms (Views: 2272.5ms | ActiveRecord: 0.0ms | Allocations: 8798)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:54:13 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 453)
+  Rendered layout layouts/application.html.erb (Duration: 259.9ms | Allocations: 26071)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.0ms | Allocations: 26381)
+
+
+  
+ActionView::Template::Error (Error: File to import not found or unreadable: brewmate-raleway-regular.ttf.
+        on line 2:1 of app/assets/stylesheets/application.scss
+>> @import "brewmate-raleway-regular.ttf";
+
+   ^
+):
+     6:     <%= csrf_meta_tags %>
+     7:     <%= csp_meta_tag %>
+     8: 
+     9:     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    10:     <%= javascript_pack_tag 'application', "data-turbolinks-track": 'reload' %>
+    11:   </head>
+    12: 
+  
+app/assets/stylesheets/application.scss:2
+app/views/layouts/application.html.erb:9
+Started GET "/" for 127.0.0.1 at 2023-04-19 15:56:45 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3055.0ms | Allocations: 37494)
+Completed 200 OK in 3057ms (Views: 3055.6ms | Allocations: 37804)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:03:14 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 471)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3039.9ms | Allocations: 37268)
+Completed 200 OK in 3041ms (Views: 3040.4ms | Allocations: 37577)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:05:35 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 7047)
+Completed 200 OK in 24ms (Views: 22.1ms | Allocations: 7356)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:05:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 453)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 2956.1ms | Allocations: 37262)
+Completed 200 OK in 2958ms (Views: 2956.5ms | Allocations: 37571)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:07:32 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 498)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c77315b675c63ca0440e
+Version: webpack 4.46.0
+Time: 1222ms
+Built at: 04/19/2023 4:07:38 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-50353b90cc700e0fcb1d.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-50353b90cc700e0fcb1d.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-9b616860d0ea244c25aa.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-9b616860d0ea244c25aa.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-50353b90cc700e0fcb1d.js js/application-50353b90cc700e0fcb1d.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-9b616860d0ea244c25aa.js js/server_rendering-9b616860d0ea244c25aa.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 5177.7ms | Allocations: 38339)
+Completed 200 OK in 5179ms (Views: 5178.5ms | Allocations: 38910)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:11:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 495)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b596e414dd8f86663141
+Version: webpack 4.46.0
+Time: 1247ms
+Built at: 04/19/2023 4:11:41 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-9b403289d8612e53ab70.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-9b403289d8612e53ab70.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-b38c3cbec510d87fa6a5.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-b38c3cbec510d87fa6a5.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-9b403289d8612e53ab70.js js/application-9b403289d8612e53ab70.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b38c3cbec510d87fa6a5.js js/server_rendering-b38c3cbec510d87fa6a5.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2381.5ms | Allocations: 8117)
+Completed 200 OK in 2383ms (Views: 2382.1ms | Allocations: 8688)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:14:26 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 492)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 701aeaed7df483b49876
+Version: webpack 4.46.0
+Time: 1261ms
+Built at: 04/19/2023 4:14:31 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-260fd259b1a554982906.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-260fd259b1a554982906.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-9c33b973d38fbca6745d.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-9c33b973d38fbca6745d.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-260fd259b1a554982906.js js/application-260fd259b1a554982906.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-9c33b973d38fbca6745d.js js/server_rendering-9c33b973d38fbca6745d.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 5105.3ms | Allocations: 38332)
+Completed 200 OK in 5108ms (Views: 5106.9ms | Allocations: 38904)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:16:26 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 507)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 7f0efcbeed70b095ed35
+Version: webpack 4.46.0
+Time: 1252ms
+Built at: 04/19/2023 4:16:28 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-ed077874ca69e7ee42f8.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-ed077874ca69e7ee42f8.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-90abc20e591437252b20.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-90abc20e591437252b20.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-ed077874ca69e7ee42f8.js js/application-ed077874ca69e7ee42f8.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-90abc20e591437252b20.js js/server_rendering-90abc20e591437252b20.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2377.0ms | Allocations: 8128)
+Completed 200 OK in 2378ms (Views: 2377.8ms | Allocations: 8700)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:17:29 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3031.4ms | Allocations: 37273)
+Completed 200 OK in 3032ms (Views: 3031.7ms | Allocations: 37582)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:18:48 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3229.0ms | Allocations: 37299)
+Completed 200 OK in 3231ms (Views: 3229.7ms | Allocations: 37608)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:19:29 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 516)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 53cddd5f0655f99544d4
+Version: webpack 4.46.0
+Time: 1959ms
+Built at: 04/19/2023 4:19:33 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-0df508d6130b56d581aa.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-0df508d6130b56d581aa.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-27d41e93a05411e39147.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-27d41e93a05411e39147.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-0df508d6130b56d581aa.js js/application-0df508d6130b56d581aa.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-27d41e93a05411e39147.js js/server_rendering-27d41e93a05411e39147.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3463.8ms | Allocations: 8226)
+Completed 200 OK in 3465ms (Views: 3464.7ms | Allocations: 8798)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:22:18 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: bcafe59d2d47a9014c21
+Version: webpack 4.46.0
+Time: 1503ms
+Built at: 04/19/2023 4:22:21 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-de5e97507feda7aedd13.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-de5e97507feda7aedd13.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-e4eb7eb9a4badb5c1310.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-e4eb7eb9a4badb5c1310.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-de5e97507feda7aedd13.js js/application-de5e97507feda7aedd13.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-e4eb7eb9a4badb5c1310.js js/server_rendering-e4eb7eb9a4badb5c1310.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2720.7ms | Allocations: 8127)
+Completed 200 OK in 2723ms (Views: 2721.4ms | Allocations: 8698)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:23:43 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 510)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a98ca8a9030126f135f5
+Version: webpack 4.46.0
+Time: 1620ms
+Built at: 04/19/2023 4:23:46 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-4fe2ccf80c06cf9ebbf0.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-4fe2ccf80c06cf9ebbf0.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-a69c76e6739e499c731f.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-a69c76e6739e499c731f.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-4fe2ccf80c06cf9ebbf0.js js/application-4fe2ccf80c06cf9ebbf0.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-a69c76e6739e499c731f.js js/server_rendering-a69c76e6739e499c731f.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2744.8ms | Allocations: 8216)
+Completed 200 OK in 2748ms (Views: 2745.7ms | Allocations: 8788)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:26:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 504)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 15a8645cc506464ecfa5
+Version: webpack 4.46.0
+Time: 1248ms
+Built at: 04/19/2023 4:26:42 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-679083334858d68e3709.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-679083334858d68e3709.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-b83f836c0062eee45886.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-b83f836c0062eee45886.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-679083334858d68e3709.js js/application-679083334858d68e3709.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b83f836c0062eee45886.js js/server_rendering-b83f836c0062eee45886.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2266.0ms | Allocations: 8213)
+Completed 200 OK in 2269ms (Views: 2266.9ms | Allocations: 8785)
+
+
+Started GET "/app/assets/images/brewmate-high-resolution-logo-color-on-transparent-background.png" for 127.0.0.1 at 2023-04-19 16:26:42 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/app/assets/images/brewmate-high-resolution-logo-color-on-transparent-background.png"):
+  
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:28:00 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 507)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 66a805c542b9a22cb976
+Version: webpack 4.46.0
+Time: 1259ms
+Built at: 04/19/2023 4:28:03 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-a7f1a461af1b121d5063.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-a7f1a461af1b121d5063.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-583514f4e9007c21c0da.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-583514f4e9007c21c0da.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-a7f1a461af1b121d5063.js js/application-a7f1a461af1b121d5063.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-583514f4e9007c21c0da.js js/server_rendering-583514f4e9007c21c0da.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./app/javascript/components/pages/Home.js
+Module not found: Error: Can't resolve './app/assets/images/brewmate-high-resolution-logo-color-on-transparent-background.png' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components/pages'
+ @ ./app/javascript/components/pages/Home.js 5:0-105
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2349.8ms | Allocations: 8216)
+Completed 200 OK in 2352ms (Views: 2350.6ms | Allocations: 8788)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:28:27 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 513)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 391877a90ce63ca1b7b4
+Version: webpack 4.46.0
+Time: 1238ms
+Built at: 04/19/2023 4:28:29 PM
+                                          Asset      Size            Chunks                         Chunk Names
+         js/application-9616dda1b1692d37d066.js  2.94 MiB       application  [emitted] [immutable]  application
+     js/application-9616dda1b1692d37d066.js.map  3.12 MiB       application  [emitted] [dev]        application
+         js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+     js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+    js/server_rendering-62b4e34575741c25988e.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+js/server_rendering-62b4e34575741c25988e.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                  manifest.json  1.05 KiB                    [emitted]              
+Entrypoint application = js/application-9616dda1b1692d37d066.js js/application-9616dda1b1692d37d066.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-62b4e34575741c25988e.js js/server_rendering-62b4e34575741c25988e.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 702 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 242 hidden modules
+
+ERROR in ./app/javascript/components/pages/Home.js
+Module not found: Error: Can't resolve './app/assets/images/brewmate-high-resolution-logo-color-on-transparent-background.png' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components/pages'
+ @ ./app/javascript/components/pages/Home.js 5:0-105 16:9-13
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2251.3ms | Allocations: 8263)
+Completed 200 OK in 2254ms (Views: 2252.3ms | Allocations: 8835)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-19 16:32:01 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 513)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c17be4dff1a50ac3085c
+Version: webpack 4.46.0
+Time: 1218ms
+Built at: 04/19/2023 4:32:03 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-0f86417f0b103f24a1ed.js  2.94 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-0f86417f0b103f24a1ed.js.map  3.12 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-166e40a48bf86d5df7c8.js  2.94 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-166e40a48bf86d5df7c8.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.27 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-ddb03ead25ab8768660c296983f221ad.png   147 KiB                    [emitted]              
+Entrypoint application = js/application-0f86417f0b103f24a1ed.js js/application-0f86417f0b103f24a1ed.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-166e40a48bf86d5df7c8.js js/server_rendering-166e40a48bf86d5df7c8.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 856 bytes {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 243 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2466.2ms | Allocations: 8249)
+Completed 200 OK in 2468ms (Views: 2467.2ms | Allocations: 8821)
+
+
