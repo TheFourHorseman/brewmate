@@ -62,3 +62,12 @@ h1,h2,h3 {
 .logo{
     width: 30%;
 }
+
+.index-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.index-card{
+    margin: 10px 10px 75px 50px
+}

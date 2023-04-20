@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,12 +11,25 @@ import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
 
 const App = (props) => {
+  const [beers, setBeers] = useState([]);
+
+  const readBeer = () => {
+    fetch("/beers")
+      .then((response) => response.json())
+      .then((payload) => setBeers(payload))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    readBeer();
+  }, []);
+
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/beerindex" element={<BeerIndex />} />
+          <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
           <Route path="/beershow" element={<BeerShow />} />
           <Route path="/beeredit" element={<BeerEdit />} />
           <Route path="/beernew" element={<BeerNew />} />
