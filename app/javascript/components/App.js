@@ -13,7 +13,6 @@ import MyBeers from "./pages/MyBeers";
 const App = (props) => {
   return (
     <>
-      {console.log(props)}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
