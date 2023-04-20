@@ -6,6 +6,7 @@ section {
     padding: 10rem  10% 2rem;
 }
 
+
 h1,h2,h3 {
     color: var(--text-color);
     align-items: center;
@@ -26,6 +27,18 @@ h1,h2,h3 {
     text-align: center;
 }
 
+// Used for scroll snapping
+.scroller {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.scroller section {
+    scroll-snap-align: start;
+}
+
+
 .welcome-section {
     background-color: #FFFFFF;
 }
@@ -44,4 +57,8 @@ h1,h2,h3 {
 
 .btn.btn-secondary{
     margin: 20px;
+}
+
+.logo{
+    width: 30%;
 }
