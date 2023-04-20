@@ -2527,3 +2527,1758 @@ warning package.json: No license field
 Completed 200 OK in 2468ms (Views: 2467.2ms | Allocations: 8821)
 
 
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE DATABASE "brew_mate_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE DATABASE "brew_mate_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (18.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (23.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Cherry Pie Ale"], ["brewery_name", "Wild Leap"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Emergency Drinking Beer Watermelon"], ["brewery_name", "Wild Heaven"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (24.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "American Blackberry Ale"], ["brewery_name", "Wild Leap"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (21.3ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Brother Thelonius"], ["brewery_name", "North Coast"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Dirty Beaches Tropical Wheat"], ["brewery_name", "Scofflaw"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Rosetta"], ["brewery_name", "Ommegang"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Speedway Stout"], ["brewery_name", "Alesmith"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Thai Wheat"], ["brewery_name", "Second Self"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (25.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Hoplanta"], ["brewery_name", "Atlanta Brewing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Cali Creamsicle"], ["brewery_name", "Mother Earth Brewing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (25.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Cali Peaches & Cream"], ["brewery_name", "Mother Earth Brewing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "San Diego State Ale"], ["brewery_name", "Alesmith"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (23.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Evil Dead Red"], ["brewery_name", "Alesmith"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "No Hype"], ["brewery_name", "Bagby Beer"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (25.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Sculpin"], ["brewery_name", "Ballast Point"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Swingin’ Friar Ale"], ["brewery_name", "Ballast Point"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Bacon and Eggs"], ["brewery_name", "Pizza Port"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (25.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "California Honey"], ["brewery_name", "Alesmith"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBeer Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "beers" WHERE "beers"."beer_name" = $1 AND "beers"."brewery_name" = $2 LIMIT $3[0m  [["beer_name", "Yeastie Boys"], ["brewery_name", "Necromancer Brewing"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (23.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8694614212376826720)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-04-20 11:23:44 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (26.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 5108)
+Started GET "/" for ::1 at 2023-04-20 11:23:53 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 4169)
+[Webpacker] Compiling...
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 1356479d7fc80a8f8707
+Version: webpack 4.46.0
+Time: 27937ms
+Built at: 04/20/2023 11:24:43 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-1fa47a68384e34f138de.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-1fa47a68384e34f138de.js.map  3.12 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-b823f59610a817829f47.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-b823f59610a817829f47.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-1fa47a68384e34f138de.js js/application-1fa47a68384e34f138de.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b823f59610a817829f47.js js/server_rendering-b823f59610a817829f47.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+[Webpacker] Compilation failed:
+Hash: 1356479d7fc80a8f8707
+Version: webpack 4.46.0
+Time: 27928ms
+Built at: 04/20/2023 11:24:43 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-1fa47a68384e34f138de.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-1fa47a68384e34f138de.js.map  3.12 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-b823f59610a817829f47.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-b823f59610a817829f47.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-1fa47a68384e34f138de.js js/application-1fa47a68384e34f138de.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-b823f59610a817829f47.js js/server_rendering-b823f59610a817829f47.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 58783.0ms | Allocations: 260695)
+  Rendered layout layouts/application.html.erb (Duration: 50314.8ms | Allocations: 223372)
+Completed 200 OK in 58846ms (Views: 58809.3ms | ActiveRecord: 0.0ms | Allocations: 265828)
+
+
+Completed 200 OK in 50320ms (Views: 50317.5ms | ActiveRecord: 0.0ms | Allocations: 223964)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:27:36 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 477)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: fba1ac66515460c59ffa
+Version: webpack 4.46.0
+Time: 6044ms
+Built at: 04/20/2023 11:27:46 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-637e080eb27969d677ad.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-637e080eb27969d677ad.js.map  3.12 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-6fb6eebd0f9270dde3e4.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-6fb6eebd0f9270dde3e4.js.map  3.12 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-637e080eb27969d677ad.js js/application-637e080eb27969d677ad.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-6fb6eebd0f9270dde3e4.js js/server_rendering-6fb6eebd0f9270dde3e4.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 10101.4ms | Allocations: 8256)
+Completed 200 OK in 10105ms (Views: 10103.1ms | ActiveRecord: 0.0ms | Allocations: 8832)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:27:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 7103)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 7415)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:30:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 470)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 97022da681eeb42a7c74
+Version: webpack 4.46.0
+Time: 6548ms
+Built at: 04/20/2023 11:30:55 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-b0fad7b445174b5fb546.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-b0fad7b445174b5fb546.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-ef1fa0f5d97215da3810.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-ef1fa0f5d97215da3810.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-b0fad7b445174b5fb546.js js/application-b0fad7b445174b5fb546.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-ef1fa0f5d97215da3810.js js/server_rendering-ef1fa0f5d97215da3810.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 10811.2ms | Allocations: 8367)
+Completed 200 OK in 10815ms (Views: 10813.1ms | ActiveRecord: 0.0ms | Allocations: 8944)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:32:30 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 440)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b49aeb14a975d7692c4c
+Version: webpack 4.46.0
+Time: 6073ms
+Built at: 04/20/2023 11:32:40 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-4df240d27b861d1fb152.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-4df240d27b861d1fb152.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-3b8210e58d448a036dd9.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-3b8210e58d448a036dd9.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-4df240d27b861d1fb152.js js/application-4df240d27b861d1fb152.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-3b8210e58d448a036dd9.js js/server_rendering-3b8210e58d448a036dd9.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 9963.6ms | Allocations: 8238)
+Completed 200 OK in 9969ms (Views: 9966.3ms | ActiveRecord: 0.0ms | Allocations: 8814)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:32:54 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 7090)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 7399)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:32:57 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 391)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7069)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 7378)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:32:59 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 7185)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 7495)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:34:27 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 449)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e1e9c4bd63deca1bc149
+Version: webpack 4.46.0
+Time: 6032ms
+Built at: 04/20/2023 11:34:37 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-ed83d9ae7fa389e49e31.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-ed83d9ae7fa389e49e31.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-dee3fe5738f9a26fd114.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-dee3fe5738f9a26fd114.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-ed83d9ae7fa389e49e31.js js/application-ed83d9ae7fa389e49e31.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-dee3fe5738f9a26fd114.js js/server_rendering-dee3fe5738f9a26fd114.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 9698.3ms | Allocations: 8332)
+Completed 200 OK in 9703ms (Views: 9700.5ms | ActiveRecord: 0.0ms | Allocations: 8908)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:34:41 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 7093)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 7403)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:34:42 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 7073)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 7382)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:34:43 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 7194)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 7504)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:34:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 7201)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 7510)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-20 11:34:49 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_up"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7095)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms | Allocations: 7405)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:34:50 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 7093)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 7402)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-20 11:34:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_up"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 403)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7099)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 7408)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:34:51 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 7097)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 7407)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-20 11:34:52 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_up"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 7183)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 7493)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:34:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 7171)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.0ms | Allocations: 7480)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:36:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 451)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 2e13a40ec07a0a4528ce
+Version: webpack 4.46.0
+Time: 6483ms
+Built at: 04/20/2023 11:36:34 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-b96767c07d0fc1fb24b7.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-b96767c07d0fc1fb24b7.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-0ebbeccf3e28fc6fc973.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-0ebbeccf3e28fc6fc973.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-b96767c07d0fc1fb24b7.js js/application-b96767c07d0fc1fb24b7.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-0ebbeccf3e28fc6fc973.js js/server_rendering-0ebbeccf3e28fc6fc973.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 10481.7ms | Allocations: 8259)
+Completed 200 OK in 10485ms (Views: 10483.6ms | ActiveRecord: 0.0ms | Allocations: 8834)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:36:37 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 7091)
+Completed 200 OK in 28ms (Views: 26.1ms | ActiveRecord: 0.0ms | Allocations: 7401)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:36:53 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 466)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c775b5fa503bf0671d9e
+Version: webpack 4.46.0
+Time: 5770ms
+Built at: 04/20/2023 11:37:02 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-fb763606b36c3bf06667.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-fb763606b36c3bf06667.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-a79cc88b5faf350ac3c8.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-a79cc88b5faf350ac3c8.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-fb763606b36c3bf06667.js js/application-fb763606b36c3bf06667.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-a79cc88b5faf350ac3c8.js js/server_rendering-a79cc88b5faf350ac3c8.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 9420.1ms | Allocations: 8459)
+Completed 200 OK in 9424ms (Views: 9422.7ms | ActiveRecord: 0.0ms | Allocations: 9035)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:37:06 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 7102)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 7411)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:37:58 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 454)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 7281)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.0ms | Allocations: 7857)
+
+
+Started GET "/sign_in_route" for ::1 at 2023-04-20 11:38:08 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"sign_in_route"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 7107)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 7417)
+
+
+Started GET "/sign_in_route" for ::1 at 2023-04-20 11:39:35 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"sign_in_route"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 472)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 308aecdb5f252aef4bf8
+Version: webpack 4.46.0
+Time: 5588ms
+Built at: 04/20/2023 11:39:44 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-792c472bf5cb29d2f81e.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-792c472bf5cb29d2f81e.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-06b472130e7601f8b917.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-06b472130e7601f8b917.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-792c472bf5cb29d2f81e.js js/application-792c472bf5cb29d2f81e.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-06b472130e7601f8b917.js js/server_rendering-06b472130e7601f8b917.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 9426.8ms | Allocations: 8264)
+Completed 200 OK in 9430ms (Views: 9428.6ms | ActiveRecord: 0.0ms | Allocations: 8839)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:39:55 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"users/sign_in"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 400)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 7096)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.0ms | Allocations: 7405)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:42:14 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 3.7ms | Allocations: 720)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 84.4ms | Allocations: 7727)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 111.0ms | Allocations: 14520)
+Completed 200 OK in 167ms (Views: 115.9ms | ActiveRecord: 14.5ms | Allocations: 21732)
+
+
+Started GET "/users/password/new" for ::1 at 2023-04-20 11:42:45 -0700
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 235)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 207)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1551)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 8234)
+Completed 200 OK in 24ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 9312)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:42:52 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 7216)
+Completed 200 OK in 46ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 7786)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:42:53 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | Allocations: 7988)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.0ms | Allocations: 8647)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 11:42:55 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@testing.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 52ms (ActiveRecord: 2.6ms | Allocations: 3592)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 7879)
+Completed 200 OK in 464ms (Views: 27.3ms | ActiveRecord: 0.0ms | Allocations: 8991)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 11:44:08 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (3.0ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", "2023-04-20 18:44:08.888605"], ["updated_at", "2023-04-20 18:44:08.890362"], ["id", 1]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 441ms (ActiveRecord: 7.3ms | Allocations: 11665)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:44:08 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1319)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 8004)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.3ms | Allocations: 8314)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:44:13 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 1245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 8015)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.6ms | Allocations: 8326)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:45:04 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 3820)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 96bbbd402b57279fc9e9
+Version: webpack 4.46.0
+Time: 6442ms
+Built at: 04/20/2023 11:45:14 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-454a1676724e17ef73e2.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-454a1676724e17ef73e2.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-2b2903a5f1650f6cdbea.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-2b2903a5f1650f6cdbea.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-454a1676724e17ef73e2.js js/application-454a1676724e17ef73e2.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-2b2903a5f1650f6cdbea.js js/server_rendering-2b2903a5f1650f6cdbea.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 10375.1ms | Allocations: 11697)
+Completed 200 OK in 10379ms (Views: 10367.2ms | ActiveRecord: 9.6ms | Allocations: 12273)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:45:25 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 7947)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 0.8ms | Allocations: 8256)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:46:09 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 1263)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 8033)
+Completed 200 OK in 56ms (Views: 54.3ms | ActiveRecord: 0.3ms | Allocations: 8344)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:47:16 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 42.7ms | Allocations: 3789)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 7b837bbf5318a0e449de
+Version: webpack 4.46.0
+Time: 7504ms
+Built at: 04/20/2023 11:47:29 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-623915b5d6421eb8ee1f.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-623915b5d6421eb8ee1f.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-701d2cb0300c96f8e422.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-701d2cb0300c96f8e422.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-623915b5d6421eb8ee1f.js js/application-623915b5d6421eb8ee1f.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-701d2cb0300c96f8e422.js js/server_rendering-701d2cb0300c96f8e422.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 11997.7ms | Allocations: 11574)
+Completed 200 OK in 12003ms (Views: 11993.1ms | ActiveRecord: 7.0ms | Allocations: 12150)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 11:47:32 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (19.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["remember_created_at", nil], ["updated_at", "2023-04-20 18:47:32.618869"], ["id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 37ms (ActiveRecord: 21.4ms | Allocations: 5571)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:47:32 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 7110)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.0ms | Allocations: 7420)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:48:23 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 474)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: ab76d4d885b9069e3a34
+Version: webpack 4.46.0
+Time: 6237ms
+Built at: 04/20/2023 11:48:33 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-448062999b084e583a20.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-448062999b084e583a20.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-9567d5471d2c9edf3651.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-9567d5471d2c9edf3651.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-448062999b084e583a20.js js/application-448062999b084e583a20.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-9567d5471d2c9edf3651.js js/server_rendering-9567d5471d2c9edf3651.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 9875.1ms | Allocations: 8248)
+Completed 200 OK in 9879ms (Views: 9876.9ms | ActiveRecord: 0.0ms | Allocations: 8822)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:48:36 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 7116)
+Completed 200 OK in 39ms (Views: 36.6ms | ActiveRecord: 0.0ms | Allocations: 7425)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:48:38 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 7191)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 7502)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:48:41 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 156)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 8095)
+Completed 200 OK in 45ms (Views: 26.1ms | ActiveRecord: 2.8ms | Allocations: 11494)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 11:48:43 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 457ms (ActiveRecord: 0.4ms | Allocations: 2775)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:48:43 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1260)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 7941)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.4ms | Allocations: 8251)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:52:40 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 71.4ms | Allocations: 3742)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 570c2fef31cd1c981690
+Version: webpack 4.46.0
+Time: 6174ms
+Built at: 04/20/2023 11:52:51 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-5d2b3c3dec1b60ade32a.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-5d2b3c3dec1b60ade32a.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-757985a8e1703a8d4f6d.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-757985a8e1703a8d4f6d.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-5d2b3c3dec1b60ade32a.js js/application-5d2b3c3dec1b60ade32a.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-757985a8e1703a8d4f6d.js js/server_rendering-757985a8e1703a8d4f6d.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 10624.9ms | Allocations: 11561)
+Completed 200 OK in 10632ms (Views: 10589.7ms | ActiveRecord: 38.9ms | Allocations: 12136)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 11:52:58 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 17ms (ActiveRecord: 0.5ms | Allocations: 2217)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:52:58 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 44.8ms | Allocations: 7174)
+Completed 200 OK in 51ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 7485)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:53:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 156)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 8102)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.0ms | Allocations: 9046)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 11:53:11 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 575ms (ActiveRecord: 0.7ms | Allocations: 2516)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:53:12 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 7995)
+Completed 200 OK in 52ms (Views: 49.3ms | ActiveRecord: 0.4ms | Allocations: 8305)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:55:50 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 3792)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 794b7c40825c4cfebb23
+Version: webpack 4.46.0
+Time: 6523ms
+Built at: 04/20/2023 11:56:11 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-94203f42463fcc078943.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-94203f42463fcc078943.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-097ccad4a6e3066670a0.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-097ccad4a6e3066670a0.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-94203f42463fcc078943.js js/application-94203f42463fcc078943.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-097ccad4a6e3066670a0.js js/server_rendering-097ccad4a6e3066670a0.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 20572.4ms | Allocations: 41932)
+Completed 200 OK in 20577ms (Views: 20568.3ms | ActiveRecord: 6.6ms | Allocations: 42507)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 11:56:17 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 25ms (ActiveRecord: 0.5ms | Allocations: 2246)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:56:17 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 429)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.8ms | Allocations: 7116)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 0.0ms | Allocations: 7425)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:56:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 156)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8102)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.0ms | Allocations: 9032)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 11:56:20 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (33.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 802ms (ActiveRecord: 33.3ms | Allocations: 2501)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:56:21 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1226)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 7906)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.3ms | Allocations: 8216)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:57:19 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 3792)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 8ed5fe1017cde077a19c
+Version: webpack 4.46.0
+Time: 7010ms
+Built at: 04/20/2023 11:57:31 AM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-f26ecb283ea5859c3436.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-f26ecb283ea5859c3436.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-cc58d4a93a5e02ae7c0b.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-cc58d4a93a5e02ae7c0b.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-f26ecb283ea5859c3436.js js/application-f26ecb283ea5859c3436.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-cc58d4a93a5e02ae7c0b.js js/server_rendering-cc58d4a93a5e02ae7c0b.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 11950.5ms | Allocations: 11720)
+Completed 200 OK in 11954ms (Views: 11947.8ms | ActiveRecord: 4.2ms | Allocations: 12296)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 11:57:38 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 7955)
+Completed 200 OK in 43ms (Views: 40.4ms | ActiveRecord: 0.3ms | Allocations: 8265)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:57:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 1261)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 7939)
+Completed 200 OK in 53ms (Views: 51.0ms | ActiveRecord: 0.3ms | Allocations: 8248)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 11:57:45 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 34ms (ActiveRecord: 0.7ms | Allocations: 2227)
+
+
+Started GET "/" for ::1 at 2023-04-20 11:57:45 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.8ms | Allocations: 7105)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.0ms | Allocations: 7414)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 11:57:49 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 156)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1344)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 8102)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.0ms | Allocations: 9046)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 12:00:16 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 436ms (ActiveRecord: 0.3ms | Allocations: 2515)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:00:16 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | Allocations: 8019)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.3ms | Allocations: 8330)
+
+
+Started GET "/beerindex" for ::1 at 2023-04-20 12:00:29 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 1266)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 61.9ms | Allocations: 8057)
+Completed 200 OK in 65ms (Views: 62.7ms | ActiveRecord: 0.3ms | Allocations: 8368)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:00:31 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1215)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 7900)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.4ms | Allocations: 8209)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 12:00:39 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.2ms | Allocations: 1806)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:00:39 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 415)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.0ms | Allocations: 7100)
+Completed 200 OK in 57ms (Views: 54.8ms | ActiveRecord: 0.0ms | Allocations: 7409)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 12:00:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 132)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 7922)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 8596)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 12:00:47 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 472ms (ActiveRecord: 0.3ms | Allocations: 2439)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:00:48 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1223)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 7903)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.4ms | Allocations: 8212)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 12:00:55 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 23ms (ActiveRecord: 0.4ms | Allocations: 1803)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:00:55 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 7189)
+Completed 200 OK in 43ms (Views: 40.9ms | ActiveRecord: 0.0ms | Allocations: 7500)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-20 12:00:57 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered /Users/learnacademy/.rvm/gems/ruby-3.2.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 8017)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.0ms | Allocations: 8702)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-20 12:01:27 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"brewmate@testing.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "brewmate@testing.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 505ms (ActiveRecord: 0.3ms | Allocations: 2957)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:01:27 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 1358)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 8311)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.4ms | Allocations: 9056)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:03:30 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 3795)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 2a59bc9fb1f1245ef7f5
+Version: webpack 4.46.0
+Time: 3600ms
+Built at: 04/20/2023 12:03:36 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-bc58b53c15f1a8f7c75d.js  2.95 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-bc58b53c15f1a8f7c75d.js.map  3.13 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-677e4145a8b2dbe2d3df.js  2.95 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-677e4145a8b2dbe2d3df.js.map  3.13 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-bc58b53c15f1a8f7c75d.js js/application-bc58b53c15f1a8f7c75d.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-677e4145a8b2dbe2d3df.js js/server_rendering-677e4145a8b2dbe2d3df.js.map
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 247 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/Home.test.js 4:0-56 9:4-10 24:4-10 25:15-21
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 6187.7ms | Allocations: 11654)
+Completed 200 OK in 6190ms (Views: 6184.9ms | ActiveRecord: 4.1ms | Allocations: 12229)
+
+
+Started GET "/beerprofile" for ::1 at 2023-04-20 12:03:40 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerprofile"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8036)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.4ms | Allocations: 8347)
+
+
+Started GET "/beershow" for ::1 at 2023-04-20 12:03:42 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1229)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 7925)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.4ms | Allocations: 8234)
+
+
+Started GET "/beernew" for ::1 at 2023-04-20 12:03:46 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beernew"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 7934)
+Completed 200 OK in 46ms (Views: 43.9ms | ActiveRecord: 0.3ms | Allocations: 8243)
+
+
+Started GET "/users/sign_out" for ::1 at 2023-04-20 12:03:48 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 8ms (ActiveRecord: 0.2ms | Allocations: 2212)
+
+
+Started GET "/" for ::1 at 2023-04-20 12:03:48 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 417)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 7098)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 0.0ms | Allocations: 7407)
+
+
