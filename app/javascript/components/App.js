@@ -12,7 +12,6 @@ import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header"
 
 const App = (props) => {
-  console.log(props)
   return (
     <>
       <BrowserRouter>
