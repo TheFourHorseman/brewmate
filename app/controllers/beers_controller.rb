@@ -14,6 +14,16 @@ class BeersController < ApplicationController
         end
     end
 
+    def update
+        beer = Beer.find(params[:id])
+        beer.update(strong_params)
+        if beer.update?
+            render json: beer
+        else
+            render json: beer.errors, status: 422
+        end
+    end
+
     private
     def strong_params
         params.require(:beer).permit(:beer_name, :brewery_name, :style, :abv, :ibu, :image, :user_id)
