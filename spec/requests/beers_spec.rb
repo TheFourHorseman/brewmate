@@ -1,7 +1,147 @@
 require 'rails_helper'
 
 RSpec.describe "Beers", type: :request do
+  let (:user) {User.create email: 'brewmate@testing.com', password: 'brewmate123'}
+
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+      it "gets a list of beers" do 
+        user.beers.create(
+          beer_name: "Backyard Buds",
+          brewery_name: "Hoppy Hour", 
+          style: "blonde", 
+          abv: 5, 
+          ibu: 2,
+          image:"https//:www.random.com"
+          )
+        
+          get '/beers'
+          beer = JSON.parse(response.body)
+          expect(response).to have_http_status(200)
+          expect(beer.length).to eq 1
+      end
+  end
+  describe "POST /create" do
+    it "creates a beer" do
+      strong_params= {
+        beer: {
+          beer_name: "Backyard Buds",
+          brewery_name: "Hoppy Hour", 
+          style: "blonde", 
+          abv: 5, 
+          ibu: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+
+      post "/beers", params: strong_params
+
+      expect(response).to have_http_status(200)
+      beer = Beer.last
+      expect(beer.beer_name).to eq "Backyard Buds"
+      expect(beer.brewery_name).to eq "Hoppy Hour"
+      expect(beer.style).to eq "blonde"
+      expect(beer.abv).to eq 5
+      expect(beer.ibu).to eq 2
+      expect(beer.image).to eq "https//:www.random.com"
+      expect(beer.user_id).to eq user.id
+      end
+
+      it "does not create a beer with out a beer name" do
+        strong_params= {
+        beer: {
+          brewery_name: "Hoppy Hour",
+          style: "blonde", 
+          abv: 5, 
+          ibu: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['beer_name']).to include "can't be blank"
+      end
+      it "does not create a beer with out a brewery name" do
+        strong_params= {
+        beer: {
+          beer_name: "Backyard BUDS",
+          style: "blonde", 
+          abv: 5, 
+          ibu: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['brewery_name']).to include "can't be blank"
+      end
+      it "does not create a beer with out a style" do
+        strong_params= {
+        beer: {
+          beer_name: "Backyard BUDS",
+          brewery_name: "Hoppy hour",
+          abv: 5, 
+          ibu: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['style']).to include "can't be blank"
+      end
+      it "does not create a beer with out a abv" do
+        strong_params= {
+        beer: {
+          beer_name: "Backyard BUDS",
+          brewery_name: "Hoppy hour",
+          style: "blonde",
+          ibu: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['abv']).to include "can't be blank"
+      end
+      it "does not create a beer with out a ibu" do
+        strong_params= {
+        beer: {
+          beer_name: "Backyard BUDS",
+          brewery_name: "Hoppy hour",
+          style: "blonde",
+          abv: 2,
+          image: "https//:www.random.com",
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['ibu']).to include "can't be blank"
+      end
+      it "does not create a beer with out a ibu" do
+        strong_params= {
+        beer: {
+          beer_name: "Backyard BUDS",
+          brewery_name: "Hoppy hour",
+          style: "blonde",
+          abv: 2,
+          ibu: 30,
+          user_id: user.id
+      }
+        }
+        post "/beers", params: strong_params
+        expect(response).to have_http_status(422)
+        json = JSON.parse(response.body)
+        expect(json['image']).to include "can't be blank"
+      end
   end
 end
