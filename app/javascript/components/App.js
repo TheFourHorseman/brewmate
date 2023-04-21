@@ -21,6 +21,19 @@ const App = (props) => {
       .catch((error) => console.log(error));
   };
 
+  const createBeer = (beer) => {
+    fetch("/beers", {
+    body: JSON.stringify(beer),
+    headers: {
+      "Content-Type": "application/json",
+    },
+    method: "POST",
+    })
+    .then((response) => response.json())
+    .then((payload)=> readBeer())
+    .catch((error)=>console.log(beer.errors, error))
+  }
+
   useEffect(() => {
     readBeer();
   }, []);
@@ -34,7 +47,7 @@ const App = (props) => {
           <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
           <Route path="/beershow/:id" element={<BeerShow  props = {props} beers={beers}/>} />
           <Route path="/beeredit" element={<BeerEdit />} />
-          <Route path="/beernew" element={<BeerNew />} />
+          <Route path="/beernew" element={<BeerNew current_user={props.current_user} createBeer={createBeer} /> } />
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
