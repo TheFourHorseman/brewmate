@@ -1,17 +1,23 @@
 import React from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate
+ } from "react-router-dom";
 import {
   Card,
   CardBody,
   CardSubtitle,
-  CardText,
   CardTitle,
   Button,
 } from "reactstrap";
 
-const BeerShow = ({ beers, props }) => {
+const BeerShow = ({ beers, props, deleteBeer }) => {
   const { id } = useParams()
+  const navigate = useNavigate()
   let selectedBeer = beers?.find(beer => beer.id === +id)
+
+  const onDeleteSubmit = () =>{
+    deleteBeer(selectedBeer.id)
+    navigate("/beerindex")
+  }
 
   return (
     <>
@@ -32,10 +38,22 @@ const BeerShow = ({ beers, props }) => {
                     className="index-image"
                   />
                   <CardTitle tag="h5">{selectedBeer.beer_name}</CardTitle>
-                  <CardSubtitle className="mb-2 text-muted" tag="h6">
+                  <CardSubtitle className="mb-2 text-muted" tag="h6">Brewery:
+                  <br/>
                     {selectedBeer.brewery_name}
                   </CardSubtitle>
-                  <CardText>{selectedBeer.beer_style}</CardText>
+                  <CardSubtitle className="mb-2 text-muted" tag="h6">Style:
+                  <br/>
+                    {selectedBeer.style}
+                  </CardSubtitle>
+                  <CardSubtitle className="mb-2 text-muted" tag="h6">ABV:
+                  <br/>
+                    {selectedBeer.abv}
+                  </CardSubtitle>
+                  <CardSubtitle className="mb-2 text-muted" tag="h6">IBU:
+                  <br/>
+                    {selectedBeer.ibu}
+                  </CardSubtitle>
                 </CardBody>
                 {props.logged_in && 
                   <Button>Like This Beer</Button>
@@ -44,11 +62,12 @@ const BeerShow = ({ beers, props }) => {
               {props.current_user?.id === selectedBeer.user_id &&(
               <>
                 <Button>Edit</Button>
-                <Button>Delete</Button>
+                <Button onClick={onDeleteSubmit}>Delete</Button>
                 </>
               )}
               </Card>
         </div>
+        <br/>
         <div className="go-back">
         <Button href="/beerindex">All Beers</Button>
         </div>

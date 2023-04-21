@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ButtonGroup,
   Button,
@@ -9,8 +10,15 @@ import {
   CardSubtitle,
 } from "reactstrap";
 
-const MyBeers = ({ beers, current_user }) => {
-  const userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
+const MyBeers = ({ beers, current_user, deleteBeer }) => {
+  const navigate = useNavigate()
+  let userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
+  
+  const onDeleteSubmit = () => {
+    deleteBeer(userBeers.id)
+    navigate("/mybeers")
+  }
+
   console.log(userBeers)
   return (
     <>
@@ -41,7 +49,7 @@ const MyBeers = ({ beers, current_user }) => {
                 <ButtonGroup>
                   <Button className="">Show More</Button>
                   <Button>Edit</Button>
-                  <Button color="danger">Delete</Button>
+                  <Button onClick={onDeleteSubmit}>Delete</Button>
                 </ButtonGroup>
               </Card>
             );

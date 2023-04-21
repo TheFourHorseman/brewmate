@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, } from "react-router-dom";
+import { useNavigate, useParams, } from "react-router-dom";
 import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
 
 const BeerNew = ({createBeer, current_user}) => {
@@ -8,7 +8,7 @@ const BeerNew = ({createBeer, current_user}) => {
   const [newBeer, setNewBeer] = useState({
     beer_name: "",
     brewery_name: "",
-    style: "",
+    style: "Lager",
     abv: "",
     ibu: "",
     image: "https://images.unsplash.com/photo-1618183479302-1e0aa382c36b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJlZXJ8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
@@ -24,8 +24,9 @@ const BeerNew = ({createBeer, current_user}) => {
     navigate("/mybeers")
   }
 
+
   return (
-    <div className="ceate-form">
+    <div className="create-form">
     <h1>Add a beer</h1>
     <Form>
     <FormGroup floating>
