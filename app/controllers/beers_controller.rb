@@ -17,7 +17,7 @@ class BeersController < ApplicationController
     def update
         beer = Beer.find(params[:id])
         beer.update(strong_params)
-        if beer.update?
+        if beer.valid?
             render json: beer
         else
             render json: beer.errors, status: 422
