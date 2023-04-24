@@ -68,6 +68,8 @@ const BeerShow = ({ beers, props, deleteBeer }) => {
               </Card>
         </div>
         <br/>
+        <br/>
+        <br/>
         <div className="go-back">
         <Button href="/beerindex">All Beers</Button>
         </div>
