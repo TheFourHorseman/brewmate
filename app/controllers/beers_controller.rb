@@ -14,6 +14,14 @@ class BeersController < ApplicationController
         end
     end
 
+    def destroy
+        beer = Beer.find(params[:id])
+        beer.destroy
+        if beer.valid?
+            render json: beer
+        end
+    end
+
     private
     def strong_params
         params.require(:beer).permit(:beer_name, :brewery_name, :style, :abv, :ibu, :image, :user_id)
