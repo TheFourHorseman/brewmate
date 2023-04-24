@@ -10,10 +10,10 @@ import {
   Button,
 } from "reactstrap";
 import logo from "../assets/brewmate-high-resolution-logo-color-on-transparent-background.png";
-import aaron from "../assets/aaron.jpeg";
-import xavier from "../assets/xavier.jpeg";
-import joey from "../assets/joey.jpeg";
-import john from "../assets/john.jpeg";
+import aaron from "../assets/aaron.jpg";
+import xavier from "../assets/xavier.jpg";
+import joey from "../assets/joey.jpg";
+import john from "../assets/john.jpg";
 
 const Home = () => {
   return (

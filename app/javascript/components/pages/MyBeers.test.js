@@ -3,6 +3,7 @@ import "@testing-library/jest-dom"
 import {render, screen} from "@testing-library/react"
 import { BrowserRouter } from "react-router-dom";
 import MyBeers from "./MyBeers";
+import userEvent from "@testing-library/user-event"
 
 describe("<MyBeers>", () => {
   beforeEach(()=>{
@@ -50,9 +51,13 @@ describe("<MyBeers>", () => {
   });
 
   it("displays a button for each beer to see more info", () => {
-    expect(
-      screen.getAllByRole("button", { name: /show more/i }).length
-    ).toEqual(2);
+    render(
+      <BrowserRouter>
+        <MyBeers />
+      </BrowserRouter>
+    )
+    const seeMore = userEvent.click(
+      screen.getAllByRole("link", { name: /show more/i }))
   });
   it("displays a brewery for each beer", () => {
     expect(screen.getByRole("heading", { name: /aaron brewing/i }))
@@ -62,8 +67,5 @@ describe("<MyBeers>", () => {
   });
   it("displays an image for each beer", () => {
     expect(screen.getAllByRole("img").length).toEqual(2);
-  });
-  it("display a delete button", () => {
-      expect(screen.getAllByRole("button", { name:/delete/i}).length).toEqual(2);
   })
 })

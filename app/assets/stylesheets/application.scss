@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+
 section {
     min-height: 100vh;
     padding: 10rem  10% 2rem;
@@ -121,4 +122,12 @@ h1,h2,h3 {
     display: flex;  
     align-items: center;
     justify-content: center;
+}
+
+.not-found {
+    background-image: url(https://images.unsplash.com/photo-1485196879722-0512abe23f46?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    height: 89vh;
+    background-size: cover;
+    color: azure;
+    text-align: center;
 }

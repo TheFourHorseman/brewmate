@@ -10,6 +10,7 @@ import BeerSuggestions from "./pages/BeerSuggestions";
 import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
+import NotFound from "./pages/NotFound";
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
@@ -80,10 +81,8 @@ const App = (props) => {
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
-            path="/mybeers" element={ <MyBeers current_user={props.current_user} beers={beers} />}
-
-            element={<MyBeers current_user={props.current_user} beers={beers} deleteBeer={deleteBeer}/>}
-
+            path="/mybeers" element={<MyBeers current_user={props.current_user} beers={beers} deleteBeer={deleteBeer}/>} />
+          <Route path="*" element={<NotFound />}
           />
         </Routes>
       </BrowserRouter>

@@ -9,7 +9,7 @@ import {
   Button,
 } from "reactstrap";
 
-const BeerShow = ({ beers, props, deleteBeer }) => {
+const BeerShow = ({ beers, props, deleteBeer, logged_in }) => {
   const { id } = useParams()
   const navigate = useNavigate()
   let selectedBeer = beers?.find(beer => beer.id === +id)

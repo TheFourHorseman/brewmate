@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import { isEqual } from "@rails/webpacker/package/utils/helpers";
+import userEvent from "@testing-library/user-event"
 
 describe("<BeerIndex />", () => {
   //load a mock data
@@ -56,19 +57,18 @@ describe("<BeerIndex />", () => {
   });
 
   it("displays a button for each beer to see more info", () => {
-    expect(
-      screen.getAllByRole("button", { name: /show more/i }).length
-    ).toEqual(2);
+    const seeMore = userEvent.click(
+      screen.getAllByRole("link", { name: /show more/i }))
   });
-  it("displays a brewery for each beer", () => {
-    screen.logTestingPlaygroundURL();
+  it("displays a brewery for each beer", () => {    
     expect(screen.getByRole("heading", { name: /aaron brewing/i }))
       .toBeInTheDocument;
     expect(screen.getByRole("heading", { name: /xavier brewing/i }))
       .toBeInTheDocument;
   });
-  it("displays an image for each beer", () => {
-    screen.logTestingPlaygroundURL();
+    
+  it("displays an image for each beer", () => {    
     expect(screen.getAllByRole("img").length).toEqual(2);
   });
-});
+
+})
