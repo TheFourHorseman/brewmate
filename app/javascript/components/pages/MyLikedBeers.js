@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   ButtonGroup,
   Button,
@@ -10,23 +10,21 @@ import {
   CardSubtitle,
 } from "reactstrap";
 
-const MyLikedBeers = ({ likedBeers, current_user }) => {
+const MyLikedBeers = ({ likes, current_user }) => {
   const navigate = useNavigate();
-  let myLikedBeers = likedBeers?.filter(
-    (like) => current_user.id === like.user_id
-  );
-
-  //   const onDeleteSubmit = () => {
-  //     deleteBeer(likedBeers.id);
-  //     navigate("/MyLikedBeers");
-  //   };
+  let myLikedBeers = likes?.filter((like) => current_user.id === like.user_id);
 
   return (
     <>
-      {console.log("liked beers:", myLikedBeers)}
-      {console.log("liked beers:", myLikedBeers)}
       <div className="index-content">
-        <h2>Your Liked Brews</h2>
+        {myLikedBeers.length > 0 && <h2>Your Liked Brews</h2>}
+        {myLikedBeers.length === 0 && (
+          <h2>
+            You're glass is looking a bit empty, why don't you go{" "}
+            <NavLink to="/beerindex">Check out some beers</NavLink>
+          </h2>
+        )}
+
         <div className="index-cards">
           {myLikedBeers?.map((like, index) => {
             return (
@@ -50,9 +48,7 @@ const MyLikedBeers = ({ likedBeers, current_user }) => {
                   <CardText>{like.beer.beer_style}</CardText>
                 </CardBody>
                 <ButtonGroup>
-                  <Button href={`/beershow/${like.beer.beer_id}`}>
-                    Show More
-                  </Button>
+                  <Button href={`/beershow/${like.beer.id}`}>Show More</Button>
                 </ButtonGroup>
               </Card>
             );

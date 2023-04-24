@@ -14,7 +14,7 @@ import MyLikedBeers from "./pages/MyLikedBeers";
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
-  const [likedBeers, setLikedBeers] = useState([]);
+  const [likes, setLikes] = useState([]);
 
   const readBeer = () => {
     fetch("/beers")
@@ -26,7 +26,7 @@ const App = (props) => {
   const readLikes = () => {
     fetch("/likes")
       .then((response) => response.json())
-      .then((payload) => setLikedBeers(payload))
+      .then((payload) => setLikes(payload))
       .catch((error) => console.log(error));
   };
 
@@ -77,8 +77,20 @@ const App = (props) => {
       method: "POST",
     })
       .then((response) => response.json())
-      .then((payload) => readBeer())
-      .catch((error) => console.log(like.errors, error));
+      .then((payload) => readLikes())
+      .catch((error) => console.log(likedBeer.errors));
+  };
+
+  const deleteLike = (id) => {
+    fetch(`/likes/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then(() => readLikes())
+      .catch((error) => console.log(error));
   };
 
   useEffect(() => {
@@ -105,6 +117,8 @@ const App = (props) => {
                 beers={beers}
                 deleteBeer={deleteBeer}
                 likeBeer={likeBeer}
+                likes={likes}
+                deleteLike={deleteLike}
               />
             }
           />
@@ -133,10 +147,7 @@ const App = (props) => {
           <Route
             path="/mylikedbeers"
             element={
-              <MyLikedBeers
-                current_user={props.current_user}
-                likedBeers={likedBeers}
-              />
+              <MyLikedBeers current_user={props.current_user} likes={likes} />
             }
           />
         </Routes>

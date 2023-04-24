@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardBody, CardSubtitle, CardTitle, Button } from "reactstrap";
 
-const BeerShow = ({ beers, props, deleteBeer, likeBeer }) => {
+const BeerShow = ({
+  beers,
+  props,
+  likes,
+  deleteBeer,
+  likeBeer,
+  deleteLike,
+}) => {
   const { id } = useParams();
   const navigate = useNavigate();
   let selectedBeer = beers?.find((beer) => beer.id === +id);
+  let selectedLike = likes?.find(
+    (like) =>
+      selectedBeer?.id === like?.beer_id &&
+      props.current_user?.id === like?.user_id
+  );
+
+  // we need to check if the array of likes contains an object that matches the signed in user and selected beer
+  const isLiked = () => {
+    return (
+      likes?.filter(
+        (like) =>
+          like.user_id === props.current_user.id &&
+          like.beer_id === selectedBeer?.id
+      ).length > 0
+    );
+  };
 
   const onDeleteSubmit = () => {
     deleteBeer(selectedBeer.id);
@@ -18,6 +41,12 @@ const BeerShow = ({ beers, props, deleteBeer, likeBeer }) => {
       user_id: props.current_user.id,
     };
     likeBeer(likedBeer);
+    navigate(0);
+  };
+
+  const onRemoveLikeSubmit = () => {
+    deleteLike(selectedLike.id);
+    navigate(0);
   };
 
   return (
@@ -61,7 +90,16 @@ const BeerShow = ({ beers, props, deleteBeer, likeBeer }) => {
                 </CardSubtitle>
               </CardBody>
               {props.logged_in && (
-                <Button onClick={onLikeSubmit}>Like This Beer</Button>
+                <>
+                  {isLiked() && (
+                    <Button color="danger" onClick={onRemoveLikeSubmit}>
+                      Remove Like
+                    </Button>
+                  )}
+                  {!isLiked() && (
+                    <Button onClick={onLikeSubmit}>Like This Beer</Button>
+                  )}
+                </>
               )}
 
               {props.current_user?.id === selectedBeer.user_id && (
