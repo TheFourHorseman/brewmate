@@ -1,6 +1,6 @@
-class LikeController < ApplicationController
+class LikesController < ApplicationController
     def create
-        like = Like.new(strong_params)
+        like = Like.create(strong_params)
         if like.valid?
             render json: like
         else
@@ -20,7 +20,7 @@ class LikeController < ApplicationController
 
     def index
         likes = Like.all
-        render json: likes.joins[:beer]
+        render json: likes, include: [:beer]
     end
 
     private

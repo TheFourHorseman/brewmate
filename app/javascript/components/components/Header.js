@@ -40,7 +40,7 @@ const Header = ({
               <DropdownMenu>
                 <DropdownItem href="/beerprofile">Profile</DropdownItem>
                 <DropdownItem href="/mybeers">Your Beers</DropdownItem>
-                <DropdownItem>Liked Beers</DropdownItem>
+                <DropdownItem href="/mylikedbeers">Liked Beers</DropdownItem>
                 <DropdownItem href="/beernew">Add Beer</DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem href={sign_out_route}>Log out</DropdownItem>
