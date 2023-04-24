@@ -22,6 +22,8 @@ class BeersController < ApplicationController
             render json: beer
         else
             render json: beer.errors, status: 422
+        end
+    end
 
     def destroy
         beer = Beer.find(params[:id])
