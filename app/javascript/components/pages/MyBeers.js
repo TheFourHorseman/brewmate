@@ -47,9 +47,7 @@ const MyBeers = ({ beers, current_user, deleteBeer }) => {
                   <CardText>{beer.beer_style}</CardText>
                 </CardBody>
                 <ButtonGroup>
-                  <Button className="">Show More</Button>
-                  <Button>Edit</Button>
-                  <Button onClick={onDeleteSubmit}>Delete</Button>
+                  <Button href={`/beershow/${beer.id}`}>Show More</Button>
                 </ButtonGroup>
               </Card>
             );
