@@ -47,6 +47,18 @@ const App = (props) => {
       .catch((error) => console.log(beer.errors, error));
   };
 
+  const deleteBeer = (id) => {
+    fetch (`/beers/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+      })
+      .then((response) => response.json())
+      .then(()=> readBeer())
+      .catch((error)=>console.log(error))
+    }
+
   useEffect(() => {
     readBeer();
   }, []);
@@ -59,29 +71,19 @@ const App = (props) => {
           <Route path="/" element={<Home />} />
           <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
           <Route
-            path="/beershow/:id"
-            element={<BeerShow props={props} beers={beers} />}
-          />
-          <Route
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
           />
-          <Route
-            path="/beernew"
-            element={
-              <BeerNew
-                current_user={props.current_user}
-                createBeer={createBeer}
-              />
-            }
-          />
+          <Route path="/beershow/:id" element={<BeerShow  props = {props} beers={beers} deleteBeer={deleteBeer}/>} />
+          <Route path="/beernew" element={<BeerNew current_user={props.current_user} createBeer={createBeer} /> } />
+
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
-            path="/mybeers"
-            element={
-              <MyBeers current_user={props.current_user} beers={beers} />
-            }
+            path="/mybeers" element={ <MyBeers current_user={props.current_user} beers={beers} />}
+
+            element={<MyBeers current_user={props.current_user} beers={beers} deleteBeer={deleteBeer}/>}
+
           />
         </Routes>
       </BrowserRouter>

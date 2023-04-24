@@ -145,6 +145,7 @@ RSpec.describe "Beers", type: :request do
       end
   end
 
+
 ############## UPDATE TESTING ###############
   describe "PATCH /update" do
     
@@ -392,5 +393,27 @@ RSpec.describe "Beers", type: :request do
         json = JSON.parse(response.body)
         expect(json['image']).to include "can't be blank"
       end
+
+       describe "DELETE /destroy" do
+         it "deletes a beer" do
+          strong_params= {
+            beer: {
+              beer_name: "Backyard Buds",
+              brewery_name: "Hoppy Hour", 
+              style: "blonde", 
+              abv: 5, 
+              ibu: 2,
+              image: "https//:www.random.com"
+            }
+          }
+    post "/beers", params: strong_params
+    beer = Beer.first
+    beers = Beer.all
+
+    delete "/beers/#{beer.id}"
+    expect(response).to have_http_status(200)
+    expect(beers).to be_empty
+    end
+
   end
 end
