@@ -27,7 +27,7 @@ const BeerEdit = ({ editBeer, beers }) => {
   };
 
   const onSubmit = () => {
-    editBeer(updatedBeer, updatedBeer.id);
+    editBeer(updatedBeer, id);
     navigate("/mybeers");
   };
 
