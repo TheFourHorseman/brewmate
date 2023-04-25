@@ -37,10 +37,12 @@ const Header = ({
                 {current_user.email}
               </DropdownToggle>
               <DropdownMenu>
-                <NavLink className="nav-link" to="/beerprofile"><DropdownItem >Profile</DropdownItem></NavLink>
+              
+                <NavLink className="nav-link" to="/beersuggestions"><DropdownItem >Beer Suggestions</DropdownItem></NavLink>
                 <NavLink className="nav-link" to="/mybeers"><DropdownItem >Your Beers</DropdownItem></NavLink>
                 <NavLink className="nav-link" to="/mylikedbeers"><DropdownItem >Liked Beers</DropdownItem></NavLink>
                 <NavLink className="nav-link" to="/beernew"><DropdownItem >Add Beer</DropdownItem></NavLink>
+
                 <DropdownItem divider />
                 <a className="nav-link" href={sign_out_route}><DropdownItem >Log out</DropdownItem></a>
               </DropdownMenu>

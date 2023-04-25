@@ -34,6 +34,36 @@ class BeersController < ApplicationController
         end
     end
 
+    def suggested_beers 
+        # user param
+        user = User.find(params[:user_id])
+        # getting avgerage IBU
+        avg_ibu = user.likes.includes(:beer).average(:ibu)
+        # getting average ABV
+        avg_abv = user.likes.includes(:beer).average(:abv)
+        # Variable used for making sure already liked beers dont show up in  suggestions
+        already_liked_beer_ids = user.likes.pluck(:beer_id)
+
+        # gets the number one liked style
+        top_styles = Beer.group(:style).count.sort_by {|_key, value| value}.reverse[0]
+
+        # gets the top 5 suggested based off style
+        suggested_style = Beer.where.not(id: already_liked_beer_ids).where(style: top_styles).limit(5)
+
+        # gets the top 5 suggested based off abv
+        suggested_abv = Beer.where.not(id: already_liked_beer_ids)
+                    .sort_by { |beer| (beer.abv - avg_abv).abs }
+                    .first(5)
+
+        # gets the top 5 suggested based off IBU
+        suggested_ibu = Beer.where.not(id: already_liked_beer_ids)
+                  .sort_by { |beer| (beer.ibu - avg_ibu).abs }
+                  .first(5)
+
+        # renders all suggestions as an object
+        render json: {ibu_suggested: suggested_ibu, abv_suggested: suggested_abv, style_suggested: suggested_style}
+    end
+
     private
     def strong_params
         params.require(:beer).permit(:beer_name, :brewery_name, :style, :abv, :ibu, :image, :user_id)

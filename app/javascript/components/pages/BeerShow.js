@@ -106,8 +106,10 @@ const BeerShow = ({
 
               {props.current_user?.id === selectedBeer.user_id && (
                 <>
+
                   <NavLink to={`/beeredit/${selectedBeer.id}`}>
                   <Button>Edit</Button>
+                  
                   <Button onClick={onDeleteSubmit}>Delete</Button>
                   </NavLink>
                 </>
