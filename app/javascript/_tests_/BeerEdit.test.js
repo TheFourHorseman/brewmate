@@ -2,9 +2,9 @@ import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import BeerEdit from "./BeerEdit";
+import BeerEdit from "../components/pages/BeerEdit";
 import { BrowserRouter, MemoryRouter, Routes, Route } from "react-router-dom";
-import beers from "../../MockBeer";
+import beers from "../MockBeer";
 
 describe("<BeerEdit />", () => {
   beforeEach(() => {
