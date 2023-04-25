@@ -2923,3 +2923,1889 @@ ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
   
 ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
   
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 13:18:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 9474)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 8acd56cac055309b4792
+Version: webpack 4.46.0
+Time: 1793ms
+Built at: 04/24/2023 1:18:50 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-9e17888b0bc2d58cc692.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-9e17888b0bc2d58cc692.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-e2c5612362cecbb4c790.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-e2c5612362cecbb4c790.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-9e17888b0bc2d58cc692.js js/application-9e17888b0bc2d58cc692.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-e2c5612362cecbb4c790.js js/server_rendering-e2c5612362cecbb4c790.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2826.1ms | Allocations: 69907)
+Completed 200 OK in 2832ms (Views: 2823.7ms | ActiveRecord: 5.1ms | Allocations: 73151)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:18:50 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (5.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 25ms (Views: 8.6ms | ActiveRecord: 12.6ms | Allocations: 9511)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:18:51 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:18:51 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:18:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:18:51 -0700
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:18:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+
+NameError: constant WebConsole::SourceLocation not defined
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:51:in `block in guess_the_first_application_binding'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `each'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `find'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:50:in `guess_the_first_application_binding'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/exception_mapper.rb:30:in `first'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:48:in `initialize'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `new'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/session.rb:34:in `from'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:30:in `block in call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `catch'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/web-console-4.2.0/lib/web_console/middleware.rb:17:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:40:in `call_app'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `block in call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/rack/logger.rb:25:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/sprockets-rails-3.4.2/lib/sprockets/rails/quiet_assets.rb:13:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/request_id.rb:26:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/method_override.rb:24:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/runtime.rb:22:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/activesupport-7.0.4.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/static.rb:23:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/rack-2.2.6.4/lib/rack/sendfile.rb:110:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/actionpack-7.0.4.3/lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/webpacker-5.4.4/lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/rack-proxy-0.7.6/lib/rack/proxy.rb:87:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/railties-7.0.4.3/lib/rails/engine.rb:530:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/configuration.rb:252:in `call'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:77:in `block in handle_request'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/request.rb:76:in `handle_request'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/server.rb:443:in `process_client'
+	from /usr/local/rvm/gems/ruby-3.2.0/gems/puma-5.6.5/lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 13:19:48 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3818)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: a0331ec91e9739c7cae3
+Version: webpack 4.46.0
+Time: 1661ms
+Built at: 04/24/2023 1:19:50 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-48782f4ad32b91b8831b.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-48782f4ad32b91b8831b.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-3ec40b9ca2f370c586b6.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-3ec40b9ca2f370c586b6.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-48782f4ad32b91b8831b.js js/application-48782f4ad32b91b8831b.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-3ec40b9ca2f370c586b6.js js/server_rendering-3ec40b9ca2f370c586b6.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2547.5ms | Allocations: 11930)
+Completed 200 OK in 2549ms (Views: 2543.4ms | ActiveRecord: 4.7ms | Allocations: 12545)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 2.7ms | Allocations: 6573)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:19:51 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/" for 127.0.0.1 at 2023-04-24 13:19:54 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1232)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8122)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 8441)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:19:54 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 2824)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 13:36:07 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 6324)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e8ce7250a95e3bde8547
+Version: webpack 4.46.0
+Time: 1912ms
+Built at: 04/24/2023 1:36:10 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-b340adf37c5dfb82acd7.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-b340adf37c5dfb82acd7.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-4860fff75436d45042b1.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-4860fff75436d45042b1.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-b340adf37c5dfb82acd7.js js/application-b340adf37c5dfb82acd7.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-4860fff75436d45042b1.js js/server_rendering-4860fff75436d45042b1.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2842.8ms | Allocations: 14318)
+Completed 200 OK in 2844ms (Views: 2843.4ms | ActiveRecord: 6.1ms | Allocations: 14928)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:36:10 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 6.6ms | ActiveRecord: 0.7ms | Allocations: 6338)
+
+
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 8157)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.4ms | Allocations: 8479)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (60.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 118ms (Views: 55.7ms | ActiveRecord: 60.7ms | Allocations: 2814)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:36:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beerind" for 127.0.0.1 at 2023-04-24 13:36:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerind"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8155)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 8472)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:36:15 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2812)
+
+
+Started GET "/beerind" for 127.0.0.1 at 2023-04-24 13:38:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerind"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3825)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6358c401173ad9a63a0a
+Version: webpack 4.46.0
+Time: 1822ms
+Built at: 04/24/2023 1:38:36 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-cc0499f2fd42d73b8f00.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-cc0499f2fd42d73b8f00.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-96202c480995e9d676d8.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-96202c480995e9d676d8.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-cc0499f2fd42d73b8f00.js js/application-cc0499f2fd42d73b8f00.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-96202c480995e9d676d8.js js/server_rendering-96202c480995e9d676d8.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2857.4ms | Allocations: 11937)
+Completed 200 OK in 2858ms (Views: 2848.2ms | ActiveRecord: 9.6ms | Allocations: 12550)
+
+
+Started GET "/beerind" for 127.0.0.1 at 2023-04-24 13:39:02 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerind"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3740)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b497afc00c389fcc5ce2
+Version: webpack 4.46.0
+Time: 1775ms
+Built at: 04/24/2023 1:39:05 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-c2ac759856455fcdfc66.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-c2ac759856455fcdfc66.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-1f711776a563660c7fa8.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-1f711776a563660c7fa8.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-c2ac759856455fcdfc66.js js/application-c2ac759856455fcdfc66.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-1f711776a563660c7fa8.js js/server_rendering-1f711776a563660c7fa8.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./app/javascript/components/App.js
+Module not found: Error: Can't resolve '.pages/NotFound' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components'
+ @ ./app/javascript/components/App.js 21:0-39 245:46-54
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2592.9ms | Allocations: 11883)
+Completed 200 OK in 2594ms (Views: 2590.6ms | ActiveRecord: 3.1ms | Allocations: 12496)
+
+
+Started GET "/beerind" for 127.0.0.1 at 2023-04-24 13:40:01 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerind"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3782)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 5f54730fff3f66e857f3
+Version: webpack 4.46.0
+Time: 1767ms
+Built at: 04/24/2023 1:40:04 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-fef0eca83303aeec36cb.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-fef0eca83303aeec36cb.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-47c9ba70e41d200b847e.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-47c9ba70e41d200b847e.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-fef0eca83303aeec36cb.js js/application-fef0eca83303aeec36cb.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-47c9ba70e41d200b847e.js js/server_rendering-47c9ba70e41d200b847e.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./app/javascript/components/App.js
+Module not found: Error: Can't resolve '.pages/NotFound' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components'
+ @ ./app/javascript/components/App.js 21:0-39 245:46-54
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2374.1ms | Allocations: 11890)
+Completed 200 OK in 2375ms (Views: 2371.2ms | ActiveRecord: 3.5ms | Allocations: 12503)
+
+
+Started GET "/0" for 127.0.0.1 at 2023-04-24 13:40:21 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"0"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 8065)
+Completed 200 OK in 21ms (Views: 19.5ms | ActiveRecord: 0.2ms | Allocations: 8384)
+
+
+Started GET "/0" for 127.0.0.1 at 2023-04-24 13:40:55 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"0"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3788)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 37260e002354c29fbc81
+Version: webpack 4.46.0
+Time: 1718ms
+Built at: 04/24/2023 1:40:57 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-1cb6c1475bb786c9e197.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-1cb6c1475bb786c9e197.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-040f8e5a5e74a4948417.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-040f8e5a5e74a4948417.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-1cb6c1475bb786c9e197.js js/application-1cb6c1475bb786c9e197.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-040f8e5a5e74a4948417.js js/server_rendering-040f8e5a5e74a4948417.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2352.9ms | Allocations: 11896)
+Completed 200 OK in 2355ms (Views: 2350.2ms | ActiveRecord: 3.7ms | Allocations: 12509)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:40:57 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 26ms (Views: 17.6ms | ActiveRecord: 5.6ms | Allocations: 6574)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:41:07 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:41:07 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:41:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:41:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:41:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 13:49:08 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 6328)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 9e6d2893bff9ddf70fd1
+Version: webpack 4.46.0
+Time: 1823ms
+Built at: 04/24/2023 1:49:11 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-f62bc5e65fc967fc57c5.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-f62bc5e65fc967fc57c5.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-75c3aca729760639e86a.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-75c3aca729760639e86a.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-f62bc5e65fc967fc57c5.js js/application-f62bc5e65fc967fc57c5.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-75c3aca729760639e86a.js js/server_rendering-75c3aca729760639e86a.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerIndex.test.js 5:0-56 34:4-10 60:11-17 65:4-10 66:11-17 69:11-17 74:4-10 75:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2634.8ms | Allocations: 14440)
+Completed 200 OK in 2636ms (Views: 2635.6ms | ActiveRecord: 6.8ms | Allocations: 15051)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.9ms | Allocations: 6337)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:49:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+Started GET "/beerind" for 127.0.0.1 at 2023-04-24 13:49:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerind"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 8139)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.5ms | Allocations: 8458)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:49:15 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 2812)
+
+
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 8049)
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 8367)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 2813)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:49:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+Started GET "/mybeers" for 127.0.0.1 at 2023-04-24 13:52:05 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 3804)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 8846df416e0cd27efe57
+Version: webpack 4.46.0
+Time: 1876ms
+Built at: 04/24/2023 1:52:08 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-105272e6ac31b0b976da.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-105272e6ac31b0b976da.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-48ced66eabefc0bcc931.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-48ced66eabefc0bcc931.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-105272e6ac31b0b976da.js js/application-105272e6ac31b0b976da.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-48ced66eabefc0bcc931.js js/server_rendering-48ced66eabefc0bcc931.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2788.0ms | Allocations: 11912)
+Completed 200 OK in 2789ms (Views: 2780.4ms | ActiveRecord: 8.3ms | Allocations: 12523)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 2.8ms | Allocations: 6597)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 13:52:08 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/mybeers" for 127.0.0.1 at 2023-04-24 14:12:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"mybeers"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 18.3ms | Allocations: 6307)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 67a6d10026e98f0686db
+Version: webpack 4.46.0
+Time: 2026ms
+Built at: 04/24/2023 2:12:47 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-71205d5e22785ab339d1.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-71205d5e22785ab339d1.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-c39c0fe65e9227ae443d.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-c39c0fe65e9227ae443d.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-71205d5e22785ab339d1.js js/application-71205d5e22785ab339d1.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-c39c0fe65e9227ae443d.js js/server_rendering-c39c0fe65e9227ae443d.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2962.5ms | Allocations: 14416)
+Completed 200 OK in 2964ms (Views: 2963.2ms | ActiveRecord: 9.0ms | Allocations: 15027)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.9ms | Allocations: 6337)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 14:12:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1243)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 8151)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.3ms | Allocations: 8470)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 2812)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 14:12:48 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beershow/1" for 127.0.0.1 at 2023-04-24 14:17:47 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3819)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 1de783b0da800d6ab5d2
+Version: webpack 4.46.0
+Time: 1783ms
+Built at: 04/24/2023 2:17:50 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-355f467a4ef9967bcb7e.js  4.25 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-355f467a4ef9967bcb7e.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-de05fa15e87c78a8b398.js  4.25 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-de05fa15e87c78a8b398.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-355f467a4ef9967bcb7e.js js/application-355f467a4ef9967bcb7e.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-de05fa15e87c78a8b398.js js/server_rendering-de05fa15e87c78a8b398.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2595.2ms | Allocations: 11931)
+Completed 200 OK in 2596ms (Views: 2588.7ms | ActiveRecord: 7.1ms | Allocations: 12542)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:17:50 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 3.1ms | Allocations: 6572)
+
+
+Started GET "/beershow/1" for 127.0.0.1 at 2023-04-24 14:31:28 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 15.3ms | Allocations: 6319)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e26aad3cbed4bf45fd90
+Version: webpack 4.46.0
+Time: 1765ms
+Built at: 04/24/2023 2:31:31 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-937cadc43390f50226cc.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-937cadc43390f50226cc.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-a0258d1d9d3c88fa22c6.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-a0258d1d9d3c88fa22c6.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-937cadc43390f50226cc.js js/application-937cadc43390f50226cc.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-a0258d1d9d3c88fa22c6.js js/server_rendering-a0258d1d9d3c88fa22c6.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2650.4ms | Allocations: 14431)
+Completed 200 OK in 2652ms (Views: 2651.0ms | ActiveRecord: 7.7ms | Allocations: 15042)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:31:31 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.6ms | Allocations: 6313)
+
+
+Started GET "/beershow/1" for 127.0.0.1 at 2023-04-24 14:46:32 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 6270)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6c37f5cdc26d180ae88d
+Version: webpack 4.46.0
+Time: 1732ms
+Built at: 04/24/2023 2:46:35 PM
+                                                                                                                      Asset      Size            Chunks                         Chunk Names
+                                                                                     js/application-ac8d6ca177b3725df935.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                 js/application-ac8d6ca177b3725df935.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                     js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                 js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                                js/server_rendering-cff066f9f5e05af001b3.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                            js/server_rendering-cff066f9f5e05af001b3.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                              manifest.json  1.74 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.jpeg   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-ac8d6ca177b3725df935.js js/application-ac8d6ca177b3725df935.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-cff066f9f5e05af001b3.js js/server_rendering-cff066f9f5e05af001b3.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./app/javascript/components/pages/Home.js
+Module not found: Error: Can't resolve '../assets/brewmate-high-resolution-logo-color-on-transparent-background.png' in '/Users/learnacademy/Desktop/brewmate/app/javascript/components/pages'
+ @ ./app/javascript/components/pages/Home.js 5:0-95 36:9-13
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2640.5ms | Allocations: 14380)
+Completed 200 OK in 2642ms (Views: 2641.1ms | ActiveRecord: 8.2ms | Allocations: 14991)
+
+
+Started GET "/beershow" for 127.0.0.1 at 2023-04-24 14:46:50 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1238)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 8047)
+Completed 200 OK in 25ms (Views: 23.9ms | ActiveRecord: 0.3ms | Allocations: 8368)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 14:46:53 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 8035)
+Completed 200 OK in 20ms (Views: 18.2ms | ActiveRecord: 0.3ms | Allocations: 8353)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 14:47:06 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1221)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 6d7452ea6fd7877aea5c
+Version: webpack 4.46.0
+Time: 1625ms
+Built at: 04/24/2023 2:47:08 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-d7261573b4020b503b1d.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-d7261573b4020b503b1d.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-e18e4e18f7e0f3ee2a00.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-e18e4e18f7e0f3ee2a00.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                       media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpeg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                        media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpeg   319 KiB                    [emitted]              
+                                                        media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpeg   157 KiB                    [emitted]              
+                                                      media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpeg   159 KiB                    [emitted]              
+Entrypoint application = js/application-d7261573b4020b503b1d.js js/application-d7261573b4020b503b1d.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-e18e4e18f7e0f3ee2a00.js js/server_rendering-e18e4e18f7e0f3ee2a00.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.37 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2354.6ms | Allocations: 9170)
+Completed 200 OK in 2356ms (Views: 2354.7ms | ActiveRecord: 0.3ms | Allocations: 9488)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:47:08 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (6.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 21ms (Views: 4.8ms | ActiveRecord: 6.3ms | Allocations: 6334)
+
+
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1249)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 8157)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.4ms | Allocations: 8475)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2813)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 14:47:14 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+Started GET "/beershow/1" for 127.0.0.1 at 2023-04-24 14:47:15 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 8149)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 8466)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:47:15 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Allocations: 2812)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 14:47:17 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1242)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 8033)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.2ms | Allocations: 8352)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 14:47:17 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 2813)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 15:20:53 -0700
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 6302)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b0062087f85d9bebf590
+Version: webpack 4.46.0
+Time: 1600ms
+Built at: 04/24/2023 3:20:55 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-531b8eea7437dda21ce8.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-531b8eea7437dda21ce8.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-67667dfc98f400878fcb.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-67667dfc98f400878fcb.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-531b8eea7437dda21ce8.js js/application-531b8eea7437dda21ce8.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-67667dfc98f400878fcb.js js/server_rendering-67667dfc98f400878fcb.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 2402.0ms | Allocations: 14298)
+Completed 200 OK in 2403ms (Views: 2402.6ms | ActiveRecord: 7.2ms | Allocations: 14909)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 15:20:56 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (3.8ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 5.0ms | ActiveRecord: 3.8ms | Allocations: 6314)
+
+
+Started GET "/beerindex" for 127.0.0.1 at 2023-04-24 15:51:30 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beerindex"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 6210)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c479b08090b4948ccc7c
+Version: webpack 4.46.0
+Time: 1998ms
+Built at: 04/24/2023 3:51:33 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-069f0bd141e6e369975a.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-069f0bd141e6e369975a.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-709c8d8318d2cc948c94.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-709c8d8318d2cc948c94.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-069f0bd141e6e369975a.js js/application-069f0bd141e6e369975a.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-709c8d8318d2cc948c94.js js/server_rendering-709c8d8318d2cc948c94.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3062.5ms | Allocations: 14252)
+Completed 200 OK in 3064ms (Views: 3063.1ms | ActiveRecord: 7.5ms | Allocations: 14866)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 15:51:33 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (2.9ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 30ms (Views: 24.9ms | ActiveRecord: 2.9ms | Allocations: 6340)
+
+
+Started GET "/dirtybe%20https://scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png" for 127.0.0.1 at 2023-04-24 15:51:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/dirtybe%20https:/scofflawbeer.com/wp-content/themes/scofflawbeer/img/SCOFFLAW-DIRTYBEACHES-1000X1000.png%20aches.png"):
+  
+Started GET "/thai_wheat.png" for 127.0.0.1 at 2023-04-24 15:51:33 -0700
+Started GET "/hoplanta.png" for 127.0.0.1 at 2023-04-24 15:51:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/thai_wheat.png"):
+  
+Started GET "/calipeaches.png" for 127.0.0.1 at 2023-04-24 15:51:33 -0700
+Started GET "/calicreamsicle.png" for 127.0.0.1 at 2023-04-24 15:51:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/hoplanta.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calipeaches.png"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/calicreamsicle.png"):
+  
+Started GET "/beershow/1" for 127.0.0.1 at 2023-04-24 15:51:34 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beershow/1"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 8150)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 8474)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 15:51:35 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (2.6ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 27ms (Views: 23.2ms | ActiveRecord: 2.6ms | Allocations: 2816)
+
+
+Started GET "/beersho" for 127.0.0.1 at 2023-04-24 15:56:17 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beersho"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 8066)
+Completed 200 OK in 33ms (Views: 25.4ms | ActiveRecord: 5.5ms | Allocations: 8387)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 15:56:17 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 2816)
+
+
+Started GET "/beersho" for 127.0.0.1 at 2023-04-24 16:02:50 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beersho"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 6341)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 9b8a7d5d7b04f34230ee
+Version: webpack 4.46.0
+Time: 1898ms
+Built at: 04/24/2023 4:02:56 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-81a63354122c683d6a1f.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-81a63354122c683d6a1f.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-634a9ab04aaef6181e4c.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-634a9ab04aaef6181e4c.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-81a63354122c683d6a1f.js js/application-81a63354122c683d6a1f.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-634a9ab04aaef6181e4c.js js/server_rendering-634a9ab04aaef6181e4c.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 5702.0ms | Allocations: 45234)
+Completed 200 OK in 5705ms (Views: 5703.5ms | ActiveRecord: 12.6ms | Allocations: 45847)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 16:02:56 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (1.2ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 1.2ms | Allocations: 6386)
+
+
+Started GET "/beersho" for 127.0.0.1 at 2023-04-24 16:03:23 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beersho"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 3750)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b615ae2a57517b101b84
+Version: webpack 4.46.0
+Time: 2099ms
+Built at: 04/24/2023 4:03:26 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-41b79a3b21eb6ac6a505.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-41b79a3b21eb6ac6a505.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-261a3791828994a574de.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-261a3791828994a574de.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-41b79a3b21eb6ac6a505.js js/application-41b79a3b21eb6ac6a505.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-261a3791828994a574de.js js/server_rendering-261a3791828994a574de.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/application.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3186.0ms | Allocations: 11787)
+Completed 200 OK in 3188ms (Views: 3173.4ms | ActiveRecord: 13.4ms | Allocations: 12402)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 16:03:27 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.7ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 43ms (Views: 27.4ms | ActiveRecord: 9.1ms | Allocations: 6576)
+
+
+Started GET "/beersho" for 127.0.0.1 at 2023-04-24 16:03:44 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beersho"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3794)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 38a8a4165e1c65a3dda3
+Version: webpack 4.46.0
+Time: 1981ms
+Built at: 04/24/2023 4:03:47 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-4a623ca61b41d96478d5.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-4a623ca61b41d96478d5.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-ee344625fc096c8ddb47.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-ee344625fc096c8ddb47.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-4a623ca61b41d96478d5.js js/application-4a623ca61b41d96478d5.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-ee344625fc096c8ddb47.js js/server_rendering-ee344625fc096c8ddb47.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerNew.test.js 4:0-56 15:4-10 37:11-17 42:11-17 47:11-17 50:11-17 55:11-17 58:11-17 61:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3007.8ms | Allocations: 11972)
+Completed 200 OK in 3009ms (Views: 3005.9ms | ActiveRecord: 2.8ms | Allocations: 12588)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 16:03:47 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.4ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 13ms (Views: 6.3ms | ActiveRecord: 3.3ms | Allocations: 6576)
+
+
+Started GET "/beersho" for 127.0.0.1 at 2023-04-24 16:04:33 -0700
+Processing by HomeController#index as HTML
+  Parameters: {"path"=>"beersho"}
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:2
+  Rendered home/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3731)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: aaa76280a749af04a66c
+Version: webpack 4.46.0
+Time: 2193ms
+Built at: 04/24/2023 4:04:36 PM
+                                                                                                                     Asset      Size            Chunks                         Chunk Names
+                                                                                    js/application-d24e4b967f1eec4bbc4c.js  4.26 MiB       application  [emitted] [immutable]  application
+                                                                                js/application-d24e4b967f1eec4bbc4c.js.map  4.22 MiB       application  [emitted] [dev]        application
+                                                                                    js/hello_react-8bdc2729d5d15eee6c01.js  1.24 MiB       hello_react  [emitted] [immutable]  hello_react
+                                                                                js/hello_react-8bdc2729d5d15eee6c01.js.map  1.41 MiB       hello_react  [emitted] [dev]        hello_react
+                                                                               js/server_rendering-257812ed17856498c7dd.js  4.26 MiB  server_rendering  [emitted] [immutable]  server_rendering
+                                                                           js/server_rendering-257812ed17856498c7dd.js.map  4.22 MiB  server_rendering  [emitted] [dev]        server_rendering
+                                                                                                             manifest.json  1.73 KiB                    [emitted]              
+                                                        media/components/assets/aaron-0d4bd6862f4d5d13a08e52c325f7b381.jpg  9.44 KiB                    [emitted]              
+media/components/assets/brewmate-high-resolution-logo-color-on-transparent-background-0c042e607d9c58611f5a6ffe83d294ed.png   147 KiB                    [emitted]              
+                                                         media/components/assets/joey-7934e479fcb262a656d429f2d38a522e.jpg   319 KiB                    [emitted]              
+                                                         media/components/assets/john-88c96d3f51f0d35fd687a4790164e20d.jpg   157 KiB                    [emitted]              
+                                                       media/components/assets/xavier-6d5baac73c383872c1626bd44e13bc66.jpg   159 KiB                    [emitted]              
+Entrypoint application = js/application-d24e4b967f1eec4bbc4c.js js/application-d24e4b967f1eec4bbc4c.js.map
+Entrypoint hello_react = js/hello_react-8bdc2729d5d15eee6c01.js js/hello_react-8bdc2729d5d15eee6c01.js.map
+Entrypoint server_rendering = js/server_rendering-257812ed17856498c7dd.js js/server_rendering-257812ed17856498c7dd.js.map
+[0] ./util.inspect (ignored) 15 bytes {application} {server_rendering} [built]
+[./app/javascript/MockBeer.js] 350 bytes {application} {server_rendering} [built]
+[./app/javascript/components sync recursive ^\.\/.*$] ./app/javascript/components sync ^\.\/.*$ 1.36 KiB {application} {server_rendering} [built]
+[./app/javascript/packs/application.js] 214 bytes {application} [built]
+[./app/javascript/packs/hello_react.jsx] 1.06 KiB {hello_react} [built]
+[./app/javascript/packs/server_rendering.js] 299 bytes {server_rendering} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 474 bytes {application} {hello_react} {server_rendering} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 627 bytes {application} {server_rendering} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 547 bytes {application} {hello_react} {server_rendering} [built]
+    + 724 hidden modules
+
+ERROR in ./node_modules/@testing-library/react/dist/@testing-library/react.esm.js 418:51
+Module parse failed: Unexpected token (418:51)
+File was processed with these loaders:
+ * ./node_modules/babel-loader/lib/index.js
+You may need an additional loader to handle the result of these loaders.
+| // if you don't like this then either import the `pure` module
+| // or set the RTL_SKIP_AUTO_CLEANUP env variable to 'true'.
+> if (typeof process === 'undefined' || !process.env?.RTL_SKIP_AUTO_CLEANUP) {
+|   // ignore teardown() in code coverage because Jest does not support it
+|   /* istanbul ignore else */
+ @ ./app/javascript/components/pages/BeerEdit.test.js 5:0-56 12:4-10 47:20-26 51:19-25 53:22-28 55:18-24 57:18-24 59:20-26 63:11-17 66:11-17
+ @ ./app/javascript/components sync ^\.\/.*$
+ @ ./app/javascript/packs/server_rendering.js
+
+
+warning package.json: No license field
+
+  Rendered layout layouts/application.html.erb (Duration: 3313.2ms | Allocations: 11769)
+Completed 200 OK in 3315ms (Views: 3310.5ms | ActiveRecord: 3.7ms | Allocations: 12384)
+
+
+Started GET "/beers" for 127.0.0.1 at 2023-04-24 16:04:36 -0700
+Processing by BeersController#index as */*
+  [1m[36mBeer Load (0.3ms)[0m  [1m[34mSELECT "beers".* FROM "beers"[0m
+  ↳ app/controllers/beers_controller.rb:5:in `index'
+Completed 200 OK in 17ms (Views: 4.8ms | ActiveRecord: 7.5ms | Allocations: 6573)
+
+
