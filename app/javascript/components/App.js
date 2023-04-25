@@ -10,15 +10,25 @@ import BeerSuggestions from "./pages/BeerSuggestions";
 import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
+import MyLikedBeers from "./pages/MyLikedBeers";
 import NotFound from "./pages/NotFound";
+
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
+  const [likes, setLikes] = useState([]);
 
   const readBeer = () => {
     fetch("/beers")
       .then((response) => response.json())
       .then((payload) => setBeers(payload))
+      .catch((error) => console.log(error));
+  };
+
+  const readLikes = () => {
+    fetch("/likes")
+      .then((response) => response.json())
+      .then((payload) => setLikes(payload))
       .catch((error) => console.log(error));
   };
 
@@ -49,19 +59,45 @@ const App = (props) => {
   };
 
   const deleteBeer = (id) => {
-    fetch (`/beers/${id}`, {
+    fetch(`/beers/${id}`, {
       headers: {
         "Content-Type": "application/json",
       },
       method: "DELETE",
-      })
+    })
       .then((response) => response.json())
-      .then(()=> readBeer())
-      .catch((error)=>console.log(error))
-    }
+      .then(() => readBeer())
+      .catch((error) => console.log(error));
+  };
+
+  const likeBeer = (likedBeer) => {
+    fetch("/likes", {
+      body: JSON.stringify(likedBeer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((payload) => readLikes())
+      .catch((error) => console.log(likedBeer.errors));
+  };
+
+  const deleteLike = (id) => {
+    fetch(`/likes/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then(() => readLikes())
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     readBeer();
+    readLikes();
   }, []);
 
   return (
@@ -75,15 +111,51 @@ const App = (props) => {
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
           />
-          <Route path="/beershow/:id" element={<BeerShow  props = {props} beers={beers} deleteBeer={deleteBeer}/>} />
-          <Route path="/beernew" element={<BeerNew current_user={props.current_user} createBeer={createBeer} /> } />
+          <Route
+            path="/beershow/:id"
+            element={
+              <BeerShow
+                props={props}
+                beers={beers}
+                deleteBeer={deleteBeer}
+                likeBeer={likeBeer}
+                likes={likes}
+                deleteLike={deleteLike}
+              />
+            }
+          />
+          <Route
+            path="/beernew"
+            element={
+              <BeerNew
+                current_user={props.current_user}
+                createBeer={createBeer}
+              />
+            }
+          />
 
           <Route path="/beersuggestions" element={<BeerSuggestions />} />
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
-            path="/mybeers" element={<MyBeers current_user={props.current_user} beers={beers} deleteBeer={deleteBeer}/>} />
-          <Route path="*" element={<NotFound />}
+            path="/mybeers"
+            element={
+              <MyBeers
+                current_user={props.current_user}
+                beers={beers}
+                deleteBeer={deleteBeer}
+              />
+            }
           />
+          <Route
+            path="/mylikedbeers"
+            element={
+             <MyLikedBeers 
+             current_user={props.current_user}
+             likes={likes}
+             />
+            }
+           />
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
     </>
