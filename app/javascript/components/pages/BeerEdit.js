@@ -10,13 +10,13 @@ const BeerEdit = ({ editBeer, beers }) => {
     if (beers.length > 0) {
       let selectedBeer = beers?.find((beer) => beer.id === +id);
       setUpdatedBeer({
-        beer_name: selectedBeer.beer_name,
-        brewery_name: selectedBeer.brewery_name,
-        abv: selectedBeer.abv,
-        ibu: selectedBeer.ibu,
-        style: selectedBeer.style,
-        image: selectedBeer.image,
-        user_id: selectedBeer.user_id,
+        beer_name: selectedBeer?.beer_name,
+        brewery_name: selectedBeer?.brewery_name,
+        abv: selectedBeer?.abv,
+        ibu: selectedBeer?.ibu,
+        style: selectedBeer?.style,
+        image: selectedBeer?.image,
+        user_id: selectedBeer?.user_id,
       });
     }
   }, [beers]);
@@ -26,7 +26,7 @@ const BeerEdit = ({ editBeer, beers }) => {
   };
 
   const onSubmit = () => {
-    editBeer(updatedBeer, updatedBeer.id);
+    editBeer(updatedBeer, id);
     navigate("/mybeers");
   };
 

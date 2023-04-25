@@ -6,9 +6,8 @@ import {
   DropdownItem,
   DropdownToggle,
   DropdownMenu,
-  NavLink,
 } from "reactstrap";
-
+import { NavLink } from 'react-router-dom'
 const Header = ({
   logged_in,
   current_user,
@@ -24,12 +23,12 @@ const Header = ({
     <div>
       <Nav tabs>
         <NavItem>
-          <NavLink href="/" active>
+          <NavLink className="nav-link" to="/" active>
             Brewmate
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/beerindex">All Beers</NavLink>
+          <NavLink className="nav-link" to="/beerindex">All Beers</NavLink>
         </NavItem>
         {logged_in && (
           <>
@@ -38,12 +37,12 @@ const Header = ({
                 {current_user.email}
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="/beerprofile">Profile</DropdownItem>
-                <DropdownItem href="/mybeers">Your Beers</DropdownItem>
-                <DropdownItem href="/mylikedbeers">Liked Beers</DropdownItem>
-                <DropdownItem href="/beernew">Add Beer</DropdownItem>
+                <NavLink className="nav-link" to="/beerprofile"><DropdownItem >Profile</DropdownItem></NavLink>
+                <NavLink className="nav-link" to="/mybeers"><DropdownItem >Your Beers</DropdownItem></NavLink>
+                <NavLink className="nav-link" to="/mylikedbeers"><DropdownItem >Liked Beers</DropdownItem></NavLink>
+                <NavLink className="nav-link" to="/beernew"><DropdownItem >Add Beer</DropdownItem></NavLink>
                 <DropdownItem divider />
-                <DropdownItem href={sign_out_route}>Log out</DropdownItem>
+                <a className="nav-link" href={sign_out_route}><DropdownItem >Log out</DropdownItem></a>
               </DropdownMenu>
             </Dropdown>
           </>
@@ -51,10 +50,10 @@ const Header = ({
         {!logged_in && (
           <>
             <NavItem>
-              <NavLink href={sign_in_route}>Log in</NavLink>
+              <a className="nav-link" href={sign_in_route}>Log in</a>
             </NavItem>
             <NavItem>
-              <NavLink href={new_user_route}>Create an account</NavLink>
+              <a className="nav-link" href={new_user_route}>Create an account</a>
             </NavItem>
           </>
         )}
