@@ -38,7 +38,7 @@ const Header = ({
                 {current_user.email}
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="/beerprofile">Profile</DropdownItem>
+                <DropdownItem href="/beersuggestions">Beer Suggestions</DropdownItem>
                 <DropdownItem href="/mybeers">Your Beers</DropdownItem>
                 <DropdownItem href="/mylikedbeers">Liked Beers</DropdownItem>
                 <DropdownItem href="/beernew">Add Beer</DropdownItem>

@@ -104,7 +104,7 @@ const BeerShow = ({
 
               {props.current_user?.id === selectedBeer.user_id && (
                 <>
-                  <Button>Edit</Button>
+                  <Button href={`/beeredit/${selectedBeer.id}`}>Edit</Button>
                   <Button onClick={onDeleteSubmit}>Delete</Button>
                 </>
               )}

@@ -8,7 +8,7 @@ section {
 }
 
 
-h1,h2,h3 {
+h1,h2,h3,h4 {
     color: var(--text-color);
     align-items: center;
     text-align: center;
@@ -40,6 +40,15 @@ h1,h2,h3 {
     scroll-snap-align: start;
 }
 
+.abi_section {
+    background-color: #ffb59c;
+}
+.abv {
+    background-color: #FFFFFF;
+}
+.style_section {
+    background-color: #ffb59c;
+}
 
 .welcome-section {
     background-color: #FFFFFF;

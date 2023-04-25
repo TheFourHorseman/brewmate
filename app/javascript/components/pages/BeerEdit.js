@@ -10,6 +10,7 @@ const BeerEdit = ({ editBeer, beers }) => {
     if (beers.length > 0) {
       let selectedBeer = beers?.find((beer) => beer.id === +id);
       setUpdatedBeer({
+        id: selectedBeer.id,
         beer_name: selectedBeer.beer_name,
         brewery_name: selectedBeer.brewery_name,
         abv: selectedBeer.abv,
