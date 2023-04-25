@@ -11,6 +11,8 @@ import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
 import MyLikedBeers from "./pages/MyLikedBeers";
+import NotFound from "./pages/NotFound";
+
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
@@ -147,9 +149,13 @@ const App = (props) => {
           <Route
             path="/mylikedbeers"
             element={
-              <MyLikedBeers current_user={props.current_user} likes={likes} />
+             <MyLikedBeers 
+             current_user={props.current_user}
+             likes={likes}
+             />
             }
-          />
+           />
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
     </>
