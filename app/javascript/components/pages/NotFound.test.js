@@ -12,7 +12,7 @@ describe("<NotFound />", () => {
             <NotFound />
         </BrowserRouter>
     )
-    screen.logTestingPlaygroundURL()
+    
     screen
         const text = screen.getByText(/you're empty/i)
             expect(text).toBeInTheDocument()

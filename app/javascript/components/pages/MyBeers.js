@@ -19,7 +19,7 @@ const MyBeers = ({ beers, current_user, deleteBeer }) => {
     navigate("/mybeers")
   }
 
-  console.log(userBeers)
+  
   return (
     <>
       <div className="index-content">
