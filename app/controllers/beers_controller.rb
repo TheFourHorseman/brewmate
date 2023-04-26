@@ -38,14 +38,14 @@ class BeersController < ApplicationController
         # user param
         user = User.find(params[:user_id])
         # getting avgerage IBU
-        avg_ibu = user.likes.includes(:beer).average(:ibu)
+        avg_ibu = user.likes.includes(:beer).average(:ibu).to_i
         # getting average ABV
         avg_abv = user.likes.includes(:beer).average(:abv)
         # Variable used for making sure already liked beers dont show up in  suggestions
         already_liked_beer_ids = user.likes.pluck(:beer_id)
 
         # gets the number one liked style
-        top_styles = Beer.group(:style).count.sort_by {|_key, value| value}.reverse[0]
+        top_styles = Beer.group(:style).count.sort_by {|_key, value| value}.reverse.map {|beer| beer[0]}.first(3)
 
         # gets the top 5 suggested based off style
         suggested_style = Beer.where.not(id: already_liked_beer_ids).where(style: top_styles).limit(5)

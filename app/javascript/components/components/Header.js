@@ -7,7 +7,7 @@ import {
   DropdownToggle,
   DropdownMenu,
 } from "reactstrap";
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 const Header = ({
   logged_in,
   current_user,
@@ -23,12 +23,14 @@ const Header = ({
     <div>
       <Nav tabs>
         <NavItem>
-          <NavLink className="nav-link" to="/" active>
+          <NavLink className="nav-link" to="/">
             Brewmate
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink className="nav-link" to="/beerindex">All Beers</NavLink>
+          <NavLink className="nav-link" to="/beerindex">
+            All Beers
+          </NavLink>
         </NavItem>
         {logged_in && (
           <>
@@ -37,14 +39,23 @@ const Header = ({
                 {current_user.email}
               </DropdownToggle>
               <DropdownMenu>
-              
-                <NavLink className="nav-link" to="/beersuggestions"><DropdownItem >Beer Suggestions</DropdownItem></NavLink>
-                <NavLink className="nav-link" to="/mybeers"><DropdownItem >Your Beers</DropdownItem></NavLink>
-                <NavLink className="nav-link" to="/mylikedbeers"><DropdownItem >Liked Beers</DropdownItem></NavLink>
-                <NavLink className="nav-link" to="/beernew"><DropdownItem >Add Beer</DropdownItem></NavLink>
+                <NavLink className="nav-link" to="/beersuggestions">
+                  <DropdownItem>Beer Suggestions</DropdownItem>
+                </NavLink>
+                <NavLink className="nav-link" to="/mybeers">
+                  <DropdownItem>Your Beers</DropdownItem>
+                </NavLink>
+                <NavLink className="nav-link" to="/mylikedbeers">
+                  <DropdownItem>Liked Beers</DropdownItem>
+                </NavLink>
+                <NavLink className="nav-link" to="/beernew">
+                  <DropdownItem>Add Beer</DropdownItem>
+                </NavLink>
 
                 <DropdownItem divider />
-                <a className="nav-link" href={sign_out_route}><DropdownItem >Log out</DropdownItem></a>
+                <a className="nav-link" href={sign_out_route}>
+                  <DropdownItem>Log out</DropdownItem>
+                </a>
               </DropdownMenu>
             </Dropdown>
           </>
@@ -52,10 +63,14 @@ const Header = ({
         {!logged_in && (
           <>
             <NavItem>
-              <a className="nav-link" href={sign_in_route}>Log in</a>
+              <a className="nav-link" href={sign_in_route}>
+                Log in
+              </a>
             </NavItem>
             <NavItem>
-              <a className="nav-link" href={new_user_route}>Create an account</a>
+              <a className="nav-link" href={new_user_route}>
+                Create an account
+              </a>
             </NavItem>
           </>
         )}

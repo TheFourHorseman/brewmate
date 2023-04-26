@@ -13,7 +13,6 @@ import Header from "./components/Header";
 import MyLikedBeers from "./pages/MyLikedBeers";
 import NotFound from "./pages/NotFound";
 
-
 const App = (props) => {
   const [beers, setBeers] = useState([]);
   const [likes, setLikes] = useState([]);
@@ -95,19 +94,19 @@ const App = (props) => {
       .then(() => readLikes())
       .catch((error) => console.log(error));
   };
-  const suggestedBeer = () => {
-    fetch(`users/${props.current_user.id}/suggested_beers`)
+  const suggestedBeer = (id) => {
+    fetch(`/users/${id}/suggested_beers`)
       .then((response) => response.json())
       .then((payload) => setSuggested(payload))
-      .catch((error) => console.log(error));
-  }
+      .catch((error) => console.log("SuggestedBeer Fetch:", error));
+  };
 
   useEffect(() => {
     readBeer();
     readLikes();
 
-    if(props.logged_in){
-      suggestedBeer()
+    if (props?.current_user) {
+      suggestedBeer(props.current_user.id);
     }
   }, []);
 
@@ -145,10 +144,17 @@ const App = (props) => {
             }
           />
 
-          <Route path="/beersuggestions" element={<BeerSuggestions 
-          current_user={props.current_user}
-          suggested={suggested}
-          />}/>
+          <Route
+            path="/beersuggestions"
+            element={
+              <BeerSuggestions
+                current_user={props.current_user}
+                suggested={suggested}
+                likes={likes}
+                suggestedBeer={suggestedBeer}
+              />
+            }
+          />
           <Route path="/beerprofile" element={<BeerProfile />} />
           <Route
             path="/mybeers"
@@ -163,13 +169,10 @@ const App = (props) => {
           <Route
             path="/mylikedbeers"
             element={
-             <MyLikedBeers 
-             current_user={props.current_user}
-             likes={likes}
-             />
+              <MyLikedBeers current_user={props.current_user} likes={likes} />
             }
-           />
-          <Route path="*" element={<NotFound />}/>
+          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
