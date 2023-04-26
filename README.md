@@ -29,7 +29,7 @@ $ bundle install
 $ yarn install
 ```
 
-Generate your database (seed file is located in the project already)
+Generate your database (a seed file with beers is located in the project already)
 ```
 $ rails db:create
 $ rails db:migrate
@@ -98,3 +98,24 @@ Beers must have ALL categories required, and beer name must be unique within the
 
 ## The Likes Model
 The likes model is simply a linking model between beers and users. A like belongs_to a User and a Beer. This linking association let's us track each time a user likes a beer.
+
+## Generating suggestions
+Suggestions are generated to the user through a set of database lookups. 
+There are three suggestion categories: Style, ABV, and IBU
+The style suggestions queries the database for 5 beers that match the top 3 styles that a user has liked
+The ABV and IBU suggestions work by calculating the average ABV or IBU of the user, and finding 5 beers from the database that are closest to that average.
+
+
+
+To-Do:
+- About us xavier card has weird button spacing
+- add visual to 'how our app works' section
+- add video background to logo section of home page
+- add styling to devise pages
+- change beer show to have a table inside for beer data instead of lines of text
+- change button on beer show to navigate instead of href 
+- update add a beer style drop down to match edit beer dropdown
+
+
+Stretch To-Do: 
+- re render component instead of reloading page

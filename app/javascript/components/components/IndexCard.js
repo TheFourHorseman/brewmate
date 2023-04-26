@@ -18,7 +18,7 @@ const IndexCard = ({ beer, navigate }) => {
       {beer && (
         <Card
           style={{
-            width: "18rem",
+            width: "20vw",
           }}
           className="index-card"
         >
@@ -34,9 +34,11 @@ const IndexCard = ({ beer, navigate }) => {
             </CardSubtitle>
             <CardText>{beer?.beer_style}</CardText>
             <Collapse isOpen={isOpen}>
-              <Badge>ABV: {beer.abv}</Badge>
-              <Badge>IBU: {beer.ibu}</Badge>
-              <Badge>Style: {beer.style}</Badge>
+              <CardText>
+                <Badge>ABV: {beer.abv}</Badge>
+                <Badge>IBU: {beer.ibu}</Badge>
+                <Badge>Style: {beer.style}</Badge>
+              </CardText>
             </Collapse>
           </CardBody>
           <Button onClick={() => navigate(`/beershow/${beer?.id}`)}>
