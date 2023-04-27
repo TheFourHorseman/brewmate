@@ -58,7 +58,7 @@ describe("<BeerIndex />", () => {
 
   it("displays a button for each beer to see more info", () => {
     const seeMore = userEvent.click(
-      screen.getAllByRole("link", { name: /show more/i })
+      screen.getAllByRole("button", { name: /show more info/i })
     );
   });
   it("displays a brewery for each beer", () => {

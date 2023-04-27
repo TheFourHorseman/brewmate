@@ -67,10 +67,10 @@ describe("<BeerShow />", () => {
     const likeBeer = screen.getByRole("button", { name: /like this beer/i });
     expect(likeBeer).toBeInTheDocument();
   });
-  it("has a all beers button", () => {
+  it("has an all beers button", () => {
     loggedInMyBeer();
 
-    const allBeers = screen.getByRole("link", { name: /all beers/i });
+    const allBeers = screen.getByRole("button", { name: /all beers/i });
     expect(allBeers).toBeInTheDocument();
   });
 });
