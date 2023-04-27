@@ -116,7 +116,7 @@ const App = (props) => {
         <Header {...props} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/beerindex" element={<BeerIndex beers={beers} />} />
+          <Route path="/beerindex" element={<BeerIndex beers={beers} props={props}/>} />
           <Route
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
