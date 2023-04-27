@@ -9,8 +9,19 @@ import {
   CardTitle,
   CardSubtitle,
 } from "reactstrap";
+import IndexCard from "../components/IndexCard";
 
-const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
+const BeerSuggestions = ({
+  current_user,
+  suggested,
+  likes,
+  suggestedBeer,
+  deleteBeer,
+  deleteLike,
+  navigate,
+  logged_in,
+  likeBeer,
+}) => {
   let myIBUSuggestions = suggested?.ibu_suggested;
   let myABVSuggestions = suggested?.abv_suggested;
   let styleSuggestions = suggested?.style_suggested;
@@ -19,9 +30,6 @@ const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
   }, []);
   return (
     <>
-      {console.log("ibusuggestions", myIBUSuggestions)}
-      {console.log("abvsuggestions", myABVSuggestions)}
-      {console.log("styleSuggestions", styleSuggestions)}
       {likes.length === 0 && (
         <h2>
           Once you have liked a few beers, we can start to give you some
@@ -47,29 +55,17 @@ const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
           <div className="index-cards">
             {myIBUSuggestions?.map((beer, index) => {
               return (
-                <Card
-                  style={{
-                    width: "18rem",
-                  }}
+                <IndexCard
+                  beer={beer}
                   key={index}
-                  className="index-card"
-                >
-                  <CardBody>
-                    <img
-                      alt={`A picture of ${beer.beer_name}`}
-                      src={beer.image}
-                      className="index-image"
-                    />
-                    <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
-                      {beer.brewery_name}
-                    </CardSubtitle>
-                    <CardText>{beer.beer_style}</CardText>
-                  </CardBody>
-                  <ButtonGroup>
-                    <Button href={`/beershow/${beer.id}`}>Show More</Button>
-                  </ButtonGroup>
-                </Card>
+                  navigate={navigate}
+                  current_user={current_user}
+                  logged_in={logged_in}
+                  deleteBeer={deleteBeer}
+                  likeBeer={likeBeer}
+                  deleteLike={deleteLike}
+                  likes={likes}
+                />
               );
             })}
           </div>
@@ -94,29 +90,17 @@ const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
           <div className="index-cards">
             {myABVSuggestions?.map((beer, index) => {
               return (
-                <Card
-                  style={{
-                    width: "18rem",
-                  }}
+                <IndexCard
+                  beer={beer}
                   key={index}
-                  className="index-card"
-                >
-                  <CardBody>
-                    <img
-                      alt={`A picture of ${beer.beer_name}`}
-                      src={beer.image}
-                      className="index-image"
-                    />
-                    <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
-                      {beer.brewery_name}
-                    </CardSubtitle>
-                    <CardText>{beer.beer_style}</CardText>
-                  </CardBody>
-                  <ButtonGroup>
-                    <Button href={`/beershow/${beer.id}`}>Show More</Button>
-                  </ButtonGroup>
-                </Card>
+                  navigate={navigate}
+                  current_user={current_user}
+                  logged_in={logged_in}
+                  deleteBeer={deleteBeer}
+                  likeBeer={likeBeer}
+                  deleteLike={deleteLike}
+                  likes={likes}
+                />
               );
             })}
           </div>
@@ -142,29 +126,17 @@ const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
           <div className="index-cards">
             {styleSuggestions?.map((beer, index) => {
               return (
-                <Card
-                  style={{
-                    width: "18rem",
-                  }}
+                <IndexCard
+                  beer={beer}
                   key={index}
-                  className="index-card"
-                >
-                  <CardBody>
-                    <img
-                      alt={`A picture of ${beer.beer_name}`}
-                      src={beer.image}
-                      className="index-image"
-                    />
-                    <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
-                      {beer.brewery_name}
-                    </CardSubtitle>
-                    <CardText>{beer.beer_style}</CardText>
-                  </CardBody>
-                  <ButtonGroup>
-                    <Button href={`/beershow/${beer.id}`}>Show More</Button>
-                  </ButtonGroup>
-                </Card>
+                  navigate={navigate}
+                  current_user={current_user}
+                  logged_in={logged_in}
+                  deleteBeer={deleteBeer}
+                  likeBeer={likeBeer}
+                  deleteLike={deleteLike}
+                  likes={likes}
+                />
               );
             })}
           </div>

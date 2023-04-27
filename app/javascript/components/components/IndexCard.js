@@ -10,9 +10,56 @@ import {
   Badge,
 } from "reactstrap";
 
-const IndexCard = ({ beer, navigate }) => {
+const IndexCard = ({
+  beer,
+  current_user,
+  logged_in,
+  likes,
+  navigate,
+  deleteBeer,
+  likeBeer,
+  deleteLike,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  // find the like (if any) assosciated with this beer and user
+  let selectedLike = likes?.find(
+    (like) => beer?.id === like?.beer_id && current_user?.id === like?.user_id
+  );
+
+  // we need to check if the array of likes contains an object that matches the signed in user and selected beer
+  const isLiked = () => {
+    return (
+      likes?.filter(
+        (like) => like.user_id === current_user.id && like.beer_id === beer?.id
+      ).length > 0
+    );
+  };
+
+  // passes the beer id up to the deleteBeer function when delete button is pressed
+  const onDeleteSubmit = () => {
+    deleteBeer(beer.id);
+    // TODO: Handle this behavior better
+    navigate("/beerindex");
+  };
+
+  // passes beer id to the likeBeer function on button press
+  const onLikeSubmit = () => {
+    let likedBeer = {
+      beer_id: beer.id,
+      user_id: current_user.id,
+    };
+    likeBeer(likedBeer);
+    // navigate(0);
+  };
+
+  // removes the like from the database
+  const onRemoveLikeSubmit = () => {
+    deleteLike(selectedLike.id);
+    // navigate(0);
+  };
+
   return (
     <>
       {beer && (
@@ -41,10 +88,27 @@ const IndexCard = ({ beer, navigate }) => {
               </CardText>
             </Collapse>
           </CardBody>
-          <Button onClick={() => navigate(`/beershow/${beer?.id}`)}>
-            Show More
-          </Button>
-          <Button onClick={toggle}>Dropdown</Button>
+          <Button onClick={toggle}>Show More Info</Button>
+          {logged_in && (
+            <>
+              {isLiked() && (
+                <Button color="danger" onClick={onRemoveLikeSubmit}>
+                  Remove Like
+                </Button>
+              )}
+              {!isLiked() && (
+                <Button onClick={onLikeSubmit}>Like This Beer</Button>
+              )}
+            </>
+          )}
+          {current_user?.id === beer.user_id && (
+            <>
+              <Button onClick={() => navigate(`/beeredit/${beer.id}`)}>
+                Edit
+              </Button>
+              <Button onClick={onDeleteSubmit}>Delete</Button>
+            </>
+          )}
         </Card>
       )}
     </>

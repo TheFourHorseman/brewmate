@@ -77,17 +77,6 @@ const BeerEdit = ({ editBeer, beers }) => {
                   {styles?.map((style, index) => {
                     return <option key={index}>{style}</option>;
                   })}
-
-                  {/* <option>Lager</option>
-                <option>Pale Ale</option>
-                <option>Pilsner</option>
-                <option>Ale</option>
-                <option>Stout</option>
-                <option>Porter</option>
-                <option>IPA</option>
-                <option>Amber Ale</option>
-                <option>Red Ale</option>
-                <option>Brown Ale</option> */}
                 </Input>
               )}
             </FormGroup>
