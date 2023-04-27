@@ -23,17 +23,17 @@ const BeerIndex = ({
   const [response, setResponse] = useState();
   const navigate = useNavigate();
 
-  function handleInputChange(event) {
+  const handleInputChange = (event) => {
     setSearch(event.target.value);
     searchResponse();
-  }
+  };
 
   const filteredBeers = beers?.filter((beer) =>
     beer?.beer_name.toLowerCase().includes(search.toLowerCase())
   );
 
   const searchResponse = () => {
-    if (logged_in === true && filteredBeers.length === 0) {
+    if (logged_in && filteredBeers.length === 0) {
       setResponse(1);
     } else if (filteredBeers.length === 0) {
       setResponse(2);
