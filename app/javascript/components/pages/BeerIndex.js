@@ -1,12 +1,4 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Button,
-} from "reactstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import IndexCard from "../components/IndexCard";
 
