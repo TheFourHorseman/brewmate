@@ -8,9 +8,17 @@ import {
   Button,
 } from "reactstrap";
 import { NavLink, useNavigate } from "react-router-dom";
+import IndexCard from "../components/IndexCard";
 
 
-const BeerIndex = ({ beers, props}) => {
+const BeerIndex = ({beers,
+  current_user,
+  likeBeer,
+  deleteLike,
+  deleteBeer,
+  likes,
+  logged_in,}) => {
+  
   const [search, setSearch] = useState('');
   const [response, setResponse] =  useState()
   const navigate = useNavigate()
@@ -26,7 +34,7 @@ const BeerIndex = ({ beers, props}) => {
   );
   
   const searchResponse = () => {
-      if(props.logged_in === true && filteredBeers.length === 0){
+      if(logged_in === true && filteredBeers.length === 0){
         setResponse(1)
       }else if (filteredBeers.length === 0){
         setResponse(2)
@@ -43,40 +51,26 @@ const BeerIndex = ({ beers, props}) => {
       {response === 2 && (
           <h2>{`The beer: "${search}" was not found.`}</h2>
       )}
-      
-
-      
       <div className="index-cards">
         {filteredBeers?.map((beer, index) => {
-          return (
-               <Card
-                 style={{
-                   width: "18rem",
-                 }}
-                 key={index}
-                 className="index-card"
-               >
-                 <CardBody>
-                   <img
-                     alt={`A picture of ${beer.beer_name}`}
-                     src={beer.image}
-                     className="index-image"
-                   />
-                   <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                   <CardSubtitle className="mb-2 text-muted" tag="h6">
-                     {beer.brewery_name}
-                   </CardSubtitle>
-                   <CardText>{beer.beer_style}</CardText>
-                 </CardBody>
-                 <Button href={`/beershow/${beer.id}`}>Show More</Button>
-               </Card>
-             );
+         return (
+              <IndexCard
+                beer={beer}
+                key={index}
+                navigate={navigate}
+                current_user={current_user}
+                logged_in={logged_in}
+                deleteBeer={deleteBeer}
+                likeBeer={likeBeer}
+                deleteLike={deleteLike}
+                likes={likes}
+              />
+            );
         })}
         </div>
     </div>
     </>
   );
 }
-
 
 export default BeerIndex;

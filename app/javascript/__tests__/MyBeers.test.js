@@ -1,17 +1,17 @@
 import React from "react";
-import "@testing-library/jest-dom"
-import {render, screen} from "@testing-library/react"
+import "@testing-library/jest-dom";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import MyBeers from "./MyBeers";
-import userEvent from "@testing-library/user-event"
+import MyBeers from "../components/pages/MyBeers";
+import userEvent from "@testing-library/user-event";
 
 describe("<MyBeers>", () => {
-  beforeEach(()=>{
-    const current_user= {
-      email:"test@testing.com",
+  beforeEach(() => {
+    const current_user = {
+      email: "test@testing.com",
       password: "testing123",
-      id: 1
-    }
+      id: 1,
+    };
     const beers = [
       {
         user_id: 1,
@@ -34,13 +34,13 @@ describe("<MyBeers>", () => {
           "https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmVlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
       },
     ];
-    render (
+    render(
       <BrowserRouter>
-        <MyBeers beers={ beers} current_user={current_user}/> 
+        <MyBeers beers={beers} current_user={current_user} />
       </BrowserRouter>
-    )
-  })
-  it ("renders without crashing", ()=> {})
+    );
+  });
+  it("renders without crashing", () => {});
   it("properly displays header", () => {
     expect("View All Brews").toBeInTheDocument;
   });
@@ -55,9 +55,10 @@ describe("<MyBeers>", () => {
       <BrowserRouter>
         <MyBeers />
       </BrowserRouter>
-    )
+    );
     const seeMore = userEvent.click(
-      screen.getAllByRole("link", { name: /show more/i }))
+      screen.getAllByRole("link", { name: /show more/i })
+    );
   });
   it("displays a brewery for each beer", () => {
     expect(screen.getByRole("heading", { name: /aaron brewing/i }))
@@ -67,5 +68,5 @@ describe("<MyBeers>", () => {
   });
   it("displays an image for each beer", () => {
     expect(screen.getAllByRole("img").length).toEqual(2);
-  })
-})
+  });
+});

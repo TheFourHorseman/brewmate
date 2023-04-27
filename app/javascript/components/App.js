@@ -116,24 +116,25 @@ const App = (props) => {
         <Header {...props} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/beerindex" element={<BeerIndex beers={beers} props={props}/>} />
+          <Route
+            path="/beerindex"
+            element={
+              <BeerIndex
+                beers={beers}
+                current_user={props.current_user}
+                logged_in={props.logged_in}
+                deleteBeer={deleteBeer}
+                likeBeer={likeBeer}
+                deleteLike={deleteLike}
+                likes={likes}
+              />
+            }
+          />
           <Route
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
           />
-          <Route
-            path="/beershow/:id"
-            element={
-              <BeerShow
-                props={props}
-                beers={beers}
-                deleteBeer={deleteBeer}
-                likeBeer={likeBeer}
-                likes={likes}
-                deleteLike={deleteLike}
-              />
-            }
-          />
+          {/* <Route path="/beershow/:id" element={<BeerShow beers={beers} />} /> */}
           <Route
             path="/beernew"
             element={
@@ -152,6 +153,10 @@ const App = (props) => {
                 suggested={suggested}
                 likes={likes}
                 suggestedBeer={suggestedBeer}
+                logged_in={props.logged_in}
+                likeBeer={likeBeer}
+                deleteBeer={deleteBeer}
+                deleteLike={deleteLike}
               />
             }
           />
