@@ -31,9 +31,16 @@ const BeerEdit = ({ editBeer, beers }) => {
     navigate("/mybeers");
   };
 
-  return (
-    <>
-      {updatedBeer && (
+  let styles = [];
+  beers?.map((beer) => {
+    if (!styles.includes(beer.style)) {
+      styles.push(beer.style);
+    }
+  });
+
+  if (updatedBeer && styles) {
+    return (
+      <>
         <div className="ceate-form">
           <h1>Update Beer Info</h1>
           <Form>
@@ -59,14 +66,19 @@ const BeerEdit = ({ editBeer, beers }) => {
               <Label for="brewery_name">Brewery Name</Label>
             </FormGroup>
             <FormGroup>
-              <Input
-                id="style"
-                name="style"
-                type="select"
-                onChange={handleChange}
-                value={updatedBeer?.style}
-              >
-                <option>Lager</option>
+              {styles && (
+                <Input
+                  id="style"
+                  name="style"
+                  type="select"
+                  onChange={handleChange}
+                  value={updatedBeer?.style}
+                >
+                  {styles?.map((style) => {
+                    return <option>{style}</option>;
+                  })}
+
+                  {/* <option>Lager</option>
                 <option>Pale Ale</option>
                 <option>Pilsner</option>
                 <option>Ale</option>
@@ -75,8 +87,9 @@ const BeerEdit = ({ editBeer, beers }) => {
                 <option>IPA</option>
                 <option>Amber Ale</option>
                 <option>Red Ale</option>
-                <option>Brown Ale</option>
-              </Input>
+                <option>Brown Ale</option> */}
+                </Input>
+              )}
             </FormGroup>
             <FormGroup floating>
               <Input
@@ -123,9 +136,9 @@ const BeerEdit = ({ editBeer, beers }) => {
             </div>
           </Form>
         </div>
-      )}
-    </>
-  );
+      </>
+    );
+  }
 };
 
 export default BeerEdit;
