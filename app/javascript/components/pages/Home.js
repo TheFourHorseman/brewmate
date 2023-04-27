@@ -14,6 +14,8 @@ import aaron from "../assets/aaron.png";
 import xavier from "../assets/xavier.png";
 import joey from "../assets/joey.png";
 import john from "../assets/john.png";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import IconButton from '@mui/material/IconButton';
 
 const Home = () => {
   return (
@@ -37,9 +39,9 @@ const Home = () => {
               sight, the better recommendations will be presented to you!
             </h3>
           </section>
-          <section className="about-us">
+          <section className="about-us">            
             <h1>About us</h1>
-            <CardGroup>
+            <CardGroup>              
               <Card>
                 <CardImg alt="Card image cap" src={aaron} top width="100%" />
                 <CardBody>
@@ -51,9 +53,9 @@ const Home = () => {
                     Aaron is from Oceanside, California, and enjoys going for a
                     long drive, cooking, and coding something new.
                   </CardText>
-                  <Button href="https://github.com/s8acrine" target="_blank">
-                    GitHub Profile
-                  </Button>
+                  <IconButton aria-label="github">
+                  <GitHubIcon href="https://github.com/s8acrine" target="_blank" />
+                  </IconButton>
                 </CardBody>
               </Card>
               <Card>

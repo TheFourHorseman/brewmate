@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+
 a {
     text-decoration: none;
     color:#FFFFFF;
@@ -60,15 +61,28 @@ h1,h2,h3,h4 {
 }
 
 .welcome-section {
-    background-color: #FFFFFF;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT1Av5TEjcFQhfkcp0Fl1rwf1-TFpYdGEppA&usqp=CAU);
+    text-align: center;
+    background-size: cover;
+    text-align: center;
+    background-color: #ffffff
 }
 
 .app-works {
+
+    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/638/894/desktop-wallpaper-beers-glass-alcohol-mug-beer-glass.jpg);
+    text-align: center;
+    background-size: cover;
+    text-align: center;
     background-color: #ffb59c;
 }
 
 .about-us {
-    background-color: #ffffff;
+    background-image: url(https://e0.pxfuel.com/wallpapers/396/677/desktop-wallpaper-take-a-beer-fraiches-awesome-marveillous-delight-graphy-take-beer-gold-beaker-glass-amazing-textures-3d-and-cg-white-foam-art-hot-beautiful-guarana-fantasy-icy-heat-freshness-yellow.jpg);
+    text-align: center;
+    background-size: cover;
+    text-align: center;
+    background-color: #ffffff
 }
 
 .contact-us {
@@ -148,4 +162,10 @@ h1,h2,h3,h4 {
     background-size: cover;
     color: azure;
     text-align: center;
+}
+
+.index-icons {
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
