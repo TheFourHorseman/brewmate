@@ -19,9 +19,6 @@ const BeerSuggestions = ({ current_user, suggested, likes, suggestedBeer }) => {
   }, []);
   return (
     <>
-      {console.log("ibusuggestions", myIBUSuggestions)}
-      {console.log("abvsuggestions", myABVSuggestions)}
-      {console.log("styleSuggestions", styleSuggestions)}
       {likes.length === 0 && (
         <h2>
           Once you have liked a few beers, we can start to give you some
