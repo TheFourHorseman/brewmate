@@ -1,42 +1,36 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Button,
-} from "reactstrap";
+import { useNavigate } from "react-router-dom";
+import IndexCard from "../components/IndexCard";
 
-const BeerIndex = ({ beers }) => {
+const BeerIndex = ({
+  beers,
+  current_user,
+  likeBeer,
+  deleteLike,
+  deleteBeer,
+  likes,
+  logged_in,
+}) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="index-content">
         <h2>View All Brews</h2>
         <div className="index-cards">
-          {beers.map((beer, index) => {
+          {beers?.map((beer, index) => {
             return (
-              <Card
-                style={{
-                  width: "18rem",
-                }}
+              <IndexCard
+                beer={beer}
                 key={index}
-                className="index-card"
-              >
-                <CardBody>
-                  <img
-                    alt={`A picture of ${beer.beer_name}`}
-                    src={beer.image}
-                    className="index-image"
-                  />
-                  <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                  <CardSubtitle className="mb-2 text-muted" tag="h6">
-                    {beer.brewery_name}
-                  </CardSubtitle>
-                  <CardText>{beer.beer_style}</CardText>
-                </CardBody>
-                <Button href={`/beershow/${beer.id}`}>Show More</Button>
-              </Card>
+                navigate={navigate}
+                current_user={current_user}
+                logged_in={logged_in}
+                deleteBeer={deleteBeer}
+                likeBeer={likeBeer}
+                deleteLike={deleteLike}
+                likes={likes}
+              />
             );
           })}
         </div>

@@ -3,14 +3,13 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardBody, CardSubtitle, CardTitle, Button } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-
 const BeerShow = ({
   beers,
   props,
   likes,
   deleteBeer,
   likeBeer,
-  deleteLike
+  deleteLike,
 }) => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -106,12 +105,12 @@ const BeerShow = ({
 
               {props.current_user?.id === selectedBeer.user_id && (
                 <>
-
-                  <NavLink to={`/beeredit/${selectedBeer.id}`}>
-                  <Button>Edit</Button>
-                  
+                  <Button
+                    onClick={() => navigate(`/beeredit/${selectedBeer.id}`)}
+                  >
+                    Edit
+                  </Button>
                   <Button onClick={onDeleteSubmit}>Delete</Button>
-                  </NavLink>
                 </>
               )}
             </Card>
@@ -120,7 +119,7 @@ const BeerShow = ({
           <br />
           <br />
           <div className="go-back">
-            <Button href="/beerindex">All Beers</Button>
+            <Button onClick={() => navigate("/beerindex")}>All Beers</Button>
           </div>
         </div>
       )}
