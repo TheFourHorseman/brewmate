@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import BeerIndex from "./pages/BeerIndex";
-import BeerShow from "./pages/BeerShow";
 import BeerEdit from "./pages/BeerEdit";
 import BeerNew from "./pages/BeerNew";
 import BeerSuggestions from "./pages/BeerSuggestions";
@@ -17,6 +16,7 @@ const App = (props) => {
   const [beers, setBeers] = useState([]);
   const [likes, setLikes] = useState([]);
   const [suggested, setSuggested] = useState();
+  const [chart, setChart] = useState([]);
 
   const readBeer = () => {
     fetch("/beers")
@@ -101,21 +101,31 @@ const App = (props) => {
       .catch((error) => console.log("SuggestedBeer Fetch:", error));
   };
 
+  const readChart = (id) => {
+    fetch(`/users/${id}/charts_data`)
+      .then((response) => response.json())
+      .then((payload) => setChart(payload))
+      .catch((error) => console.log("Charts Fetch: ", error));
+  }
+
   useEffect(() => {
     readBeer();
     readLikes();
-
+    
     if (props?.current_user) {
       suggestedBeer(props.current_user.id);
+      readChart(props.current_user.id);
     }
   }, []);
+
+  console.log(chart)
 
   return (
     <>
       <BrowserRouter>
         <Header {...props} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route
             path="/beerindex"
             element={
@@ -134,7 +144,6 @@ const App = (props) => {
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
           />
-          {/* <Route path="/beershow/:id" element={<BeerShow beers={beers} />} /> */}
           <Route
             path="/beernew"
             element={
@@ -160,7 +169,13 @@ const App = (props) => {
               />
             }
           />
-          <Route path="/beerprofile" element={<BeerProfile />} />
+          <Route path="/beerprofile" element={
+          <BeerProfile 
+           chart={chart} 
+           current_user={props.current_user} 
+           readChart={readChart}
+           suggested={suggested}
+           />} />
           <Route
             path="/mybeers"
             element={

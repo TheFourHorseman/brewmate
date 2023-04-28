@@ -14,8 +14,9 @@ import aaron from "../assets/aaron.png";
 import xavier from "../assets/xavier.png";
 import joey from "../assets/joey.png";
 import john from "../assets/john.png";
+import Charts from "../components/Charts";
 
-const Home = () => {
+const Home = ({chart}) => {
   return (
     <>
       <div className="home-content">
