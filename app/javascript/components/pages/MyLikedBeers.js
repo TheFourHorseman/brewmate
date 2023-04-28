@@ -37,18 +37,18 @@ const MyLikedBeers = ({ likes, current_user }) => {
               >
                 <CardBody>
                   <img
-                    alt={`A picture of ${like.beer.beer_name}`}
-                    src={like.beer.image}
+                    alt={`A picture of ${like.beer?.beer_name}`}
+                    src={like.beer?.image}
                     className="index-image"
                   />
-                  <CardTitle tag="h5">{like.beer.beer_name}</CardTitle>
+                  <CardTitle tag="h5">{like.beer?.beer_name}</CardTitle>
                   <CardSubtitle className="mb-2 text-muted" tag="h6">
-                    {like.beer.brewery_name}
+                    {like.beer?.brewery_name}
                   </CardSubtitle>
-                  <CardText>{like.beer.beer_style}</CardText>
+                  <CardText>{like.beer?.beer_style}</CardText>
                 </CardBody>
                 <ButtonGroup>
-                  <Button href={`/beershow/${like.beer.id}`}>Show More</Button>
+                  <Button href={`/beershow/${like.beer?.id}`}>Show More</Button>
                 </ButtonGroup>
               </Card>
             );

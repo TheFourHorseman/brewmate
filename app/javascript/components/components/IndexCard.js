@@ -49,8 +49,6 @@ const IndexCard = ({
   // passes the beer id up to the deleteBeer function when delete button is pressed
   const onDeleteSubmit = () => {
     deleteBeer(beer.id);
-    // TODO: Handle this behavior better
-    navigate("/beerindex");
   };
 
   // passes beer id to the likeBeer function on button press
@@ -99,8 +97,8 @@ const IndexCard = ({
           </CardBody>
           <div className="index-icons">
           <Tooltip title="Show More Info" arrow>
-          <IconButton aria-label="show more">
-            <ExpandMoreTwoToneIcon onClick={toggle} />
+          <IconButton aria-label="show more" onClick={toggle}>
+            <ExpandMoreTwoToneIcon  />
             </IconButton>
             </Tooltip>
           </div>
@@ -109,14 +107,14 @@ const IndexCard = ({
               <div className="index-icons">
               {isLiked() && (
                 <Tooltip title="Remove Like" arrow>
-                <IconButton aria-label="unlike">
-                  <GradeIcon onClick={onRemoveLikeSubmit} />
+                <IconButton aria-label="unlike" onClick={onRemoveLikeSubmit}>
+                  <GradeIcon  />
                 </IconButton></Tooltip>
               )}
               {!isLiked() && (
                 <Tooltip title="Like This Beer!" arrow>
-                <IconButton aria-label="like">
-                  <GradeOutlinedIcon onClick={onLikeSubmit} />
+                <IconButton aria-label="like" onClick={onLikeSubmit}>
+                  <GradeOutlinedIcon  />
                   </IconButton>
                   </Tooltip>
               )}
@@ -128,13 +126,13 @@ const IndexCard = ({
               <div className="index-icons">
               <Stack direction="row" spacing={1}>
               <Tooltip title="Edit Your Beer" arrow>
-              <IconButton aria-label="edit">
-                <EditTwoToneIcon onClick={() => navigate(`/beeredit/${beer.id}`)} />
+              <IconButton aria-label="edit" onClick={() => navigate(`/beeredit/${beer.id}`)}>
+                <EditTwoToneIcon  />
               </IconButton>
               </Tooltip>
               <Tooltip title="Delete Your Beer" arrow>
-              <IconButton aria-label="delete">
-                <DeleteTwoToneIcon onClick={onDeleteSubmit} />
+              <IconButton aria-label="delete" onClick={onDeleteSubmit}>
+                <DeleteTwoToneIcon  />
                 </IconButton>
                 </Tooltip>
                 </Stack>

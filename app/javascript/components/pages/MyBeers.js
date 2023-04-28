@@ -1,23 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import {
-  ButtonGroup,
-  Button,
-  Card,
-  CardBody,
-  CardText,
-  CardTitle,
-  CardSubtitle,
-} from "reactstrap";
+import IndexCard from "../components/IndexCard";
 
 const MyBeers = ({ beers, current_user, deleteBeer }) => {
-  const navigate = useNavigate()
   let userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
-  
-  const onDeleteSubmit = () => {
-    deleteBeer(userBeers.id)
-    navigate("/mybeers")
-  }
 
   
   return (
@@ -27,29 +12,13 @@ const MyBeers = ({ beers, current_user, deleteBeer }) => {
         <div className="index-cards">
           {userBeers?.map((beer, index) => {
             return (
-              <Card
-                style={{
-                  width: "18rem",
-                }}
+              <IndexCard
+                beers={beers}
+                beer={beer}
+                current_user={current_user}
+                deleteBeer={deleteBeer}
                 key={index}
-                className="index-card"
-              >
-                <CardBody>
-                  <img
-                    alt={`A picture of ${beer.beer_name}`}
-                    src={beer.image}
-                    className="index-image"
-                  />
-                  <CardTitle tag="h5">{beer.beer_name}</CardTitle>
-                  <CardSubtitle className="mb-2 text-muted" tag="h6">
-                    {beer.brewery_name}
-                  </CardSubtitle>
-                  <CardText>{beer.beer_style}</CardText>
-                </CardBody>
-                <ButtonGroup>
-                  <Button href={`/beershow/${beer.id}`}>Show More</Button>
-                </ButtonGroup>
-              </Card>
+              />
             );
           })}
         </div>
