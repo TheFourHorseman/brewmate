@@ -12,6 +12,7 @@ import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
 import MyLikedBeers from "./pages/MyLikedBeers";
 import NotFound from "./pages/NotFound";
+import NewUser from "./pages/NewUser";
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
@@ -177,6 +178,7 @@ const App = (props) => {
               <MyLikedBeers current_user={props.current_user} likes={likes} />
             }
           />
+          <Route path="/newuser" element={<NewUser />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
