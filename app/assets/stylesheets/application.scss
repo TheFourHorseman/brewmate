@@ -140,6 +140,20 @@ h1,h2,h3,h4 {
     justify-items: center;
 }
 
+.index-cards::before {
+    content: "";
+    background-image: url('https://e0.pxfuel.com/wallpapers/141/978/desktop-wallpaper-guinness-print-clear-drinking-glass-guinness-dans-un-bar-background-guinness-beer-thumbnail.jpg'), url('https://e0.pxfuel.com/wallpapers/215/17/desktop-wallpaper-lamp-drink-beer-beverage-alcohol-bottle-wine-wine-glass-background-thumbnail.jpg');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+    background-attachment: scroll, scroll; 
+    background-repeat: repeat, repeat;
+    background-size: contain, contain;
+}
+
 .index-card{
     // max-height: 580px;
     margin: 35px 35px 35px 35px;
@@ -199,3 +213,4 @@ h1,h2,h3,h4 {
     align-items: center;
     display: flex;
 }
+
