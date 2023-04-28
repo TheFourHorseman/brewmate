@@ -138,6 +138,20 @@ h1,h2,h3,h4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    position: relative;
+}
+
+.index-cards::before {
+    content: "";
+    background-image: url('https://e0.pxfuel.com/wallpapers/2/94/desktop-wallpaper-beer-glass-abstract.jpg');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .index-card{
@@ -199,3 +213,4 @@ h1,h2,h3,h4 {
     align-items: center;
     display: flex;
 }
+

@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import BeerIndex from "./pages/BeerIndex";
-import BeerShow from "./pages/BeerShow";
 import BeerEdit from "./pages/BeerEdit";
 import BeerNew from "./pages/BeerNew";
 import BeerSuggestions from "./pages/BeerSuggestions";
@@ -134,7 +133,6 @@ const App = (props) => {
             path="/beeredit/:id"
             element={<BeerEdit beers={beers} editBeer={editBeer} />}
           />
-          {/* <Route path="/beershow/:id" element={<BeerShow beers={beers} />} /> */}
           <Route
             path="/beernew"
             element={
