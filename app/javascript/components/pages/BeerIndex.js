@@ -42,6 +42,7 @@ const BeerIndex = ({
           placeholder="Search by beer name..."
           value={search}
           onChange={handleInputChange}
+          alt="Search Bar"
         />
         {response === 1 && (
           <>
