@@ -8,6 +8,7 @@ const NewUser = () => {
     <>
       <section className="new-user-info">
         <h2>Welcome to BrewMate!</h2>
+        <br />
         <h3>
           We wan't to make sure you have the best possible experience, so here
           are some tips!
