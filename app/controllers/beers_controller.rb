@@ -61,7 +61,13 @@ class BeersController < ApplicationController
                   .first(5)
 
         # renders all suggestions as an object
-        render json: {ibu_suggested: suggested_ibu, abv_suggested: suggested_abv, style_suggested: suggested_style}
+        render json: {ibu_suggested: suggested_ibu, abv_suggested: suggested_abv, style_suggested: suggested_style, ibu: avg_ibu, abv: avg_abv}
+    end
+
+    def charts_data 
+        user = User.find(params[:user_id])
+        top_liked_styles =  user.likes.joins(:beer).group('beers.style').count.sort_by {|_key, value|value}.reverse
+        render json: top_liked_styles
     end
 
     private

@@ -51,6 +51,9 @@ const Header = ({
                 <NavLink className="nav-link" to="/beernew">
                   <DropdownItem>Add Beer</DropdownItem>
                 </NavLink>
+                <NavLink className="nav-link" to="/beerprofile">
+                  <DropdownItem>Profile</DropdownItem>
+                </NavLink>
 
                 <DropdownItem divider />
                 <a className="nav-link" href={sign_out_route}>
