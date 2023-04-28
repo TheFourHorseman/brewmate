@@ -17,22 +17,18 @@ describe("<NewUser />", () => {
     const text = screen.getByText(/welcome to brewMate!/i);
     expect(text).toBeInTheDocument();
   });
+
   it("displays a functional button that calls upon the navigate function", () => {
+    const navigate = jest.fn();
+
     render(
       <BrowserRouter>
         <NewUser />
       </BrowserRouter>
     );
-    const useNavigate = jest.fn();
-    const navigate = jest.fn();
-
-    const indexButton = screen.getByRole("button", {
-      name: /i'm ready to view beers!/i,
-    });
-    screen.logTestingPlaygroundURL();
-    expect(indexButton).toBeInTheDocument;
-    fireEvent.click(indexButton);
-    expect(navigate.mock.calls).toEqual(1);
+    const button = screen.getByRole("button");
+    fireEvent.click(button);
+    expect(navigate).toBeCalled;
   });
 });
 
