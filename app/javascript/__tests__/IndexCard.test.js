@@ -79,11 +79,6 @@ describe("<IndexCard.js>", () => {
     renderConditions(true, true, true);
     expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument;
   });
-  it("like button calls the onLikeSubmit function", () => {
-    renderConditions(true, true, false);
-    let likeButton = screen.getByRole("button", { name: "Like This Beer" });
-    console.log(likeButton);
-  });
   it("if user has created the beer shows a navigation and delete button", () => {
     renderConditions(true, true, true);
     expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument;
