@@ -9,15 +9,14 @@ import {
   Collapse,
   Badge,
 } from "reactstrap";
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import IconButton from '@mui/material/IconButton';
-import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-import Stack from '@mui/material/Stack';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
-import GradeIcon from '@mui/icons-material/Grade';
-import Tooltip from '@mui/material/Tooltip';
-
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import IconButton from "@mui/material/IconButton";
+import EditTwoToneIcon from "@mui/icons-material/EditTwoTone";
+import Stack from "@mui/material/Stack";
+import ExpandMoreTwoToneIcon from "@mui/icons-material/ExpandMoreTwoTone";
+import GradeOutlinedIcon from "@mui/icons-material/GradeOutlined";
+import GradeIcon from "@mui/icons-material/Grade";
+import Tooltip from "@mui/material/Tooltip";
 
 const IndexCard = ({
   beer,
@@ -98,47 +97,54 @@ const IndexCard = ({
             </Collapse>
           </CardBody>
           <div className="index-icons">
-          <Tooltip title="Show More Info" arrow>
-          <IconButton aria-label="show more">
-            <ExpandMoreTwoToneIcon onClick={toggle} />
-            </IconButton>
+            <Tooltip title="Show More Info" arrow>
+              <IconButton aria-label="show more" onClick={toggle}>
+                <ExpandMoreTwoToneIcon />
+              </IconButton>
             </Tooltip>
           </div>
           {logged_in && (
             <>
               <div className="index-icons">
-              {isLiked() && (
-                <Tooltip title="Remove Like" arrow>
-                <IconButton aria-label="unlike">
-                  <GradeIcon onClick={onRemoveLikeSubmit} />
-                </IconButton></Tooltip>
-              )}
-              {!isLiked() && (
-                <Tooltip title="Like This Beer!" arrow>
-                <IconButton aria-label="like">
-                  <GradeOutlinedIcon onClick={onLikeSubmit} />
-                  </IconButton>
+                {isLiked() && (
+                  <Tooltip title="Remove Like" arrow>
+                    <IconButton
+                      aria-label="unlike"
+                      onClick={onRemoveLikeSubmit}
+                    >
+                      <GradeIcon />
+                    </IconButton>
                   </Tooltip>
-              )}
+                )}
+                {!isLiked() && (
+                  <Tooltip title="Like This Beer!" arrow>
+                    <IconButton aria-label="like" onClick={onLikeSubmit}>
+                      <GradeOutlinedIcon />
+                    </IconButton>
+                  </Tooltip>
+                )}
               </div>
             </>
           )}
           {current_user?.id === beer.user_id && (
             <>
               <div className="index-icons">
-              <Stack direction="row" spacing={1}>
-              <Tooltip title="Edit Your Beer" arrow>
-              <IconButton aria-label="edit">
-                <EditTwoToneIcon onClick={() => navigate(`/beeredit/${beer.id}`)} />
-              </IconButton>
-              </Tooltip>
-              <Tooltip title="Delete Your Beer" arrow>
-              <IconButton aria-label="delete">
-                <DeleteTwoToneIcon onClick={onDeleteSubmit} />
-                </IconButton>
-                </Tooltip>
+                <Stack direction="row" spacing={1}>
+                  <Tooltip title="Edit Your Beer" arrow>
+                    <IconButton
+                      onClick={() => navigate(`/beeredit/${beer.id}`)}
+                      aria-label="edit"
+                    >
+                      <EditTwoToneIcon />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Delete Your Beer" arrow>
+                    <IconButton onClick={onDeleteSubmit} aria-label="delete">
+                      <DeleteTwoToneIcon />
+                    </IconButton>
+                  </Tooltip>
                 </Stack>
-                </div>
+              </div>
             </>
           )}
         </Card>

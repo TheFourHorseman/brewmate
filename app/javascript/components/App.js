@@ -107,26 +107,26 @@ const App = (props) => {
       .then((response) => response.json())
       .then((payload) => setChart(payload))
       .catch((error) => console.log("Charts Fetch: ", error));
-  }
+  };
 
   useEffect(() => {
     readBeer();
     readLikes();
-    
+
     if (props?.current_user) {
       suggestedBeer(props.current_user.id);
       readChart(props.current_user.id);
     }
   }, []);
 
-  console.log(chart)
+  console.log(chart);
 
   return (
     <>
       <BrowserRouter>
         <Header {...props} />
         <Routes>
-          <Route path="/" element={<Home/>} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/beerindex"
             element={
@@ -167,30 +167,51 @@ const App = (props) => {
                 likeBeer={likeBeer}
                 deleteBeer={deleteBeer}
                 deleteLike={deleteLike}
+                readLikes={readLikes}
               />
             }
           />
-          <Route path="/beerprofile" element={
-          <BeerProfile 
-           chart={chart} 
-           current_user={props.current_user} 
-           readChart={readChart}
-           suggested={suggested}
-           />} />
+          <Route
+            path="/beerprofile"
+            element={
+              <BeerProfile
+                chart={chart}
+                current_user={props.current_user}
+                readChart={readChart}
+                suggested={suggested}
+              />
+            }
+          />
           <Route
             path="/mybeers"
             element={
               <MyBeers
                 current_user={props.current_user}
-                beers={beers}
+                suggested={suggested}
+                likes={likes}
+                suggestedBeer={suggestedBeer}
+                logged_in={props.logged_in}
+                likeBeer={likeBeer}
                 deleteBeer={deleteBeer}
+                deleteLike={deleteLike}
+                readLikes={readLikes}
               />
             }
           />
           <Route
             path="/mylikedbeers"
             element={
-              <MyLikedBeers current_user={props.current_user} likes={likes} />
+              <MyLikedBeers
+                current_user={props.current_user}
+                suggested={suggested}
+                likes={likes}
+                suggestedBeer={suggestedBeer}
+                logged_in={props.logged_in}
+                likeBeer={likeBeer}
+                deleteBeer={deleteBeer}
+                deleteLike={deleteLike}
+                readLikes={readLikes}
+              />
             }
           />
           <Route path="/newuser" element={<NewUser />} />

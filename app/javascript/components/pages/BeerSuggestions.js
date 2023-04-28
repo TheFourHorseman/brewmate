@@ -21,11 +21,13 @@ const BeerSuggestions = ({
   navigate,
   logged_in,
   likeBeer,
+  readLikes,
 }) => {
   let myIBUSuggestions = suggested?.ibu_suggested;
   let myABVSuggestions = suggested?.abv_suggested;
   let styleSuggestions = suggested?.style_suggested;
   useEffect(() => {
+    readLikes();
     suggestedBeer(current_user.id);
   }, []);
   return (
