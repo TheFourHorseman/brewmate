@@ -8,6 +8,7 @@ import {
   DropdownMenu,
 } from "reactstrap";
 import { NavLink } from "react-router-dom";
+
 const Header = ({
   logged_in,
   current_user,
@@ -16,7 +17,6 @@ const Header = ({
   sign_out_route,
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggle = () => setDropdownOpen(!dropdownOpen);
 
   return (
@@ -50,6 +50,9 @@ const Header = ({
                 </NavLink>
                 <NavLink className="nav-link" to="/beernew">
                   <DropdownItem>Add Beer</DropdownItem>
+                </NavLink>
+                <NavLink className="nav-link" to="/beerprofile">
+                  <DropdownItem>Profile</DropdownItem>
                 </NavLink>
 
                 <DropdownItem divider />

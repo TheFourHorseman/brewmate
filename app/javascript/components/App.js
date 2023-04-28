@@ -11,11 +11,13 @@ import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
 import MyLikedBeers from "./pages/MyLikedBeers";
 import NotFound from "./pages/NotFound";
+import NewUser from "./pages/NewUser";
 
 const App = (props) => {
   const [beers, setBeers] = useState([]);
   const [likes, setLikes] = useState([]);
   const [suggested, setSuggested] = useState();
+  const [chart, setChart] = useState([]);
 
   const readBeer = () => {
     fetch("/beers")
@@ -100,21 +102,31 @@ const App = (props) => {
       .catch((error) => console.log("SuggestedBeer Fetch:", error));
   };
 
+  const readChart = (id) => {
+    fetch(`/users/${id}/charts_data`)
+      .then((response) => response.json())
+      .then((payload) => setChart(payload))
+      .catch((error) => console.log("Charts Fetch: ", error));
+  }
+
   useEffect(() => {
     readBeer();
     readLikes();
-
+    
     if (props?.current_user) {
       suggestedBeer(props.current_user.id);
+      readChart(props.current_user.id);
     }
   }, []);
+
+  console.log(chart)
 
   return (
     <>
       <BrowserRouter>
         <Header {...props} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home/>} />
           <Route
             path="/beerindex"
             element={
@@ -158,7 +170,13 @@ const App = (props) => {
               />
             }
           />
-          <Route path="/beerprofile" element={<BeerProfile />} />
+          <Route path="/beerprofile" element={
+          <BeerProfile 
+           chart={chart} 
+           current_user={props.current_user} 
+           readChart={readChart}
+           suggested={suggested}
+           />} />
           <Route
             path="/mybeers"
             element={
@@ -175,6 +193,7 @@ const App = (props) => {
               <MyLikedBeers current_user={props.current_user} likes={likes} />
             }
           />
+          <Route path="/newuser" element={<NewUser />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

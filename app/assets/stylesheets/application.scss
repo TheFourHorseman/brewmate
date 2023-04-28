@@ -1,20 +1,26 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import "login";
 
 
 a {
     text-decoration: none;
-    color:#FFFFFF;
+    color:inherit;
 }
 
 a :hover {
     text-decoration: none;
-    color:#FFFFFF;
+    color:inherit;
 }
 
 section {
     min-height: 100vh;
     padding: 10rem  10% 2rem;
+}
+
+p {
+    letter-spacing: 0.1rem;
+    font-size: large;
 }
 
 
@@ -208,9 +214,35 @@ h1,h2,h3,h4 {
     text-align: center;
 }
 
+
 .index-icons {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+
+// NEW USER INFO PAGE
+.new-user-info {
+    display: flex;
+    flex-flow:row wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+.new-user-text-block{
+    background-color: #6F605B;
+    color: #ffb59c;
+    border-radius: 15px;
+    display:block;
+    margin:5%
+}
+
+.new-user-text-block p {
+    margin: 5%;
+}
+.new-user-subheading{
+    font-size: x-large;
+    color:#ffb59c;
+    margin: 5%
 }
 

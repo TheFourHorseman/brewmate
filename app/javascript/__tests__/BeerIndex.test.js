@@ -3,10 +3,14 @@ import BeerIndex from "../components/pages/BeerIndex";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
-import { isEqual } from "@rails/webpacker/package/utils/helpers";
-import userEvent from "@testing-library/user-event";
+import { userEvent, type } from "@testing-library/user-event";
 
 describe("<BeerIndex />", () => {
+  // MOCK FUNCTIONS
+  const setSearch = jest.fn();
+  const searchResponse = jest.fn();
+  const setResponse = jest.fn();
+
   //load a mock data
   beforeEach(() => {
     const current_user = {
@@ -14,6 +18,8 @@ describe("<BeerIndex />", () => {
       password: "testing123",
       id: 1,
     };
+    const handleInputChange = jest.fn();
+    const searchResponse = jest.fn();
 
     const beers = [
       {
@@ -57,9 +63,8 @@ describe("<BeerIndex />", () => {
   });
 
   it("displays a button for each beer to see more info", () => {
-    const seeMore = userEvent.click(
-      screen.getAllByRole("link", { name: /show more/i })
-    );
+    const seeMore = screen.getAllByRole("button", { name: /show more info/i });
+    expect(seeMore.length).toEqual(2);
   });
   it("displays a brewery for each beer", () => {
     expect(screen.getByRole("heading", { name: /aaron brewing/i }))
@@ -71,4 +76,6 @@ describe("<BeerIndex />", () => {
   it("displays an image for each beer", () => {
     expect(screen.getAllByRole("img").length).toEqual(2);
   });
+
+  it("search bar input properly calls setSearch and searchResponse functions", () => {});
 });
