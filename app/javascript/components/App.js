@@ -119,8 +119,6 @@ const App = (props) => {
     }
   }, []);
 
-  console.log(chart);
-
   return (
     <>
       <BrowserRouter>
