@@ -9,6 +9,15 @@ import {
   Collapse,
   Badge,
 } from "reactstrap";
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
+import IconButton from '@mui/material/IconButton';
+import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
+import Stack from '@mui/material/Stack';
+import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
+import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
+import GradeIcon from '@mui/icons-material/Grade';
+import Tooltip from '@mui/material/Tooltip';
+
 
 const IndexCard = ({
   beer,
@@ -88,25 +97,48 @@ const IndexCard = ({
               </CardText>
             </Collapse>
           </CardBody>
-          <Button onClick={toggle}>Show More Info</Button>
+          <div className="index-icons">
+          <Tooltip title="Show More Info" arrow>
+          <IconButton aria-label="show more">
+            <ExpandMoreTwoToneIcon onClick={toggle} />
+            </IconButton>
+            </Tooltip>
+          </div>
           {logged_in && (
             <>
+              <div className="index-icons">
               {isLiked() && (
-                <Button color="danger" onClick={onRemoveLikeSubmit}>
-                  Remove Like
-                </Button>
+                <Tooltip title="Remove Like" arrow>
+                <IconButton aria-label="unlike">
+                  <GradeIcon onClick={onRemoveLikeSubmit} />
+                </IconButton></Tooltip>
               )}
               {!isLiked() && (
-                <Button onClick={onLikeSubmit}>Like This Beer</Button>
+                <Tooltip title="Like This Beer!" arrow>
+                <IconButton aria-label="like">
+                  <GradeOutlinedIcon onClick={onLikeSubmit} />
+                  </IconButton>
+                  </Tooltip>
               )}
+              </div>
             </>
           )}
           {current_user?.id === beer.user_id && (
             <>
-              <Button onClick={() => navigate(`/beeredit/${beer.id}`)}>
-                Edit
-              </Button>
-              <Button onClick={onDeleteSubmit}>Delete</Button>
+              <div className="index-icons">
+              <Stack direction="row" spacing={1}>
+              <Tooltip title="Edit Your Beer" arrow>
+              <IconButton aria-label="edit">
+                <EditTwoToneIcon onClick={() => navigate(`/beeredit/${beer.id}`)} />
+              </IconButton>
+              </Tooltip>
+              <Tooltip title="Delete Your Beer" arrow>
+              <IconButton aria-label="delete">
+                <DeleteTwoToneIcon onClick={onDeleteSubmit} />
+                </IconButton>
+                </Tooltip>
+                </Stack>
+                </div>
             </>
           )}
         </Card>
