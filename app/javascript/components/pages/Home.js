@@ -18,8 +18,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from '@mui/material/IconButton';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Stack from '@mui/material/Stack';
+import Charts from "../components/Charts";
 
-const Home = () => {
+
+const Home = ({chart}) => {
   return (
     <>
       <div className="home-content">

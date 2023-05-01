@@ -1,6 +1,11 @@
+<%= react_component '/components/Header.js', {
+  logged_in: user_signed_in?,
+  current_user: current_user,
+  new_user_route: new_user_registration_path, sign_in_route: new_user_session_path, sign_out_route: destroy_user_session_path
+} %>
 <h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "login-form" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -23,7 +28,10 @@
 
   <div class="actions">
     <%= f.submit "Sign up" %>
-  </div>
+
+  </div><br />
+  <%= render "devise/shared/links" %><br />
+
+  <a href="/">Back To Home</a><br />
 <% end %>
 
-<%= render "devise/shared/links" %>
