@@ -1,10 +1,12 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 import BeerNew from "../components/pages/BeerNew";
 
 describe("<BeerNew />", () => {
+  let onSubmit = jest.fn();
+  const createBeer = jest.fn();
   beforeEach(() => {
     const current_user = {
       email: "test@testing.com",
@@ -13,7 +15,7 @@ describe("<BeerNew />", () => {
     };
     render(
       <BrowserRouter>
-        <BeerNew current_user={current_user} />
+        <BeerNew current_user={current_user} createBeer={createBeer} />
       </BrowserRouter>
     );
   });
@@ -61,5 +63,11 @@ describe("<BeerNew />", () => {
       })
     ).toBeInTheDocument;
     expect(screen.getByRole("button", { name: /cancel/i })).toBeInTheDocument;
+  });
+
+  it("properly calls the createbeer function when submission form is clicked", () => {
+    const submit = screen.getByRole("button", { name: /create/i });
+    fireEvent.click(submit);
+    expect(onSubmit).toBeCalled;
   });
 });

@@ -5,7 +5,7 @@
 
 a {
     text-decoration: none;
-    color:inherit;
+    color:#F36527;
 }
 
 a :hover {
@@ -233,6 +233,41 @@ h1,h2,h3,h4 {
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.drop-down {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.search {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #ffb59c;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search:hover input{
+    width: 400px;
+}
+
+.search input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
 }
 
 

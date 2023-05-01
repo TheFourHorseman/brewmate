@@ -63,7 +63,7 @@ describe("<BeerIndex />", () => {
   });
 
   it("displays a button for each beer to see more info", () => {
-    const seeMore = screen.getAllByRole("button", { name: /show more info/i });
+    const seeMore = screen.getAllByRole("button", { name: /show more/i });
     expect(seeMore.length).toEqual(2);
   });
   it("displays a brewery for each beer", () => {
