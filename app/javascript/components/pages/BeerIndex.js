@@ -36,29 +36,8 @@ const BeerIndex = ({
 
   return (
     <>
-      <div className="search">
-        🔍
-         <input
-          type="text"
-          placeholder="Search by beer name..."
-          value={search}
-          onChange={handleInputChange}
-          alt="Search Bar"
-        />
-        {response === 1 && (
-          <>
-            <h2>
-              {`The beer: "${search}" was not found.`}
-              <h2>
-                <NavLink to="/beernew">
-                  <strong>You can add it here</strong>
-                </NavLink>
-              </h2>
-            </h2>
-          </>
-        )}
-        {response === 2 && <h2>{`The beer: "${search}" was not found.`}</h2>}
-      </div>
+      <div className="index-content">
+        <h2>View All Brews</h2>
         <div className="index-cards">
           {filteredBeers?.map((beer, index) => {
             return (
