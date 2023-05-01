@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, useParams, } from "react-router-dom";
-import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Card, Form, FormGroup, Input, Label} from "reactstrap";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const BeerNew = ({createBeer, current_user}) => {
   const navigate = useNavigate()
@@ -129,8 +131,10 @@ const BeerNew = ({createBeer, current_user}) => {
       </Label>
     </FormGroup>
     <div className="create-btn">
-    <Button onClick={onSubmit}>Create</Button>
-    <Button onClick={()=>{navigate(-1)}}>Cancel</Button>
+      <Stack spacing={2} direction="row">
+    <Button variant="contained"onClick={onSubmit}>Create</Button>
+    <Button variant="contained"onClick={()=>{navigate(-1)}}>Cancel</Button>
+      </Stack>
     </div>
   </Form>
   </div>

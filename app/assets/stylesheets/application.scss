@@ -10,7 +10,8 @@ a {
 
 a :hover {
     text-decoration: none;
-    color:inherit;
+
+    color:#F36527;
 }
 
 section {
@@ -107,6 +108,7 @@ h1,h2,h3,h4 {
     position: relative;
     align-items: center;
     justify-content: center;
+    
 }
 
 .about-us::before {
@@ -144,6 +146,20 @@ h1,h2,h3,h4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    position: relative;
+}
+
+.index-cards::before {
+    content: "";
+    background-image: url('https://e0.pxfuel.com/wallpapers/2/94/desktop-wallpaper-beer-glass-abstract.jpg');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.25;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 
@@ -152,6 +168,16 @@ h1,h2,h3,h4 {
     margin: 35px 35px 35px 35px;
     text-align: center;
     background-color: #F36527;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.index-card:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 .index-image{
     max-width: 100%;
@@ -183,7 +209,8 @@ h1,h2,h3,h4 {
 
 .create-form{
     margin: 10vh 10vh 10vw 10vw;
-   
+    background-image: url('https://media.istockphoto.com/id/470941950/photo/three-beers-isolated.jpg?s=612x612&w=0&k=20&c=messgKVlBpjhEYH90Lzpr-1-A6EpwvyuLHHLkpKA9Hw=');
+    background-size: cover;
 }
 
 .create-btn {

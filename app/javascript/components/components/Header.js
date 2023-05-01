@@ -20,7 +20,7 @@ const Header = ({
   const toggle = () => setDropdownOpen(!dropdownOpen);
 
   return (
-    <div>
+    <div className="drop-down">
       <Nav tabs>
         <NavItem>
           <NavLink className="nav-link" to="/">

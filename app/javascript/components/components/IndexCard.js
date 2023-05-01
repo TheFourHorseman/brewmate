@@ -48,8 +48,6 @@ const IndexCard = ({
   // passes the beer id up to the deleteBeer function when delete button is pressed
   const onDeleteSubmit = () => {
     deleteBeer(beer.id);
-    // TODO: Handle this behavior better
-    navigate("/beerindex");
   };
 
   // passes beer id to the likeBeer function on button press
@@ -97,15 +95,18 @@ const IndexCard = ({
             </Collapse>
           </CardBody>
           <div className="index-icons">
-            <Tooltip title="Show More Info" arrow>
-              <IconButton aria-label="show more" onClick={toggle}>
-                <ExpandMoreTwoToneIcon />
-              </IconButton>
+
+          <Tooltip title="Show More/Less" arrow>
+          <IconButton aria-label="show more" onClick={toggle}>
+            <ExpandMoreTwoToneIcon  />
+            </IconButton>
+
             </Tooltip>
           </div>
           {logged_in && (
             <>
               <div className="index-icons">
+
                 {isLiked() && (
                   <Tooltip title="Remove Like" arrow>
                     <IconButton
@@ -114,6 +115,7 @@ const IndexCard = ({
                     >
                       <GradeIcon />
                     </IconButton>
+
                   </Tooltip>
                 )}
                 {!isLiked() && (
@@ -129,6 +131,7 @@ const IndexCard = ({
           {current_user?.id === beer.user_id && (
             <>
               <div className="index-icons">
+
                 <Stack direction="row" spacing={1}>
                   <Tooltip title="Edit Your Beer" arrow>
                     <IconButton
@@ -143,6 +146,7 @@ const IndexCard = ({
                       <DeleteTwoToneIcon />
                     </IconButton>
                   </Tooltip>
+
                 </Stack>
               </div>
             </>
