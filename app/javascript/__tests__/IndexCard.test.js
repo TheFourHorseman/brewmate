@@ -77,26 +77,25 @@ describe("<IndexCard.js>", () => {
   });
   it("displays a button to edit", () => {
     renderConditions(true, true, true);
-    expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument;
+    expect(screen.getByRole("button", { name: /edit/i })).toBeInTheDocument;
   });
   it("if user has created the beer shows a navigation and delete button", () => {
     renderConditions(true, true, true);
-    expect(screen.getByRole("button", { name: "Delete" })).toBeInTheDocument;
-    expect(screen.getByRole("button", { name: "Edit" })).toBeInTheDocument;
+    expect(screen.getByRole("button", { name: /delete/i })).toBeInTheDocument;
   });
   it("calls the deleteBeer function when the delete button is clicked", () => {
     renderConditions(true, true, true);
-    fireEvent.click(screen.getByRole("button", { name: "Delete" }));
+    fireEvent.click(screen.getByRole("button", { name: /delete/i }));
     expect(deleteBeer.mock.calls).toHaveLength(1);
   });
   it("calls the likeBeer function when the like button is clicked", () => {
     renderConditions(true, true, false);
-    fireEvent.click(screen.getByRole("button", { name: /like this beer/i }));
+    fireEvent.click(screen.getByRole("button", { name: /like/i }));
     expect(likeBeer.mock.calls).toHaveLength(1);
   });
   it("calls the deleteLike function when the remove like button is clicked", () => {
     renderConditions(true, true, true);
-    fireEvent.click(screen.getByRole("button", { name: /remove like/i }));
+    fireEvent.click(screen.getByRole("button", { name: /unlike/i }));
     expect(deleteLike.mock.calls).toHaveLength(1);
   });
   it("navigates to the edit page when the edit button is clicked", () => {

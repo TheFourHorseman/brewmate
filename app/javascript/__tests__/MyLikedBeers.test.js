@@ -61,9 +61,9 @@ describe("<MyLikedBeers>", () => {
   });
 
   it("displays a button for each beer to see more info", () => {
-    expect(screen.getAllByRole("link", { name: /show more/i }).length).toEqual(
-      2
-    );
+    expect(
+      screen.getAllByRole("button", { name: /show more/i }).length
+    ).toEqual(2);
   });
   it("displays a brewery for each beer", () => {
     expect(screen.getByRole("heading", { name: /aaron brewing/i }))

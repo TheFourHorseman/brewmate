@@ -6,6 +6,8 @@ import MyBeers from "../components/pages/MyBeers";
 import userEvent from "@testing-library/user-event";
 
 describe("<MyBeers>", () => {
+  const deleteBeer = jest.fn();
+  const navigate = jest.fn();
   beforeEach(() => {
     const current_user = {
       email: "test@testing.com",
@@ -36,7 +38,12 @@ describe("<MyBeers>", () => {
     ];
     render(
       <BrowserRouter>
-        <MyBeers beers={beers} current_user={current_user} />
+        <MyBeers
+          beers={beers}
+          current_user={current_user}
+          deleteBeer={deleteBeer}
+          navigate={navigate}
+        />
       </BrowserRouter>
     );
   });
@@ -57,7 +64,7 @@ describe("<MyBeers>", () => {
       </BrowserRouter>
     );
     const seeMore = userEvent.click(
-      screen.getAllByRole("link", { name: /show more/i })
+      screen.getAllByRole("button", { name: /show more/i })
     );
   });
   it("displays a brewery for each beer", () => {

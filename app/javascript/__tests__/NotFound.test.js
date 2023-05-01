@@ -14,7 +14,7 @@ describe("<NotFound />", () => {
     );
 
     screen;
-    const text = screen.getByText(/you're empty/i);
+    const text = screen.getByText(/Beers Not Found/i);
     expect(text).toBeInTheDocument();
   });
   it("display a home button", () => {
