@@ -36,7 +36,8 @@ const BeerIndex = ({
 
   return (
     <>
-      <div>
+      <div className="search">
+        🔎
         <input
           type="text"
           placeholder="Search by beer name..."
@@ -56,25 +57,26 @@ const BeerIndex = ({
             </h2>
           </>
         )}
-        {response === 2 && <h2>{`The beer: "${search}" was not found.`}</h2>}
-        <div className="index-cards">
-          {filteredBeers?.map((beer, index) => {
-            return (
-              <IndexCard
-                beer={beer}
-                key={index}
-                navigate={navigate}
-                current_user={current_user}
-                logged_in={logged_in}
-                deleteBeer={deleteBeer}
-                likeBeer={likeBeer}
-                deleteLike={deleteLike}
-                likes={likes}
-              />
-            );
-          })}
-        </div>
-      
+      </div>
+      {response === 2 && <h2>{`The beer: "${search}" was not found.`}</h2>}
+
+      <div className="index-cards">
+        {filteredBeers?.map((beer, index) => {
+          return (
+            <IndexCard
+              beer={beer}
+              key={index}
+              navigate={navigate}
+              current_user={current_user}
+              logged_in={logged_in}
+              deleteBeer={deleteBeer}
+              likeBeer={likeBeer}
+              deleteLike={deleteLike}
+              likes={likes}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };

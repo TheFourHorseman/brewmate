@@ -1,28 +1,5 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Button,
-  Collapse,
-  Badge,
-} from "reactstrap";
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import IconButton from '@mui/material/IconButton';
-import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-import Stack from '@mui/material/Stack';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
-import GradeIcon from '@mui/icons-material/Grade';
-import Tooltip from '@mui/material/Tooltip';
-
-
-import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
 import IndexCard from "../components/IndexCard";
 
 const MyLikedBeers = ({
@@ -60,7 +37,8 @@ const MyLikedBeers = ({
         {myLikedBeers.length > 0 && <h2>Your Liked Brews</h2>}
         {myLikedBeers.length === 0 && (
           <h2>
-            You're glass is looking a bit empty, why don't you go check out some beers
+            You're glass is looking a bit empty, why don't you go check out some
+            beers
           </h2>
         )}
 

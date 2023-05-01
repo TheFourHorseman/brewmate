@@ -1,39 +1,17 @@
-
-import React from "react";
+import React, { useState } from "react";
 import IndexCard from "../components/IndexCard";
-
-const MyBeers = ({ beers, current_user, deleteBeer }) => {
-  let userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
-
-import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Button,
-  Collapse,
-  Badge,
-} from "reactstrap";
 
-import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
-import IconButton from '@mui/material/IconButton';
-import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
-import Stack from '@mui/material/Stack';
-import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import GradeOutlinedIcon from '@mui/icons-material/GradeOutlined';
-import GradeIcon from '@mui/icons-material/Grade';
-import Tooltip from '@mui/material/Tooltip';
-
-const MyBeers = ({ beers, beer,
+const MyBeers = ({
+  beers,
+  beer,
   current_user,
   logged_in,
   likes,
   deleteBeer,
   likeBeer,
-  deleteLike, }) => {
+  deleteLike,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   let selectedLike = likes?.find(
@@ -47,8 +25,8 @@ const MyBeers = ({ beers, beer,
     );
   };
   let userBeers = beers?.filter((beer) => current_user.id === beer.user_id);
-  let navigate = useNavigate()
-  
+  let navigate = useNavigate();
+
   const onDeleteSubmit = () => {
     deleteBeer(beer.id);
     // TODO: Handle this behavior better
@@ -66,7 +44,6 @@ const MyBeers = ({ beers, beer,
     deleteLike(selectedLike.id);
     // navigate(0);
   };
-
 
   return (
     <>
@@ -86,7 +63,6 @@ const MyBeers = ({ beers, beer,
                 deleteLike={deleteLike}
                 likes={likes}
               />
-
             );
           })}
         </div>
