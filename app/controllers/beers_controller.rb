@@ -56,7 +56,7 @@ class BeersController < ApplicationController
                     .first(5)
 
         # gets the top 5 suggested based off IBU
-        suggested_ibu = Beer.where.not(id: already_liked_beer_ids)
+        suggested_ibu = Beer.where.not(id: already_liked_beer_ids).where.not(ibu: 0)
                   .sort_by { |beer| (beer.ibu - avg_ibu).abs }
                   .first(5)
 

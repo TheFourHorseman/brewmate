@@ -17,6 +17,7 @@ import {
   Collapse,
   Badge,
 } from "reactstrap";
+
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import IconButton from '@mui/material/IconButton';
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
@@ -67,7 +68,6 @@ const MyBeers = ({ beers, beer,
   };
 
 
-  
   return (
     <>
       <div className="index-content">
@@ -75,82 +75,17 @@ const MyBeers = ({ beers, beer,
         <div className="index-cards">
           {userBeers?.map((beer, index) => {
             return (
-
-              <><IndexCard
-                beers={beers}
+              <IndexCard
                 beer={beer}
+                key={index}
+                navigate={navigate}
                 current_user={current_user}
+                logged_in={logged_in}
                 deleteBeer={deleteBeer}
-                key={index} /><Card
-                  style={{
-                    width: "20vw",
-                  }}
-                  key={(index)}
-                  className="index-card"
-                >
-                  <CardBody>
-                    <img
-                      alt={`A picture of ${beer?.beer_name}`}
-                      src={beer?.image}
-                      className="index-image" />
-                    <CardTitle tag="h5">{beer?.beer_name}</CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
-                      {beer?.brewery_name}
-                    </CardSubtitle>
-                    <CardText>{beer?.beer_style}</CardText>
-                    <Collapse isOpen={isOpen}>
-                      <CardText>
-                        <Badge>ABV: {beer.abv}</Badge>
-                        <Badge>IBU: {beer.ibu}</Badge>
-                        <Badge>Style: {beer.style}</Badge>
-                      </CardText>
-                    </Collapse>
-                  </CardBody>
-                  <div className="index-icons">
-                    <Tooltip title="Show More Info" arrow>
-                      <IconButton aria-label="show more" onClick={toggle}>
-                        <ExpandMoreTwoToneIcon />
-                      </IconButton>
-                    </Tooltip>
-                  </div>
-                  {logged_in && (
-                    <>
-                      <div className="index-icons">
-                        {isLiked() && (
-                          <Tooltip title="Remove Like" arrow>
-                            <IconButton aria-label="unlike" onClick={onRemoveLikeSubmit}>
-                              <GradeIcon />
-                            </IconButton></Tooltip>
-                        )}
-                        {!isLiked() && (
-                          <Tooltip title="Like This Beer!" arrow>
-                            <IconButton aria-label="like" onClick={onLikeSubmit}>
-                              <GradeOutlinedIcon />
-                            </IconButton>
-                          </Tooltip>
-                        )}
-                      </div>
-                    </>
-                  )}
-                  {current_user?.id === beer.user_id && (
-                    <>
-                      <div className="index-icons">
-                        <Stack direction="row" spacing={1}>
-                          <Tooltip title="Edit Your Beer" arrow>
-                            <IconButton aria-label="edit">
-                              <EditTwoToneIcon onClick={() => navigate(`/beeredit/${beer.id}`)} />
-                            </IconButton>
-                          </Tooltip>
-                          <Tooltip title="Delete Your Beer" arrow>
-                            <IconButton aria-label="delete">
-                              <DeleteTwoToneIcon onClick={onDeleteSubmit} />
-                            </IconButton>
-                          </Tooltip>
-                        </Stack>
-                      </div>
-                    </>
-                  )}
-                </Card></>
+                likeBeer={likeBeer}
+                deleteLike={deleteLike}
+                likes={likes}
+              />
 
             );
           })}
