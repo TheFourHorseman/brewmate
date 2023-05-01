@@ -9,6 +9,7 @@ import BeerSuggestions from "./pages/BeerSuggestions";
 import BeerProfile from "./pages/BeerProfile";
 import MyBeers from "./pages/MyBeers";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import MyLikedBeers from "./pages/MyLikedBeers";
 import NotFound from "./pages/NotFound";
 
@@ -177,6 +178,7 @@ const App = (props) => {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

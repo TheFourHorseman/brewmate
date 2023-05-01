@@ -96,7 +96,7 @@ const IndexCard = ({
             </Collapse>
           </CardBody>
           <div className="index-icons">
-          <Tooltip title="Show More Info" arrow>
+          <Tooltip title="Show More/Less" arrow>
           <IconButton aria-label="show more" onClick={toggle}>
             <ExpandMoreTwoToneIcon  />
             </IconButton>

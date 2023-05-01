@@ -9,7 +9,7 @@ a {
 
 a :hover {
     text-decoration: none;
-    color:#FFFFFF;
+    color:#F36527;
 }
 
 section {
@@ -101,6 +101,7 @@ h1,h2,h3,h4 {
     position: relative;
     align-items: center;
     justify-content: center;
+    
 }
 
 .about-us::before {
@@ -159,6 +160,16 @@ h1,h2,h3,h4 {
     margin: 35px 35px 35px 35px;
     text-align: center;
     background-color: #F36527;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.index-card:hover {
+    transform: translateY(-0.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 .index-image{
     max-width: 100%;
@@ -190,7 +201,8 @@ h1,h2,h3,h4 {
 
 .create-form{
     margin: 10vh 10vh 10vw 10vw;
-   
+    background-image: url('https://media.istockphoto.com/id/470941950/photo/three-beers-isolated.jpg?s=612x612&w=0&k=20&c=messgKVlBpjhEYH90Lzpr-1-A6EpwvyuLHHLkpKA9Hw=');
+    background-size: cover;
 }
 
 .create-btn {
@@ -214,3 +226,37 @@ h1,h2,h3,h4 {
     display: flex;
 }
 
+.drop-down {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.search {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #ffb59c;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search:hover input{
+    width: 400px;
+}
+
+.search input {
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+}

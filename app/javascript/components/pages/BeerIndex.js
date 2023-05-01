@@ -36,8 +36,9 @@ const BeerIndex = ({
 
   return (
     <>
-      <div>
-        <input
+      <div className="search">
+        🔍
+         <input
           type="text"
           placeholder="Search by beer name..."
           value={search}
@@ -57,6 +58,7 @@ const BeerIndex = ({
           </>
         )}
         {response === 2 && <h2>{`The beer: "${search}" was not found.`}</h2>}
+      </div>
         <div className="index-cards">
           {filteredBeers?.map((beer, index) => {
             return (
@@ -74,7 +76,7 @@ const BeerIndex = ({
             );
           })}
         </div>
-      </div>
+      
     </>
   );
 };

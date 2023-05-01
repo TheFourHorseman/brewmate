@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Card, Form, FormGroup, Input, Label, Button } from "reactstrap";
+import { Card, Form, FormGroup, Input, Label } from "reactstrap";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const BeerEdit = ({ editBeer, beers }) => {
   const { id } = useParams();
@@ -41,7 +43,7 @@ const BeerEdit = ({ editBeer, beers }) => {
   if (updatedBeer && styles) {
     return (
       <>
-        <div className="ceate-form">
+        <div className="create-form">
           <h1>Update Beer Info</h1>
           <Form>
             <FormGroup floating>
@@ -114,14 +116,16 @@ const BeerEdit = ({ editBeer, beers }) => {
               <Label for="image">Image</Label>
             </FormGroup>
             <div className="create-btn">
-              <Button onClick={onSubmit}>Edit</Button>
-              <Button
+            <Stack spacing={2} direction="row">
+              <Button variant="contained"onClick={onSubmit}>Edit</Button>
+              <Button variant="contained"
                 onClick={() => {
                   navigate(-1);
                 }}
               >
                 Cancel
               </Button>
+              </Stack>
             </div>
           </Form>
         </div>
